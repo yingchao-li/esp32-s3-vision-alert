@@ -1,0 +1,14 @@
+{
+  "status": "FLASH PASS",
+  "port": "/dev/cu.usbmodem5C930528211",
+  "mac": "44:b1:76:c7:ed:58",
+  "image": "/path/to/ESP32_USB_Camera/esp32_vision/build/esp32_vision.bin",
+  "image_sha256": "729ea7b2fd5190ec7f993c4d492a882bdd92059ef50b3b3a3ce38be8e4393c70",
+  "image_bytes": 2388064,
+  "offset": 65536,
+  "partition_bytes": 4128768,
+  "partition_table_written": false,
+  "bootloader_written": false,
+  "nvs_erased": false,
+  "hardware_function_test": "NOT PERFORMED; USER RESPONSIBILITY"
+}

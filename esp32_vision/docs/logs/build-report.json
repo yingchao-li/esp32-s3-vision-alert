@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-28",
+  "idf": "5.4.2",
+  "esp_dl": "3.3.14",
+  "camera_driver": "2.1.3",
+  "route": "A: official ESP-DL YOLO11n COCO 320 INT8 (no training)",
+  "model": {
+    "file": "models/coco_detect_yolo11n_320_s8_v1.espdl",
+    "bytes": 2858512,
+    "sha256": "69a2125826430a46dca7edeb9193324da12758be7bcfa34d862ce31f34152986",
+    "input": "INT8 NHWC 1x320x320x3",
+    "outputs": "score0/1/2 [1,40/20/10,40/20/10,80], box0/1/2 [1,40/20/10,40/20/10,64]",
+    "deployed_classes": ["Person", "Bicycle", "Car"],
+    "undeployed_classes": ["Traffic Cone"],
+    "embedded_section_sha256": "verified identical to artifact (extracted from .flash.rodata)",
+    "official_s3_latency_ms": {"preprocess": 15.1, "model": 961.5, "postprocess": 15.2, "note": "NOT measured on this board"}
+  },
+  "partition": {
+    "app_offset": 65536,
+    "app_size": 7274496,
+    "layout_change": "0x3f0000 -> 0x6f0000; nvs/phy offsets unchanged",
+    "first_flash_requires": "--approve-layout-change"
+  },
+  "profiles": {
+    "pipeline": {
+      "status": "BUILD PASS",
+      "image_bytes": 4817936,
+      "sha256": "998662bc499e4f5e5f3d0a78ad629caf751112108eb4e8dbfcaeba785ecc4eda",
+      "partition_bytes": 7274496,
+      "free_bytes": 2456560,
+      "flash_status": "NOT FLASHED"
+    },
+    "dual": {
+      "status": "BUILD PASS",
+      "image_bytes": 4818032,
+      "sha256": "91b6f25876fdf4316e443a11a739fc1d9c15e66819b8186ec6aca5b81ebc4439",
+      "partition_bytes": 7274496,
+      "free_bytes": 2456464,
+      "flash_status": "NOT FLASHED"
+    }
+  },
+  "current_model": "REAL THREE CLASS (route A): YOLO11n COCO 320 INT8, Person/Bicycle/Car; Traffic Cone NOT DEPLOYED",
+  "four_class_weights": "PARTIAL/BLOCKED: no authorized local training data/weights",
+  "host_cpp_tests": "PASS: 5 algorithm groups (incl. COCO-80 mapping) with AddressSanitizer/UndefinedBehaviorSanitizer",
+  "python_unit_tests": "PASS: 17 tests, incl. YOLO11 manifest/SHA/corruption, partition layout and flash guards",
+  "javascript_syntax": "PASS: unchanged dashboard (node --check previously)",
+  "training_and_quantization": "NOT EXECUTED for route A (uses official pretrained COCO artifact)",
+  "hardware_function_tests": "NOT PERFORMED; image/3-class detection/buzzer/network/FPS/memory/stress acceptance remains user responsibility",
+  "known_risks": [
+    "Official S3 latency ~961ms/frame (~1 FPS); end-to-end alert ~2-3s",
+    "YOLO11n activation arena needs ~6MB PSRAM; 8MB board also holds camera/preview/WiFi buffers",
+    "Official NMS is class-agnostic; overlapping person/car may suppress each other",
+    "COCO model cannot detect Traffic Cone"
+  ]
+}

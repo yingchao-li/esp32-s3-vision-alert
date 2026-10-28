@@ -1,0 +1,86 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x10e4
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xb30
+load:0x403cb700,len:0x2cfc
+entry 0x403c88a8
+I (479) octal_psram: vendor id    : 0x0d (AP)
+I (480) octal_psram: dev id       : 0x02 (generation 3)
+I (480) octal_psram: density      : 0x03 (64 Mbit)
+I (482) octal_psram: good-die     : 0x01 (Pass)
+I (486) octal_psram: Latency      : 0x01 (Fixed)
+I (490) octal_psram: VCC          : 0x01 (3V)
+I (494) octal_psram: SRF          : 0x01 (Fast Refresh)
+I (499) octal_psram: BurstType    : 0x01 (Hybrid Wrap)
+I (504) octal_psram: BurstLen     : 0x01 (32 Byte)
+I (509) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)
+I (514) octal_psram: DriveStrength: 0x00 (1/1)
+I (519) MSPI Timing: PSRAM timing tuning index: 5
+I (523) esp_psram: Found 8MB PSRAM device
+I (526) esp_psram: Speed: 80MHz
+I (529) cpu_start: Multicore app
+I (817) esp_psram: SPI SRAM memory test OK
+I (826) cpu_start: Pro cpu start user code
+I (826) cpu_start: cpu freq: 240000000 Hz
+I (826) app_init: Application information:
+I (826) app_init: Project name:     esp32_vision
+I (831) app_init: App version:      2.0.0
+I (834) app_init: Compile time:     Oct 28 2026 21:52:15
+I (840) app_init: ELF file SHA256:  c3ef02e4c...
+I (844) app_init: ESP-IDF:          v5.4.2
+I (848) efuse_init: Min chip rev:     v0.0
+I (851) efuse_init: Max chip rev:     v0.99 
+I (855) efuse_init: Chip rev:         v0.2
+I (859) heap_init: Initializing. RAM available for dynamic allocation:
+I (866) heap_init: At 3FCB3B40 len 00035BD0 (214 KiB): RAM
+I (871) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM
+I (876) heap_init: At 600FE01C len 00001FCC (7 KiB): RTCRAM
+I (881) esp_psram: Adding pool of 8192K of PSRAM memory to heap allocator
+I (888) spi_flash: detected chip: generic
+I (891) spi_flash: flash io: dio
+I (895) sleep_gpio: Configure to isolate all GPIO pins in sleep state
+I (901) sleep_gpio: Enable automatic switching of GPIO sleep configuration
+I (0) main_task: Started on CPU1
+I (25) esp_psram: Reserving pool of 64K of internal memory for DMA/internal allocations
+I (25) main_task: Calling app_main()
+I (37) BOOT: Freenove ESP32-S3 flash=8388608 PSRAM=8388608 reset=1
+I (37) gpio: GPIO[14]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 
+I (41) s3 ll_cam: DMA Channel=0
+I (43) cam_hal: cam init ok
+I (45) sccb-ng: pin_sda 4 pin_scl 5
+I (49) sccb-ng: sccb_i2c_port=1
+I (63) ov7725: Mismatch PID=0xe8
+I (64) ov7760: Mismatch PID=0xe8
+I (65) gc032a: Mismatch PID=0xf302
+I (66) camera: Camera PID=0x9b VER=0x00 MIDL=0x00 MIDH=0x00
+I (67) camera: Detected GC0308 camera
+I (70) camera: Detected camera at address=0x21
+I (323) cam_hal: PSRAM DMA mode disabled
+I (323) s3 ll_cam: node_size: 3840, nodes_per_line: 1, lines_per_node: 6
+I (324) s3 ll_cam: dma_half_buffer_min:  3840, dma_half_buffer: 15360, lines_per_half_buffer: 24, dma_buffer_size: 30720
+I (333) cam_hal: buffer_size: 30720, half_buffer_size: 15360, node_buffer_size: 3840, node_cnt: 8, total_cnt: 10
+I (343) cam_hal: Allocating 153600 Byte frame buffer in PSRAM
+I (348) cam_hal: Allocating 153600 Byte frame buffer in PSRAM
+I (354) cam_hal: cam config ok
+I (357) gc0308: subsample win:640x480, ratio:0.500000
+I (373) CAMERA: Initialized GC0308 PID=0x009b; RGB565 320x240, 153600 bytes/FB, 2 FB in PSRAM, GRAB_LATEST, XCLK=10MHz; unchanged Freenove GPIOs
+I (375) CAMERA: Preview uses ESP32 software RGB565->JPEG; GC0308 has no native JPEG. Initialization is not validation of image content.
+I (386) MODEL: init/verify: rodata=0x3c1ad9d0, bytes=435328 expected=435328; ESP-DL=3.3.14; Espressif PicoDet pedestrian S8 v1 (PERSON ONLY)
+I (426) MODEL: init/verify: SHA256=3eb5827e12322728fe99ea9c86d71ea38aa5a5b70064abf7d75bc90140b74015 PASS
+I (426) MODEL: before constructor: internal free=180767 largest=86016; SIMD internal free=108276 largest=86016; SIMD PSRAM free=8077128 largest=7995392
+I (437) MODEL: init/construct: PSRAM activation arena; internal budget=0, param_copy=true
+I (520) dl::Model: init/load returned ESP_OK (0x0)
+I (560) dl::Model: init/arena allocated=true; internal budget=0 bytes
+I (562) MODEL: after constructor: internal free=137291 largest=63488; SIMD internal free=64800 largest=21504; SIMD PSRAM free=7149784 largest=7077888
+I (569) MODEL: init/graph: inputs=1 outputs=6
+I (573) MODEL: init/input: INT8 [1,224,224,3] data=0x3c2d9100
+I (578) MODEL: init/output 0: score [1,28,28,1] data=0x3c2dd560; box [1,28,28,32] data=0x3c2e82f0
+I (587) MODEL: init/output 1: score [1,14,14,1] data=0x3c2dd3b0; box [1,14,14,32] data=0x3c2da050
+I (595) MODEL: init/output 2: score [1,7,7,1] data=0x3c2dd480; box [1,7,7,32] data=0x3c2dc820
+W (604) dl::Model: minimize() will delete unused inference variables, breaking model testing/debugging.
+I (614) MODEL: ready: internal free=157555 largest=63488; SIMD internal free=85064 largest=21504; SIMD PSRAM free=7149784 largest=7077888
+I (625) MODEL: Person detector loaded; Espressif PicoDet pedestrian S8 v1 (PERSON ONLY); four-class available=false (PERSON ONLY, PARTIAL)

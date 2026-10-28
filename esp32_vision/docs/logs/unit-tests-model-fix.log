@@ -1,0 +1,22 @@
+PASS alarm: 1/2/3/4 counts, bounded pulses, start intervals, no re-entry, mute/fault/freshness, settings bounds
+PASS tracking: multiple instances, class gating, order-independent IDs, occlusion/reappearance, tentative reset, bounded capacity
+PASS ROI: left/center/right, entry/exit, confirmation, short hold expiry, risk, configurable class priority
+PASS class-aware NMS/candidate bounds and real sample-window mean/P50/P95/P99/max
+/path/to/ESP32_USB_Camera/esp32_vision/models/pedestrian_detect_pico_s8_v1.espdl
+test_annotation_conversion_fixture_only (tools_test.DatasetTests.test_annotation_conversion_fixture_only) ... ok
+test_boxes (tools_test.DatasetTests.test_boxes) ... ok
+test_exact_class_mapping (tools_test.DatasetTests.test_exact_class_mapping) ... ok
+test_modified_partition_layout_is_rejected (tools_test.FlashTests.test_modified_partition_layout_is_rejected) ... ok
+test_real_stable_table_and_binary_fit (tools_test.FlashTests.test_real_stable_table_and_binary_fit) ... ok
+test_wrong_chip_or_oversized_image_rejected (tools_test.FlashTests.test_wrong_chip_or_oversized_image_rejected) ... ok
+test_changed_dependency_is_rejected (tools_test.ModelDiagnosticsTests.test_changed_dependency_is_rejected) ... ok
+test_real_dependency_diagnostics_and_allocation_guard (tools_test.ModelDiagnosticsTests.test_real_dependency_diagnostics_and_allocation_guard) ... ok
+test_baseline_cannot_be_claimed_as_four_classes (tools_test.ModelTests.test_baseline_cannot_be_claimed_as_four_classes) ... ok
+test_corruption_rejected (tools_test.ModelTests.test_corruption_rejected) ... ok
+test_missing_four_class_artifact_blocks_build (tools_test.ModelTests.test_missing_four_class_artifact_blocks_build) ... ok
+test_real_baseline (tools_test.ModelTests.test_real_baseline) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.006s
+
+OK

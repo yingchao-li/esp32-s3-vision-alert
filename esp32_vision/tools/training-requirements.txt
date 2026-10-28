@@ -1,0 +1,10 @@
+numpy==1.26.4
+torch==2.2.2
+torchvision==0.17.2
+torchaudio==2.2.2
+ultralytics==8.3.112
+onnx==1.17.0
+onnxsim==0.4.36
+onnxruntime==1.19.2
+opencv-python==4.11.0.86
+esp-ppq @ git+https://github.com/espressif/esp-ppq.git@55bb56b22dca5186876a44ee740d71c25bb42ffc

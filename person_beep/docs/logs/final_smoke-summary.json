@@ -1,0 +1,30 @@
+{
+  "source": "docs/logs/final_smoke.log",
+  "frames": 119,
+  "inference_ms": {
+    "mean": 121.88,
+    "min": 120.77,
+    "max": 122.93
+  },
+  "person_boxes": 0,
+  "confidence_range": null,
+  "negative_frames": 119,
+  "alarm_sequences": 0,
+  "min_observed_low_cooldown_ms": null,
+  "cooldown_violations": [],
+  "gpio14_readback": {
+    "edges": 1,
+    "high_pulse_ms": [],
+    "low_period_ms": [],
+    "note": "5ms polling of actual GPIO pad, includes any cancelled/truncated sequence"
+  },
+  "safe_idle": false,
+  "panic": false,
+  "hardware_lines": [
+    "I (1048) HARDWARE: Freenove ESP32-S3, cores=2, revision=2, reset_reason=1",
+    "I (1059) HARDWARE: Flash=8388608 bytes, PSRAM=8388608 bytes (measured)"
+  ],
+  "sensor_lines": [
+    "I (1408) CAMERA: Sensor=GC0308, PID=0x009b (read from hardware)"
+  ]
+}

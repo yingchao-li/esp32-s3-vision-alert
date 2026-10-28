@@ -1,0 +1,7 @@
+.section .rodata.person_model,"a",@progbits
+.balign 16
+.global person_model_start
+person_model_start:
+.incbin "@PERSON_MODEL_FILE@"
+.global person_model_end
+person_model_end:

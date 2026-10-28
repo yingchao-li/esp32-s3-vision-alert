@@ -1,0 +1,1389 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0xa (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x10e4
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xb30
+load:0x403cb700,len:0x2cfc
+entry 0x403c88a8
+I (548) octal_psram: vendor id    : 0x0d (AP)
+I (548) octal_psram: dev id       : 0x02 (generation 3)
+I (549) octal_psram: density      : 0x03 (64 Mbit)
+I (551) octal_psram: good-die     : 0x01 (Pass)
+I (555) octal_psram: Latency      : 0x01 (Fixed)
+I (559) octal_psram: VCC          : 0x01 (3V)
+I (563) octal_psram: SRF          : 0x01 (Fast Refresh)
+I (568) octal_psram: BurstType    : 0x01 (Hybrid Wrap)
+I (573) octal_psram: BurstLen     : 0x01 (32 Byte)
+I (578) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)
+I (583) octal_psram: DriveStrength: 0x00 (1/1)
+I (588) MSPI Timing: PSRAM timing tuning index: 5
+I (591) esp_psram: Found 8MB PSRAM device
+I (595) esp_psram: Speed: 80MHz
+I (598) cpu_start: Multicore app
+I (886) esp_psram: SPI SRAM memory test OK
+I (895) cpu_start: Pro cpu start user code
+I (895) cpu_start: cpu freq: 240000000 Hz
+I (895) app_init: Application information:
+I (895) app_init: Project name:     person_beep
+I (899) app_init: App version:      1.0.0
+I (903) app_init: Compile time:     Oct 28 2026 20:48:26
+I (908) app_init: ELF file SHA256:  811bbd3c2...
+I (912) app_init: ESP-IDF:          v5.4.2
+I (916) efuse_init: Min chip rev:     v0.0
+I (920) efuse_init: Max chip rev:     v0.99 
+I (924) efuse_init: Chip rev:         v0.2
+I (928) heap_init: Initializing. RAM available for dynamic allocation:
+I (934) heap_init: At 3FCA1668 len 000480A8 (288 KiB): RAM
+I (939) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM
+I (945) heap_init: At 600FE01C len 00001FCC (7 KiB): RTCRAM
+I (950) esp_psram: Adding pool of 8192K of PSRAM memory to heap allocator
+I (957) spi_flash: detected chip: generic
+I (960) spi_flash: flash io: dio
+I (963) sleep_gpio: Configure to isolate all GPIO pins in sleep state
+I (969) sleep_gpio: Enable automatic switching of GPIO sleep configuration
+I (0) main_task: Started on CPU1
+I (25) esp_psram: Reserving pool of 64K of internal memory for DMA/internal allocations
+I (25) main_task: Calling app_main()
+I (25) gpio: GPIO[14]| InputEn: 1| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 
+I (33) BUZZER: Ready: Freenove GPIO14, active HIGH, hardware-timed pulses
+I (1042) BUZZER_PIN: GPIO14 actual pad=0, t=59633 us
+I (1048) HARDWARE: Freenove ESP32-S3, cores=2, revision=2, reset_reason=1
+I (1059) HARDWARE: Flash=8388608 bytes, PSRAM=8388608 bytes (measured)
+I (1066) MEMORY: internal free=290827, min=290827, largest=196608; PSRAM free=8385580, largest=8257536 bytes
+I (1076) s3 ll_cam: DMA Channel=0
+I (1078) cam_hal: cam init ok
+I (1081) sccb-ng: pin_sda 4 pin_scl 5
+I (1084) sccb-ng: sccb_i2c_port=1
+I (1099) ov7725: Mismatch PID=0xe8
+I (1100) ov7760: Mismatch PID=0xe8
+I (1101) gc032a: Mismatch PID=0xf302
+I (1102) camera: Camera PID=0x9b VER=0x00 MIDL=0x00 MIDH=0x00
+I (1103) camera: Detected GC0308 camera
+I (1107) camera: Detected camera at address=0x21
+I (1360) cam_hal: PSRAM DMA mode disabled
+I (1361) s3 ll_cam: node_size: 3840, nodes_per_line: 1, lines_per_node: 6
+I (1361) s3 ll_cam: dma_half_buffer_min:  3840, dma_half_buffer: 15360, lines_per_half_buffer: 24, dma_buffer_size: 30720
+I (1370) cam_hal: buffer_size: 30720, half_buffer_size: 15360, node_buffer_size: 3840, node_cnt: 8, total_cnt: 10
+I (1380) cam_hal: Allocating 153600 Byte frame buffer in PSRAM
+I (1386) cam_hal: Allocating 153600 Byte frame buffer in PSRAM
+I (1392) cam_hal: cam config ok
+I (1394) gc0308: subsample win:640x480, ratio:0.500000
+I (1408) CAMERA: Sensor=GC0308, PID=0x009b (read from hardware)
+I (1411) CAMERA: Initialized: Freenove pins, RGB565BE 320x240, two PSRAM buffers
+I (1987) MEMORY: internal free=254351, min=254351, largest=159744; PSRAM free=8077128, largest=7995392 bytes
+W (2134) dl::Model: minimize() will delete unused inference variables, breaking model testing/debugging.
+
+I (2136) dl::Model: model:torch-jit-export, version:0
+I (2138) dl::Model: MODEL LOCATION IN FLASH RODATA
+I (2142) dl::Model: +----------------+--------------+----------+--------------+
+I (2149) dl::Model: |                     memory summary                      |
+I (2156) dl::Model: +----------------+--------------+----------+--------------+
+I (2163) dl::Model: |                | internal RAM | PSRAM    | FLASH        |
+I (2170) dl::Model: +----------------+--------------+----------+--------------+
+I (2177) dl::Model: | fbs_model      |              |          | 425.11KB     |
+I (2184) dl::Model: |  -- parameter  |              |          |  -- 332.33KB |
+I (2191) dl::Model: +----------------+--------------+----------+--------------+
+I (2198) dl::Model: | parameter_copy |              | 332.33KB |              |
+I (2205) dl::Model: +----------------+--------------+----------+--------------+
+I (2212) dl::Model: | variable       | 64.00KB      | 539.00KB |              |
+I (2219) dl::Model: +----------------+--------------+----------+--------------+
+I (2226) dl::Model: | others         | 22.03KB      | 36.24KB  |              |
+I (2233) dl::Model: +----------------+--------------+----------+--------------+
+I (2240) dl::Model: | total          | 86.03KB      | 907.57KB | 425.11KB     |
+I (2247) dl::Model: +----------------+--------------+----------+--------------+
+
+I (2254) MODEL: Person detector loaded: PicoDet S8 v1, INT8 224x224, threshold=0.80
+I (2262) MEMORY: internal free=165431, min=110407, largest=63488; PSRAM free=7143932, largest=7077888 bytes
+I (2394) FRAME: #1 Inference: 122.33 ms (pre=9.16, model=112.87, post=0.28), capture=0.05 ms, age=315.75 ms
+I (2395) DETECTION: No person above threshold 0.80
+I (2519) FRAME: #2 Inference: 120.71 ms (pre=8.81, model=111.64, post=0.24), capture=0.05 ms, age=341.30 ms
+I (2520) DETECTION: No person above threshold 0.80
+I (2700) FRAME: #3 Inference: 122.89 ms (pre=9.01, model=113.61, post=0.25), capture=54.39 ms, age=222.89 ms
+I (2701) DETECTION: No person above threshold 0.80
+I (2826) FRAME: #4 Inference: 120.86 ms (pre=8.80, model=111.81, post=0.24), capture=0.05 ms, age=248.52 ms
+I (2827) DETECTION: No person above threshold 0.80
+I (3000) FRAME: #5 Inference: 122.76 ms (pre=9.00, model=113.50, post=0.25), capture=47.40 ms, age=222.76 ms
+I (3001) DETECTION: No person above threshold 0.80
+I (3126) FRAME: #6 Inference: 120.95 ms (pre=8.80, model=111.89, post=0.24), capture=0.05 ms, age=248.60 ms
+I (3127) DETECTION: No person above threshold 0.80
+I (3300) FRAME: #7 Inference: 122.93 ms (pre=9.01, model=113.65, post=0.25), capture=46.40 ms, age=222.94 ms
+I (3301) DETECTION: No person above threshold 0.80
+I (3426) FRAME: #8 Inference: 120.91 ms (pre=8.79, model=111.86, post=0.24), capture=0.05 ms, age=248.55 ms
+I (3427) DETECTION: No person above threshold 0.80
+I (3600) FRAME: #9 Inference: 122.88 ms (pre=9.01, model=113.60, post=0.25), capture=46.40 ms, age=222.88 ms
+I (3601) DETECTION: No person above threshold 0.80
+I (3726) FRAME: #10 Inference: 120.87 ms (pre=8.79, model=111.82, post=0.24), capture=0.05 ms, age=248.52 ms
+I (3727) DETECTION: No person above threshold 0.80
+I (3900) FRAME: #11 Inference: 122.89 ms (pre=9.01, model=113.61, post=0.25), capture=46.40 ms, age=222.89 ms
+I (3901) DETECTION: No person above threshold 0.80
+I (4026) FRAME: #12 Inference: 120.88 ms (pre=8.80, model=111.82, post=0.24), capture=0.05 ms, age=248.52 ms
+I (4027) DETECTION: No person above threshold 0.80
+I (4200) FRAME: #13 Inference: 122.93 ms (pre=9.01, model=113.65, post=0.25), capture=46.40 ms, age=222.93 ms
+I (4201) DETECTION: No person above threshold 0.80
+I (4326) FRAME: #14 Inference: 120.91 ms (pre=8.79, model=111.86, post=0.24), capture=0.05 ms, age=248.55 ms
+I (4327) DETECTION: No person above threshold 0.80
+I (4500) FRAME: #15 Inference: 122.78 ms (pre=9.00, model=113.51, post=0.25), capture=46.40 ms, age=222.77 ms
+I (4501) DETECTION: No person above threshold 0.80
+I (4626) FRAME: #16 Inference: 120.89 ms (pre=8.79, model=111.84, post=0.24), capture=0.05 ms, age=248.53 ms
+I (4627) DETECTION: No person above threshold 0.80
+I (4800) FRAME: #17 Inference: 122.92 ms (pre=9.01, model=113.64, post=0.25), capture=46.40 ms, age=222.92 ms
+I (4801) DETECTION: No person above threshold 0.80
+I (4926) FRAME: #18 Inference: 120.87 ms (pre=8.80, model=111.82, post=0.24), capture=0.05 ms, age=248.51 ms
+I (4927) DETECTION: No person above threshold 0.80
+I (5100) FRAME: #19 Inference: 122.79 ms (pre=9.01, model=113.52, post=0.25), capture=46.40 ms, age=222.78 ms
+I (5101) DETECTION: No person above threshold 0.80
+I (5226) FRAME: #20 Inference: 120.91 ms (pre=8.80, model=111.85, post=0.24), capture=0.05 ms, age=248.56 ms
+I (5227) DETECTION: No person above threshold 0.80
+I (5400) FRAME: #21 Inference: 122.92 ms (pre=9.00, model=113.65, post=0.25), capture=46.40 ms, age=222.93 ms
+I (5401) DETECTION: No person above threshold 0.80
+I (5526) FRAME: #22 Inference: 120.96 ms (pre=8.80, model=111.90, post=0.24), capture=0.05 ms, age=248.59 ms
+I (5527) DETECTION: No person above threshold 0.80
+I (5700) FRAME: #23 Inference: 122.93 ms (pre=9.01, model=113.65, post=0.25), capture=46.40 ms, age=222.94 ms
+I (5701) DETECTION: No person above threshold 0.80
+I (5826) FRAME: #24 Inference: 121.14 ms (pre=8.80, model=111.84, post=0.48), capture=0.05 ms, age=248.78 ms
+I (5827) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=4843863 us
+I (5827) DETECTION: person, confidence=0.8101, box=[118,0,315,130] in 320x240
+I (5832) BUZZER_PIN: GPIO14 actual pad=1, t=4848863 us
+I (6000) FRAME: #25 Inference: 122.98 ms (pre=9.01, model=113.68, post=0.27), capture=38.40 ms, age=222.98 ms
+I (6001) DETECTION: No person above threshold 0.80
+W (6002) BUZZER: Stopped: stale/negative result or TX timeout; GPIO14 LOW
+I (6011) BUZZER_PIN: GPIO14 actual pad=0, t=5028071 us
+I (6126) FRAME: #26 Inference: 121.27 ms (pre=8.88, model=112.11, post=0.26), capture=0.05 ms, age=248.90 ms
+I (6127) DETECTION: No person above threshold 0.80
+I (6300) FRAME: #27 Inference: 122.92 ms (pre=9.01, model=113.64, post=0.25), capture=46.40 ms, age=222.93 ms
+I (6301) DETECTION: No person above threshold 0.80
+I (6426) FRAME: #28 Inference: 120.91 ms (pre=8.80, model=111.85, post=0.25), capture=0.05 ms, age=248.55 ms
+I (6427) DETECTION: No person above threshold 0.80
+I (6600) FRAME: #29 Inference: 122.78 ms (pre=9.01, model=113.51, post=0.25), capture=46.40 ms, age=222.78 ms
+I (6601) DETECTION: No person above threshold 0.80
+I (6726) FRAME: #30 Inference: 120.90 ms (pre=8.79, model=111.85, post=0.24), capture=0.05 ms, age=248.54 ms
+I (6727) DETECTION: No person above threshold 0.80
+I (6900) FRAME: #31 Inference: 122.93 ms (pre=9.02, model=113.65, post=0.25), capture=46.40 ms, age=222.93 ms
+I (6901) DETECTION: No person above threshold 0.80
+I (7026) FRAME: #32 Inference: 121.02 ms (pre=8.80, model=111.95, post=0.25), capture=0.05 ms, age=248.66 ms
+I (7027) DETECTION: No person above threshold 0.80
+I (7200) FRAME: #33 Inference: 122.78 ms (pre=9.01, model=113.50, post=0.25), capture=46.39 ms, age=222.79 ms
+I (7201) DETECTION: No person above threshold 0.80
+I (7326) FRAME: #34 Inference: 120.91 ms (pre=8.79, model=111.86, post=0.24), capture=0.05 ms, age=248.57 ms
+I (7327) DETECTION: No person above threshold 0.80
+I (7500) FRAME: #35 Inference: 122.78 ms (pre=9.01, model=113.52, post=0.25), capture=46.39 ms, age=222.78 ms
+I (7501) DETECTION: No person above threshold 0.80
+I (7626) FRAME: #36 Inference: 120.98 ms (pre=8.79, model=111.92, post=0.25), capture=0.05 ms, age=248.64 ms
+I (7627) DETECTION: No person above threshold 0.80
+I (7800) FRAME: #37 Inference: 122.79 ms (pre=9.01, model=113.52, post=0.25), capture=46.40 ms, age=222.80 ms
+I (7801) DETECTION: No person above threshold 0.80
+I (7926) FRAME: #38 Inference: 120.96 ms (pre=8.79, model=111.89, post=0.25), capture=0.05 ms, age=248.61 ms
+I (7927) DETECTION: No person above threshold 0.80
+I (8100) FRAME: #39 Inference: 122.90 ms (pre=9.01, model=113.63, post=0.25), capture=46.40 ms, age=222.91 ms
+I (8101) DETECTION: No person above threshold 0.80
+I (8226) FRAME: #40 Inference: 120.93 ms (pre=8.79, model=111.88, post=0.25), capture=0.05 ms, age=248.58 ms
+I (8227) DETECTION: No person above threshold 0.80
+I (8400) FRAME: #41 Inference: 122.91 ms (pre=9.01, model=113.64, post=0.25), capture=46.40 ms, age=222.91 ms
+I (8401) DETECTION: No person above threshold 0.80
+I (8526) FRAME: #42 Inference: 120.98 ms (pre=8.79, model=111.91, post=0.25), capture=0.05 ms, age=248.62 ms
+I (8527) DETECTION: No person above threshold 0.80
+I (8700) FRAME: #43 Inference: 122.79 ms (pre=9.01, model=113.52, post=0.25), capture=46.40 ms, age=222.81 ms
+I (8701) DETECTION: No person above threshold 0.80
+I (8826) FRAME: #44 Inference: 121.02 ms (pre=8.79, model=111.96, post=0.25), capture=0.05 ms, age=248.67 ms
+I (8827) DETECTION: No person above threshold 0.80
+I (9000) FRAME: #45 Inference: 122.79 ms (pre=9.01, model=113.52, post=0.25), capture=46.40 ms, age=222.80 ms
+I (9001) DETECTION: No person above threshold 0.80
+I (9126) FRAME: #46 Inference: 120.91 ms (pre=8.80, model=111.86, post=0.24), capture=0.05 ms, age=248.56 ms
+I (9127) DETECTION: No person above threshold 0.80
+I (9300) FRAME: #47 Inference: 122.81 ms (pre=9.01, model=113.55, post=0.25), capture=46.40 ms, age=222.81 ms
+I (9301) DETECTION: No person above threshold 0.80
+I (9426) FRAME: #48 Inference: 121.00 ms (pre=8.79, model=111.94, post=0.25), capture=0.05 ms, age=248.65 ms
+I (9427) DETECTION: No person above threshold 0.80
+I (9600) FRAME: #49 Inference: 122.88 ms (pre=9.01, model=113.61, post=0.25), capture=46.40 ms, age=222.89 ms
+I (9601) DETECTION: No person above threshold 0.80
+I (9726) FRAME: #50 Inference: 120.99 ms (pre=8.79, model=111.93, post=0.25), capture=0.05 ms, age=248.64 ms
+I (9727) DETECTION: No person above threshold 0.80
+I (9900) FRAME: #51 Inference: 122.92 ms (pre=9.01, model=113.65, post=0.25), capture=46.40 ms, age=222.93 ms
+I (9901) DETECTION: No person above threshold 0.80
+I (10026) FRAME: #52 Inference: 120.97 ms (pre=8.80, model=111.91, post=0.25), capture=0.05 ms, age=248.63 ms
+I (10027) DETECTION: No person above threshold 0.80
+I (10200) FRAME: #53 Inference: 122.78 ms (pre=9.01, model=113.51, post=0.25), capture=46.40 ms, age=222.79 ms
+I (10201) DETECTION: No person above threshold 0.80
+I (10326) FRAME: #54 Inference: 121.03 ms (pre=8.79, model=111.97, post=0.25), capture=0.05 ms, age=248.68 ms
+I (10327) DETECTION: No person above threshold 0.80
+I (10500) FRAME: #55 Inference: 122.80 ms (pre=9.01, model=113.53, post=0.25), capture=46.40 ms, age=222.81 ms
+I (10501) DETECTION: No person above threshold 0.80
+I (10626) FRAME: #56 Inference: 120.98 ms (pre=8.79, model=111.92, post=0.25), capture=0.05 ms, age=248.63 ms
+I (10627) DETECTION: No person above threshold 0.80
+I (10800) FRAME: #57 Inference: 122.93 ms (pre=9.02, model=113.65, post=0.25), capture=46.40 ms, age=222.94 ms
+I (10801) DETECTION: No person above threshold 0.80
+I (10926) FRAME: #58 Inference: 120.97 ms (pre=8.79, model=111.91, post=0.25), capture=0.05 ms, age=248.62 ms
+I (10927) DETECTION: No person above threshold 0.80
+I (11100) FRAME: #59 Inference: 122.80 ms (pre=9.00, model=113.53, post=0.25), capture=46.40 ms, age=222.80 ms
+I (11101) DETECTION: No person above threshold 0.80
+I (11226) FRAME: #60 Inference: 121.02 ms (pre=8.79, model=111.95, post=0.25), capture=0.05 ms, age=248.67 ms
+I (11227) DETECTION: No person above threshold 0.80
+I (11400) FRAME: #61 Inference: 122.92 ms (pre=9.01, model=113.65, post=0.25), capture=46.40 ms, age=222.93 ms
+I (11401) DETECTION: No person above threshold 0.80
+I (11526) FRAME: #62 Inference: 120.91 ms (pre=8.79, model=111.85, post=0.25), capture=0.05 ms, age=248.55 ms
+I (11527) DETECTION: No person above threshold 0.80
+I (11700) FRAME: #63 Inference: 122.93 ms (pre=9.01, model=113.66, post=0.25), capture=46.40 ms, age=222.93 ms
+I (11701) DETECTION: No person above threshold 0.80
+I (11826) FRAME: #64 Inference: 120.95 ms (pre=8.79, model=111.89, post=0.25), capture=0.05 ms, age=248.59 ms
+I (11827) DETECTION: No person above threshold 0.80
+I (12000) FRAME: #65 Inference: 122.93 ms (pre=9.01, model=113.66, post=0.25), capture=46.40 ms, age=222.93 ms
+I (12001) DETECTION: No person above threshold 0.80
+I (12126) FRAME: #66 Inference: 120.90 ms (pre=8.79, model=111.85, post=0.25), capture=0.05 ms, age=248.54 ms
+I (12127) DETECTION: No person above threshold 0.80
+I (12300) FRAME: #67 Inference: 122.81 ms (pre=9.01, model=113.54, post=0.25), capture=46.40 ms, age=222.80 ms
+I (12301) DETECTION: No person above threshold 0.80
+I (12426) FRAME: #68 Inference: 120.99 ms (pre=8.79, model=111.93, post=0.25), capture=0.05 ms, age=248.64 ms
+I (12427) DETECTION: No person above threshold 0.80
+I (12600) FRAME: #69 Inference: 122.80 ms (pre=9.01, model=113.53, post=0.25), capture=46.40 ms, age=222.81 ms
+I (12601) DETECTION: No person above threshold 0.80
+I (12726) FRAME: #70 Inference: 121.01 ms (pre=8.79, model=111.95, post=0.25), capture=0.05 ms, age=248.66 ms
+I (12727) DETECTION: No person above threshold 0.80
+I (12900) FRAME: #71 Inference: 122.74 ms (pre=9.00, model=113.47, post=0.25), capture=46.40 ms, age=222.75 ms
+I (12901) DETECTION: No person above threshold 0.80
+I (13026) FRAME: #72 Inference: 120.49 ms (pre=8.79, model=111.44, post=0.25), capture=0.04 ms, age=248.14 ms
+I (13026) DETECTION: No person above threshold 0.80
+I (13222) FRAME: #73 Inference: 122.88 ms (pre=9.00, model=113.61, post=0.25), capture=68.99 ms, age=222.86 ms
+I (13223) DETECTION: No person above threshold 0.80
+I (13348) FRAME: #74 Inference: 121.04 ms (pre=8.79, model=111.78, post=0.45), capture=0.05 ms, age=249.10 ms
+I (13349) DETECTION: person, confidence=0.8615, box=[113,0,319,239] in 320x240
+I (13352) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=12368863 us
+I (13360) BUZZER_PIN: GPIO14 actual pad=1, t=12377565 us
+I (13522) FRAME: #75 Inference: 123.21 ms (pre=9.01, model=113.67, post=0.52), capture=44.00 ms, age=223.23 ms
+I (13523) DETECTION: person, confidence=0.8615, box=[0,0,319,239] in 320x240
+I (13557) BUZZER_PIN: GPIO14 actual pad=0, t=12573863 us
+I (13651) FRAME: #76 Inference: 121.79 ms (pre=8.79, model=112.33, post=0.66), capture=0.05 ms, age=251.84 ms
+I (13652) DETECTION: person, confidence=0.9763, box=[0,0,319,239] in 320x240
+I (13757) BUZZER_PIN: GPIO14 actual pad=1, t=12773863 us
+I (13822) FRAME: #77 Inference: 123.36 ms (pre=9.01, model=113.75, post=0.58), capture=41.00 ms, age=223.36 ms
+I (13823) DETECTION: person, confidence=0.9601, box=[0,0,319,239] in 320x240
+I (13951) FRAME: #78 Inference: 121.51 ms (pre=8.79, model=112.11, post=0.59), capture=0.05 ms, age=251.54 ms
+I (13951) DETECTION: person, confidence=0.9601, box=[0,0,319,239] in 320x240
+I (13957) BUZZER_PIN: GPIO14 actual pad=0, t=12973863 us
+I (13962) BUZZER: LOW, cooldown >= 2000 ms, t=12973863 us
+I (14122) FRAME: #79 Inference: 123.26 ms (pre=9.00, model=113.68, post=0.57), capture=41.00 ms, age=223.27 ms
+I (14123) DETECTION: person, confidence=0.9763, box=[0,0,319,239] in 320x240
+I (14251) FRAME: #80 Inference: 121.43 ms (pre=8.80, model=112.03, post=0.58), capture=0.05 ms, age=251.47 ms
+I (14251) DETECTION: person, confidence=0.9763, box=[0,0,319,239] in 320x240
+I (14422) FRAME: #81 Inference: 123.26 ms (pre=9.01, model=113.66, post=0.57), capture=41.00 ms, age=223.27 ms
+I (14423) DETECTION: person, confidence=0.9723, box=[0,0,319,239] in 320x240
+I (14551) FRAME: #82 Inference: 121.50 ms (pre=8.79, model=112.06, post=0.63), capture=0.05 ms, age=251.54 ms
+I (14551) DETECTION: person, confidence=0.9723, box=[0,0,319,239] in 320x240
+I (14722) FRAME: #83 Inference: 123.25 ms (pre=9.01, model=113.66, post=0.57), capture=41.00 ms, age=223.26 ms
+I (14723) DETECTION: person, confidence=0.9642, box=[0,0,318,239] in 320x240
+I (14851) FRAME: #84 Inference: 121.55 ms (pre=8.80, model=112.12, post=0.61), capture=0.05 ms, age=251.59 ms
+I (14852) DETECTION: person, confidence=0.9601, box=[0,0,319,239] in 320x240
+I (15022) FRAME: #85 Inference: 123.27 ms (pre=9.01, model=113.67, post=0.57), capture=41.00 ms, age=223.28 ms
+I (15023) DETECTION: person, confidence=0.9763, box=[0,0,319,239] in 320x240
+I (15151) FRAME: #86 Inference: 121.60 ms (pre=8.80, model=112.12, post=0.67), capture=0.05 ms, age=251.64 ms
+I (15151) DETECTION: person, confidence=0.9723, box=[0,0,319,239] in 320x240
+I (15322) FRAME: #87 Inference: 123.32 ms (pre=9.01, model=113.67, post=0.62), capture=41.00 ms, age=223.33 ms
+I (15323) DETECTION: person, confidence=0.9682, box=[0,0,319,239] in 320x240
+I (15451) FRAME: #88 Inference: 121.52 ms (pre=8.79, model=112.10, post=0.60), capture=0.05 ms, age=251.56 ms
+I (15451) DETECTION: person, confidence=0.9520, box=[6,1,319,239] in 320x240
+I (15622) FRAME: #89 Inference: 123.33 ms (pre=9.01, model=113.66, post=0.64), capture=41.00 ms, age=223.34 ms
+I (15623) DETECTION: person, confidence=0.9396, box=[3,16,319,239] in 320x240
+I (15751) FRAME: #90 Inference: 121.42 ms (pre=8.80, model=111.98, post=0.62), capture=0.05 ms, age=252.46 ms
+I (15752) DETECTION: person, confidence=0.9354, box=[17,19,319,239] in 320x240
+I (15922) FRAME: #91 Inference: 123.27 ms (pre=9.01, model=113.67, post=0.57), capture=40.00 ms, age=223.28 ms
+I (15923) DETECTION: person, confidence=0.9437, box=[42,27,310,239] in 320x240
+I (15957) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=14973863 us
+I (15962) BUZZER_PIN: GPIO14 actual pad=1, t=14978863 us
+I (16052) FRAME: #92 Inference: 121.61 ms (pre=8.80, model=112.24, post=0.56), capture=0.05 ms, age=252.66 ms
+I (16052) DETECTION: person, confidence=0.9437, box=[56,36,319,239] in 320x240
+I (16162) BUZZER_PIN: GPIO14 actual pad=0, t=15178863 us
+I (16222) FRAME: #93 Inference: 123.28 ms (pre=9.01, model=113.73, post=0.52), capture=40.01 ms, age=223.30 ms
+I (16223) DETECTION: person, confidence=0.9642, box=[71,46,319,239] in 320x240
+I (16351) FRAME: #94 Inference: 121.30 ms (pre=8.79, model=111.98, post=0.51), capture=0.05 ms, age=252.33 ms
+I (16352) DETECTION: person, confidence=0.9601, box=[71,50,319,239] in 320x240
+I (16362) BUZZER_PIN: GPIO14 actual pad=1, t=15378863 us
+I (16522) FRAME: #95 Inference: 123.22 ms (pre=9.01, model=113.67, post=0.52), capture=40.00 ms, age=223.22 ms
+I (16523) DETECTION: person, confidence=0.9479, box=[52,56,297,239] in 320x240
+I (16562) BUZZER_PIN: GPIO14 actual pad=0, t=15578863 us
+I (16562) BUZZER: LOW, cooldown >= 2000 ms, t=15578863 us
+I (16652) FRAME: #96 Inference: 121.44 ms (pre=8.80, model=112.11, post=0.51), capture=0.05 ms, age=252.48 ms
+I (16652) DETECTION: person, confidence=0.9561, box=[34,60,284,239] in 320x240
+I (16822) FRAME: #97 Inference: 123.14 ms (pre=9.01, model=113.66, post=0.46), capture=40.01 ms, age=223.16 ms
+I (16823) DETECTION: person, confidence=0.9228, box=[15,61,281,239] in 320x240
+I (16951) FRAME: #98 Inference: 121.32 ms (pre=8.79, model=111.99, post=0.52), capture=0.05 ms, age=252.35 ms
+I (16952) DETECTION: person, confidence=0.9437, box=[14,61,290,239] in 320x240
+I (17122) FRAME: #99 Inference: 123.23 ms (pre=9.01, model=113.67, post=0.53), capture=40.00 ms, age=223.24 ms
+I (17123) DETECTION: person, confidence=0.9437, box=[24,61,301,239] in 320x240
+I (17251) FRAME: #100 Inference: 121.30 ms (pre=8.80, model=111.97, post=0.51), capture=0.05 ms, age=252.34 ms
+I (17252) DETECTION: person, confidence=0.9479, box=[16,59,287,239] in 320x240
+I (17258) MEMORY: internal free=165131, min=110407, largest=63488; PSRAM free=7142132, largest=7077888 bytes
+I (17422) FRAME: #101 Inference: 123.23 ms (pre=9.01, model=113.67, post=0.53), capture=31.00 ms, age=223.24 ms
+I (17423) DETECTION: person, confidence=0.9186, box=[0,49,251,239] in 320x240
+I (17551) FRAME: #102 Inference: 121.33 ms (pre=8.80, model=111.98, post=0.53), capture=0.05 ms, age=252.37 ms
+I (17552) DETECTION: person, confidence=0.9312, box=[0,39,229,239] in 320x240
+I (17722) FRAME: #103 Inference: 123.26 ms (pre=9.00, model=113.67, post=0.57), capture=40.00 ms, age=223.28 ms
+I (17723) DETECTION: person, confidence=0.9601, box=[0,27,214,239] in 320x240
+I (17851) FRAME: #104 Inference: 121.37 ms (pre=8.79, model=112.00, post=0.57), capture=0.05 ms, age=252.41 ms
+I (17852) DETECTION: person, confidence=0.9520, box=[0,29,216,239] in 320x240
+I (18044) FRAME: #105 Inference: 122.97 ms (pre=9.01, model=113.67, post=0.27), capture=61.60 ms, age=244.57 ms
+I (18044) DETECTION: No person above threshold 0.80
+I (18170) FRAME: #106 Inference: 120.98 ms (pre=8.79, model=111.92, post=0.25), capture=0.05 ms, age=249.42 ms
+I (18171) DETECTION: No person above threshold 0.80
+I (18343) FRAME: #107 Inference: 122.87 ms (pre=9.01, model=113.60, post=0.26), capture=45.60 ms, age=222.88 ms
+I (18344) DETECTION: No person above threshold 0.80
+I (18469) FRAME: #108 Inference: 120.95 ms (pre=8.80, model=111.89, post=0.25), capture=0.05 ms, age=247.89 ms
+I (18469) DETECTION: No person above threshold 0.80
+I (18644) FRAME: #109 Inference: 123.04 ms (pre=9.00, model=113.51, post=0.52), capture=47.60 ms, age=223.05 ms
+I (18644) DETECTION: person, confidence=0.8883, box=[0,58,194,239] in 320x240
+I (18647) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=17663863 us
+I (18656) BUZZER_PIN: GPIO14 actual pad=1, t=17673139 us
+I (18773) FRAME: #110 Inference: 121.66 ms (pre=8.84, model=112.23, post=0.57), capture=0.04 ms, age=252.11 ms
+I (18774) DETECTION: person, confidence=0.9186, box=[0,22,184,239] in 320x240
+I (18852) BUZZER_PIN: GPIO14 actual pad=0, t=17868863 us
+I (18944) FRAME: #111 Inference: 123.28 ms (pre=9.01, model=113.67, post=0.57), capture=40.60 ms, age=223.29 ms
+I (18945) DETECTION: person, confidence=0.9100, box=[0,0,205,239] in 320x240
+I (19052) BUZZER_PIN: GPIO14 actual pad=1, t=18068863 us
+I (19073) FRAME: #112 Inference: 121.88 ms (pre=8.80, model=112.49, post=0.58), capture=0.05 ms, age=252.31 ms
+I (19074) DETECTION: person, confidence=0.9312, box=[0,0,235,239] in 320x240
+I (19252) BUZZER_PIN: GPIO14 actual pad=0, t=18268863 us
+I (19252) BUZZER: LOW, cooldown >= 2000 ms, t=18268863 us
+I (19266) FRAME: #113 Inference: 123.40 ms (pre=9.01, model=113.86, post=0.51), capture=62.20 ms, age=245.02 ms
+I (19266) DETECTION: person, confidence=0.9642, box=[0,0,302,239] in 320x240
+I (19395) FRAME: #114 Inference: 121.66 ms (pre=8.79, model=112.18, post=0.67), capture=0.05 ms, age=252.49 ms
+I (19396) DETECTION: person, confidence=0.9723, box=[0,0,289,239] in 320x240
+I (19565) FRAME: #115 Inference: 123.25 ms (pre=9.00, model=113.66, post=0.57), capture=40.20 ms, age=223.26 ms
+I (19566) DETECTION: person, confidence=0.9601, box=[0,0,252,239] in 320x240
+I (19695) FRAME: #116 Inference: 121.56 ms (pre=8.79, model=112.19, post=0.56), capture=0.05 ms, age=252.40 ms
+I (19695) DETECTION: person, confidence=0.9396, box=[0,0,239,239] in 320x240
+I (19865) FRAME: #117 Inference: 123.19 ms (pre=9.01, model=113.65, post=0.52), capture=40.20 ms, age=223.21 ms
+I (19866) DETECTION: person, confidence=0.9014, box=[0,0,190,239] in 320x240
+I (19995) FRAME: #118 Inference: 121.56 ms (pre=8.79, model=112.19, post=0.56), capture=0.05 ms, age=252.40 ms
+I (19995) DETECTION: person, confidence=0.9057, box=[0,19,187,239] in 320x240
+I (20165) FRAME: #119 Inference: 123.12 ms (pre=9.01, model=113.65, post=0.45), capture=40.20 ms, age=223.14 ms
+I (20166) DETECTION: person, confidence=0.9143, box=[0,48,247,239] in 320x240
+I (20294) FRAME: #120 Inference: 121.26 ms (pre=8.79, model=112.19, post=0.27), capture=0.05 ms, age=252.10 ms
+I (20295) DETECTION: No person above threshold 0.80
+I (20465) FRAME: #121 Inference: 122.76 ms (pre=9.00, model=113.50, post=0.25), capture=43.20 ms, age=222.77 ms
+I (20466) DETECTION: No person above threshold 0.80
+I (20591) FRAME: #122 Inference: 121.24 ms (pre=8.79, model=111.99, post=0.45), capture=0.05 ms, age=249.09 ms
+I (20592) DETECTION: person, confidence=0.8197, box=[0,53,230,239] in 320x240
+I (20765) FRAME: #123 Inference: 123.15 ms (pre=9.00, model=113.68, post=0.45), capture=44.20 ms, age=223.17 ms
+I (20766) DETECTION: person, confidence=0.8927, box=[0,27,242,239] in 320x240
+I (20894) FRAME: #124 Inference: 121.25 ms (pre=8.79, model=112.19, post=0.26), capture=0.05 ms, age=252.09 ms
+I (20895) DETECTION: No person above threshold 0.80
+I (21065) FRAME: #125 Inference: 122.90 ms (pre=9.01, model=113.62, post=0.25), capture=43.20 ms, age=222.91 ms
+I (21066) DETECTION: No person above threshold 0.80
+I (21191) FRAME: #126 Inference: 121.22 ms (pre=8.79, model=111.96, post=0.45), capture=0.05 ms, age=249.06 ms
+I (21192) DETECTION: person, confidence=0.8292, box=[0,13,228,239] in 320x240
+I (21252) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=20268864 us
+I (21257) BUZZER_PIN: GPIO14 actual pad=1, t=20273863 us
+I (21366) FRAME: #127 Inference: 123.32 ms (pre=9.00, model=113.73, post=0.57), capture=44.20 ms, age=223.34 ms
+I (21366) DETECTION: person, confidence=0.8478, box=[0,10,213,239] in 320x240
+I (21457) BUZZER_PIN: GPIO14 actual pad=0, t=20473864 us
+I (21495) FRAME: #128 Inference: 121.61 ms (pre=8.79, model=112.23, post=0.57), capture=0.05 ms, age=252.45 ms
+I (21495) DETECTION: person, confidence=0.9143, box=[0,11,222,239] in 320x240
+I (21657) BUZZER_PIN: GPIO14 actual pad=1, t=20673863 us
+I (21666) FRAME: #129 Inference: 123.41 ms (pre=9.01, model=113.94, post=0.45), capture=40.20 ms, age=223.43 ms
+I (21666) DETECTION: person, confidence=0.8197, box=[0,3,238,239] in 320x240
+I (21795) FRAME: #130 Inference: 121.45 ms (pre=8.80, model=112.18, post=0.46), capture=0.05 ms, age=252.28 ms
+I (21795) DETECTION: person, confidence=0.8339, box=[0,0,211,239] in 320x240
+I (21857) BUZZER_PIN: GPIO14 actual pad=0, t=20873863 us
+I (21857) BUZZER: LOW, cooldown >= 2000 ms, t=20873863 us
+I (21965) FRAME: #131 Inference: 122.98 ms (pre=9.01, model=113.68, post=0.28), capture=40.20 ms, age=222.99 ms
+I (21966) DETECTION: No person above threshold 0.80
+I (22091) FRAME: #132 Inference: 121.01 ms (pre=8.79, model=111.96, post=0.25), capture=0.05 ms, age=248.85 ms
+I (22092) DETECTION: No person above threshold 0.80
+I (22265) FRAME: #133 Inference: 122.80 ms (pre=9.00, model=113.53, post=0.25), capture=46.20 ms, age=222.81 ms
+I (22266) DETECTION: No person above threshold 0.80
+I (22391) FRAME: #134 Inference: 121.05 ms (pre=8.79, model=111.99, post=0.25), capture=0.05 ms, age=248.89 ms
+I (22392) DETECTION: No person above threshold 0.80
+I (22565) FRAME: #135 Inference: 122.85 ms (pre=9.00, model=113.58, post=0.26), capture=46.20 ms, age=222.87 ms
+I (22566) DETECTION: No person above threshold 0.80
+I (22691) FRAME: #136 Inference: 121.01 ms (pre=8.79, model=111.96, post=0.25), capture=0.05 ms, age=248.85 ms
+I (22692) DETECTION: No person above threshold 0.80
+I (22865) FRAME: #137 Inference: 122.81 ms (pre=9.00, model=113.54, post=0.25), capture=46.20 ms, age=222.82 ms
+I (22866) DETECTION: No person above threshold 0.80
+I (22991) FRAME: #138 Inference: 121.31 ms (pre=8.79, model=111.99, post=0.52), capture=0.05 ms, age=249.16 ms
+I (22992) DETECTION: person, confidence=0.8839, box=[0,0,214,239] in 320x240
+I (23166) FRAME: #139 Inference: 123.29 ms (pre=9.01, model=113.68, post=0.58), capture=43.20 ms, age=223.31 ms
+I (23166) DETECTION: person, confidence=0.9186, box=[0,0,212,239] in 320x240
+I (23295) FRAME: #140 Inference: 121.52 ms (pre=8.80, model=112.19, post=0.52), capture=0.05 ms, age=252.35 ms
+I (23295) DETECTION: person, confidence=0.8883, box=[0,0,196,239] in 320x240
+I (23465) FRAME: #141 Inference: 123.15 ms (pre=9.00, model=113.67, post=0.46), capture=40.20 ms, age=223.15 ms
+I (23466) DETECTION: person, confidence=0.8432, box=[0,0,188,239] in 320x240
+I (23595) FRAME: #142 Inference: 121.51 ms (pre=8.80, model=112.18, post=0.52), capture=0.05 ms, age=252.35 ms
+I (23595) DETECTION: person, confidence=0.9057, box=[0,0,188,239] in 320x240
+I (23765) FRAME: #143 Inference: 123.16 ms (pre=9.02, model=113.67, post=0.46), capture=40.20 ms, age=223.16 ms
+I (23766) DETECTION: person, confidence=0.8927, box=[0,0,192,239] in 320x240
+I (23857) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=22873864 us
+I (23862) BUZZER_PIN: GPIO14 actual pad=1, t=22878863 us
+I (23895) FRAME: #144 Inference: 121.63 ms (pre=8.80, model=112.28, post=0.53), capture=0.05 ms, age=252.46 ms
+I (23895) DETECTION: person, confidence=0.8385, box=[0,0,217,239] in 320x240
+I (24062) BUZZER_PIN: GPIO14 actual pad=0, t=23078863 us
+I (24066) FRAME: #145 Inference: 123.62 ms (pre=9.01, model=114.07, post=0.52), capture=40.20 ms, age=223.63 ms
+I (24067) DETECTION: person, confidence=0.8705, box=[0,0,198,239] in 320x240
+I (24194) FRAME: #146 Inference: 121.25 ms (pre=8.79, model=112.19, post=0.26), capture=0.05 ms, age=252.07 ms
+I (24195) DETECTION: No person above threshold 0.80
+W (24197) BUZZER: Stopped: stale/negative result or TX timeout; GPIO14 LOW
+I (24365) FRAME: #147 Inference: 123.17 ms (pre=9.01, model=113.68, post=0.46), capture=43.20 ms, age=223.18 ms
+I (24366) DETECTION: person, confidence=0.8570, box=[0,0,203,239] in 320x240
+I (24495) FRAME: #148 Inference: 121.44 ms (pre=8.80, model=112.18, post=0.45), capture=0.05 ms, age=252.28 ms
+I (24495) DETECTION: person, confidence=0.8839, box=[0,0,239,239] in 320x240
+I (24665) FRAME: #149 Inference: 122.94 ms (pre=9.00, model=113.66, post=0.27), capture=40.20 ms, age=222.96 ms
+I (24666) DETECTION: No person above threshold 0.80
+I (24791) FRAME: #150 Inference: 121.06 ms (pre=8.80, model=111.99, post=0.26), capture=0.05 ms, age=248.90 ms
+I (24792) DETECTION: No person above threshold 0.80
+I (24965) FRAME: #151 Inference: 123.11 ms (pre=9.01, model=113.64, post=0.46), capture=46.20 ms, age=223.13 ms
+I (24966) DETECTION: person, confidence=0.8524, box=[0,0,193,239] in 320x240
+I (25095) FRAME: #152 Inference: 121.52 ms (pre=8.80, model=112.18, post=0.53), capture=0.05 ms, age=252.35 ms
+I (25095) DETECTION: person, confidence=0.8927, box=[0,0,192,239] in 320x240
+I (25265) FRAME: #153 Inference: 123.16 ms (pre=9.01, model=113.68, post=0.46), capture=40.20 ms, age=223.16 ms
+I (25266) DETECTION: person, confidence=0.8750, box=[0,0,186,239] in 320x240
+I (25395) FRAME: #154 Inference: 121.45 ms (pre=8.79, model=112.18, post=0.46), capture=0.05 ms, age=252.29 ms
+I (25395) DETECTION: person, confidence=0.8927, box=[0,0,177,239] in 320x240
+I (25565) FRAME: #155 Inference: 123.15 ms (pre=9.02, model=113.67, post=0.46), capture=40.20 ms, age=223.16 ms
+I (25566) DETECTION: person, confidence=0.8750, box=[0,0,167,239] in 320x240
+I (25694) FRAME: #156 Inference: 121.27 ms (pre=8.80, model=112.19, post=0.27), capture=0.05 ms, age=252.11 ms
+I (25695) DETECTION: No person above threshold 0.80
+I (25865) FRAME: #157 Inference: 122.81 ms (pre=9.01, model=113.53, post=0.25), capture=43.20 ms, age=222.80 ms
+I (25866) DETECTION: No person above threshold 0.80
+I (25991) FRAME: #158 Inference: 121.00 ms (pre=8.79, model=111.94, post=0.25), capture=0.05 ms, age=248.85 ms
+I (25992) DETECTION: No person above threshold 0.80
+I (26165) FRAME: #159 Inference: 123.10 ms (pre=9.01, model=113.63, post=0.45), capture=46.20 ms, age=223.12 ms
+I (26166) DETECTION: person, confidence=0.8244, box=[0,0,165,239] in 320x240
+I (26197) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=25213863 us
+I (26202) BUZZER_PIN: GPIO14 actual pad=1, t=25218863 us
+I (26295) FRAME: #160 Inference: 121.47 ms (pre=8.80, model=112.20, post=0.45), capture=0.05 ms, age=252.31 ms
+I (26295) DETECTION: person, confidence=0.8927, box=[0,0,166,239] in 320x240
+I (26402) BUZZER_PIN: GPIO14 actual pad=0, t=25418863 us
+I (26465) FRAME: #161 Inference: 123.02 ms (pre=9.00, model=113.74, post=0.26), capture=40.20 ms, age=223.01 ms
+I (26466) DETECTION: No person above threshold 0.80
+W (26467) BUZZER: Stopped: stale/negative result or TX timeout; GPIO14 LOW
+I (26591) FRAME: #162 Inference: 121.05 ms (pre=8.81, model=111.97, post=0.26), capture=0.05 ms, age=248.88 ms
+I (26592) DETECTION: No person above threshold 0.80
+I (26765) FRAME: #163 Inference: 122.97 ms (pre=9.01, model=113.68, post=0.26), capture=46.20 ms, age=222.98 ms
+I (26766) DETECTION: No person above threshold 0.80
+I (26891) FRAME: #164 Inference: 121.05 ms (pre=8.79, model=111.98, post=0.26), capture=0.05 ms, age=248.89 ms
+I (26892) DETECTION: No person above threshold 0.80
+I (27065) FRAME: #165 Inference: 122.90 ms (pre=9.01, model=113.62, post=0.26), capture=46.20 ms, age=222.91 ms
+I (27066) DETECTION: No person above threshold 0.80
+I (27191) FRAME: #166 Inference: 121.04 ms (pre=8.79, model=111.97, post=0.26), capture=0.05 ms, age=248.88 ms
+I (27192) DETECTION: No person above threshold 0.80
+I (27365) FRAME: #167 Inference: 122.96 ms (pre=9.01, model=113.68, post=0.26), capture=46.20 ms, age=222.97 ms
+I (27366) DETECTION: No person above threshold 0.80
+I (27491) FRAME: #168 Inference: 121.24 ms (pre=8.79, model=111.98, post=0.46), capture=0.05 ms, age=249.08 ms
+I (27492) DETECTION: person, confidence=0.8244, box=[0,0,178,239] in 320x240
+I (27665) FRAME: #169 Inference: 123.15 ms (pre=9.01, model=113.68, post=0.45), capture=44.20 ms, age=223.17 ms
+I (27666) DETECTION: person, confidence=0.8053, box=[0,0,178,239] in 320x240
+I (27794) FRAME: #170 Inference: 121.21 ms (pre=8.79, model=112.14, post=0.26), capture=0.05 ms, age=252.05 ms
+I (27795) DETECTION: No person above threshold 0.80
+I (27965) FRAME: #171 Inference: 122.94 ms (pre=9.01, model=113.66, post=0.25), capture=43.20 ms, age=222.96 ms
+I (27966) DETECTION: No person above threshold 0.80
+I (28091) FRAME: #172 Inference: 121.22 ms (pre=8.79, model=111.95, post=0.46), capture=0.05 ms, age=249.06 ms
+I (28092) DETECTION: person, confidence=0.8244, box=[0,0,179,239] in 320x240
+I (28265) FRAME: #173 Inference: 123.15 ms (pre=9.00, model=113.68, post=0.45), capture=44.20 ms, age=223.17 ms
+I (28266) DETECTION: person, confidence=0.8385, box=[0,0,177,239] in 320x240
+I (28394) FRAME: #174 Inference: 121.24 ms (pre=8.79, model=112.17, post=0.26), capture=0.05 ms, age=252.08 ms
+I (28395) DETECTION: No person above threshold 0.80
+I (28565) FRAME: #175 Inference: 122.98 ms (pre=9.00, model=113.52, post=0.44), capture=43.20 ms, age=222.99 ms
+I (28566) DETECTION: person, confidence=0.8197, box=[0,0,178,239] in 320x240
+I (28567) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=27583863 us
+I (28577) BUZZER_PIN: GPIO14 actual pad=1, t=27594606 us
+I (28694) FRAME: #176 Inference: 121.59 ms (pre=8.84, model=112.26, post=0.48), capture=0.05 ms, age=251.44 ms
+I (28695) DETECTION: person, confidence=0.8432, box=[0,0,178,239] in 320x240
+I (28772) BUZZER_PIN: GPIO14 actual pad=0, t=27788863 us
+I (28865) FRAME: #177 Inference: 123.16 ms (pre=9.01, model=113.68, post=0.45), capture=41.20 ms, age=223.17 ms
+I (28866) DETECTION: person, confidence=0.8705, box=[0,0,180,239] in 320x240
+I (28972) BUZZER_PIN: GPIO14 actual pad=1, t=27988863 us
+I (28995) FRAME: #178 Inference: 121.54 ms (pre=8.79, model=112.28, post=0.45), capture=0.05 ms, age=252.38 ms
+I (28995) DETECTION: person, confidence=0.8795, box=[0,0,181,239] in 320x240
+I (29165) FRAME: #179 Inference: 123.15 ms (pre=9.01, model=113.68, post=0.44), capture=40.20 ms, age=223.16 ms
+I (29166) DETECTION: person, confidence=0.8970, box=[0,0,178,239] in 320x240
+I (29172) BUZZER_PIN: GPIO14 actual pad=0, t=28188863 us
+I (29177) BUZZER: LOW, cooldown >= 2000 ms, t=28188863 us
+I (29295) FRAME: #180 Inference: 121.44 ms (pre=8.85, model=112.13, post=0.45), capture=0.05 ms, age=252.28 ms
+I (29295) DETECTION: person, confidence=0.8339, box=[0,0,180,239] in 320x240
+I (29465) FRAME: #181 Inference: 123.16 ms (pre=9.02, model=113.67, post=0.46), capture=40.20 ms, age=223.16 ms
+I (29466) DETECTION: person, confidence=0.8385, box=[0,0,186,239] in 320x240
+I (29595) FRAME: #182 Inference: 121.46 ms (pre=8.80, model=112.19, post=0.46), capture=0.05 ms, age=252.29 ms
+I (29595) DETECTION: person, confidence=0.8053, box=[0,0,184,239] in 320x240
+I (29765) FRAME: #183 Inference: 123.15 ms (pre=9.01, model=113.67, post=0.45), capture=40.20 ms, age=223.15 ms
+I (29766) DETECTION: person, confidence=0.8101, box=[0,0,179,239] in 320x240
+I (29895) FRAME: #184 Inference: 121.46 ms (pre=8.80, model=112.18, post=0.46), capture=0.05 ms, age=252.30 ms
+I (29895) DETECTION: person, confidence=0.8101, box=[0,0,178,239] in 320x240
+I (30065) FRAME: #185 Inference: 123.14 ms (pre=9.01, model=113.67, post=0.45), capture=40.20 ms, age=223.14 ms
+I (30066) DETECTION: person, confidence=0.8101, box=[0,0,188,239] in 320x240
+I (30194) FRAME: #186 Inference: 121.26 ms (pre=8.79, model=112.19, post=0.27), capture=0.05 ms, age=252.11 ms
+I (30195) DETECTION: No person above threshold 0.80
+I (30365) FRAME: #187 Inference: 122.95 ms (pre=9.00, model=113.50, post=0.44), capture=43.20 ms, age=222.96 ms
+I (30366) DETECTION: person, confidence=0.8795, box=[0,10,199,239] in 320x240
+I (30493) FRAME: #188 Inference: 121.39 ms (pre=8.80, model=112.05, post=0.53), capture=0.05 ms, age=250.75 ms
+I (30494) DETECTION: person, confidence=0.8524, box=[0,10,202,239] in 320x240
+I (30665) FRAME: #189 Inference: 123.20 ms (pre=9.00, model=113.67, post=0.52), capture=42.20 ms, age=223.21 ms
+I (30666) DETECTION: person, confidence=0.8524, box=[0,7,199,239] in 320x240
+I (30795) FRAME: #190 Inference: 121.45 ms (pre=8.79, model=112.19, post=0.46), capture=0.05 ms, age=252.30 ms
+I (30795) DETECTION: person, confidence=0.8053, box=[0,5,189,239] in 320x240
+I (30965) FRAME: #191 Inference: 123.15 ms (pre=9.00, model=113.68, post=0.45), capture=40.20 ms, age=223.15 ms
+I (30966) DETECTION: person, confidence=0.8339, box=[0,0,189,239] in 320x240
+I (31094) FRAME: #192 Inference: 121.27 ms (pre=8.79, model=112.19, post=0.27), capture=0.05 ms, age=252.11 ms
+I (31095) DETECTION: No person above threshold 0.80
+I (31265) FRAME: #193 Inference: 122.78 ms (pre=9.00, model=113.53, post=0.25), capture=43.20 ms, age=222.79 ms
+I (31266) DETECTION: No person above threshold 0.80
+I (31391) FRAME: #194 Inference: 121.26 ms (pre=8.79, model=112.00, post=0.45), capture=0.05 ms, age=249.11 ms
+I (31392) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=30408863 us
+I (31392) DETECTION: person, confidence=0.8053, box=[0,0,206,239] in 320x240
+I (31397) BUZZER_PIN: GPIO14 actual pad=1, t=30413955 us
+I (31565) FRAME: #195 Inference: 122.99 ms (pre=9.00, model=113.70, post=0.28), capture=38.20 ms, age=223.00 ms
+I (31566) DETECTION: No person above threshold 0.80
+W (31567) BUZZER: Stopped: stale/negative result or TX timeout; GPIO14 LOW
+I (31576) BUZZER_PIN: GPIO14 actual pad=0, t=30593218 us
+I (31691) FRAME: #196 Inference: 121.21 ms (pre=8.86, model=112.08, post=0.26), capture=0.05 ms, age=249.05 ms
+I (31692) DETECTION: No person above threshold 0.80
+I (31865) FRAME: #197 Inference: 122.82 ms (pre=9.00, model=113.55, post=0.26), capture=46.20 ms, age=222.83 ms
+I (31866) DETECTION: No person above threshold 0.80
+I (31991) FRAME: #198 Inference: 121.01 ms (pre=8.79, model=111.95, post=0.25), capture=0.05 ms, age=248.86 ms
+I (31992) DETECTION: No person above threshold 0.80
+I (32165) FRAME: #199 Inference: 122.79 ms (pre=9.00, model=113.53, post=0.25), capture=46.20 ms, age=222.80 ms
+I (32166) DETECTION: No person above threshold 0.80
+I (32291) FRAME: #200 Inference: 121.01 ms (pre=8.79, model=111.95, post=0.25), capture=0.05 ms, age=248.86 ms
+I (32292) DETECTION: No person above threshold 0.80
+I (32295) MEMORY: internal free=165231, min=110407, largest=63488; PSRAM free=7142132, largest=7077888 bytes
+I (32465) FRAME: #201 Inference: 122.95 ms (pre=9.00, model=113.68, post=0.26), capture=36.20 ms, age=222.97 ms
+I (32466) DETECTION: No person above threshold 0.80
+I (32591) FRAME: #202 Inference: 121.06 ms (pre=8.79, model=111.99, post=0.26), capture=0.05 ms, age=248.90 ms
+I (32592) DETECTION: No person above threshold 0.80
+I (32765) FRAME: #203 Inference: 122.88 ms (pre=9.00, model=113.60, post=0.26), capture=46.20 ms, age=222.89 ms
+I (32766) DETECTION: No person above threshold 0.80
+I (32891) FRAME: #204 Inference: 121.04 ms (pre=8.79, model=111.98, post=0.26), capture=0.05 ms, age=248.89 ms
+I (32892) DETECTION: No person above threshold 0.80
+I (33065) FRAME: #205 Inference: 122.83 ms (pre=9.00, model=113.56, post=0.26), capture=46.20 ms, age=222.84 ms
+I (33066) DETECTION: No person above threshold 0.80
+I (33191) FRAME: #206 Inference: 121.04 ms (pre=8.79, model=111.98, post=0.26), capture=0.05 ms, age=248.89 ms
+I (33192) DETECTION: No person above threshold 0.80
+I (33365) FRAME: #207 Inference: 122.81 ms (pre=9.00, model=113.54, post=0.25), capture=46.20 ms, age=222.82 ms
+I (33366) DETECTION: No person above threshold 0.80
+I (33491) FRAME: #208 Inference: 121.01 ms (pre=8.79, model=111.95, post=0.25), capture=0.05 ms, age=248.85 ms
+I (33492) DETECTION: No person above threshold 0.80
+I (33665) FRAME: #209 Inference: 122.79 ms (pre=9.00, model=113.53, post=0.25), capture=46.20 ms, age=222.80 ms
+I (33666) DETECTION: No person above threshold 0.80
+I (33791) FRAME: #210 Inference: 121.02 ms (pre=8.79, model=111.96, post=0.25), capture=0.05 ms, age=248.87 ms
+I (33792) DETECTION: No person above threshold 0.80
+I (33965) FRAME: #211 Inference: 122.81 ms (pre=9.00, model=113.54, post=0.25), capture=46.20 ms, age=222.82 ms
+I (33966) DETECTION: No person above threshold 0.80
+I (34091) FRAME: #212 Inference: 121.23 ms (pre=8.79, model=111.96, post=0.47), capture=0.05 ms, age=249.08 ms
+I (34092) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=33108863 us
+I (34092) DETECTION: person, confidence=0.8432, box=[0,0,191,239] in 320x240
+I (34097) BUZZER_PIN: GPIO14 actual pad=1, t=33113953 us
+I (34265) FRAME: #213 Inference: 123.17 ms (pre=9.00, model=113.70, post=0.46), capture=38.20 ms, age=223.19 ms
+I (34266) DETECTION: person, confidence=0.8053, box=[0,0,194,239] in 320x240
+I (34297) BUZZER_PIN: GPIO14 actual pad=0, t=33313863 us
+I (34395) FRAME: #214 Inference: 121.45 ms (pre=8.80, model=112.19, post=0.45), capture=0.05 ms, age=252.29 ms
+I (34395) DETECTION: person, confidence=0.8292, box=[0,0,204,239] in 320x240
+I (34497) BUZZER_PIN: GPIO14 actual pad=1, t=33513863 us
+I (34565) FRAME: #215 Inference: 123.03 ms (pre=9.00, model=113.73, post=0.28), capture=40.20 ms, age=223.01 ms
+I (34566) DETECTION: No person above threshold 0.80
+W (34567) BUZZER: Stopped: stale/negative result or TX timeout; GPIO14 LOW
+I (34576) BUZZER_PIN: GPIO14 actual pad=0, t=33593173 us
+I (34691) FRAME: #216 Inference: 121.13 ms (pre=8.87, model=112.00, post=0.26), capture=0.05 ms, age=248.97 ms
+I (34692) DETECTION: No person above threshold 0.80
+I (34865) FRAME: #217 Inference: 123.15 ms (pre=9.01, model=113.66, post=0.46), capture=46.20 ms, age=223.16 ms
+I (34866) DETECTION: person, confidence=0.8053, box=[0,0,198,239] in 320x240
+I (34994) FRAME: #218 Inference: 121.27 ms (pre=8.80, model=112.19, post=0.27), capture=0.05 ms, age=252.11 ms
+I (34995) DETECTION: No person above threshold 0.80
+I (35165) FRAME: #219 Inference: 122.78 ms (pre=9.00, model=113.52, post=0.25), capture=43.20 ms, age=222.78 ms
+I (35166) DETECTION: No person above threshold 0.80
+I (35291) FRAME: #220 Inference: 121.06 ms (pre=8.79, model=112.00, post=0.26), capture=0.05 ms, age=248.91 ms
+I (35292) DETECTION: No person above threshold 0.80
+I (35465) FRAME: #221 Inference: 122.93 ms (pre=9.00, model=113.66, post=0.26), capture=46.20 ms, age=222.94 ms
+I (35466) DETECTION: No person above threshold 0.80
+I (35591) FRAME: #222 Inference: 121.24 ms (pre=8.79, model=111.98, post=0.45), capture=0.05 ms, age=249.08 ms
+I (35592) DETECTION: person, confidence=0.8101, box=[0,0,200,239] in 320x240
+I (35765) FRAME: #223 Inference: 122.97 ms (pre=9.00, model=113.67, post=0.28), capture=44.20 ms, age=222.98 ms
+I (35766) DETECTION: No person above threshold 0.80
+I (35891) FRAME: #224 Inference: 121.05 ms (pre=8.79, model=111.99, post=0.26), capture=0.05 ms, age=248.90 ms
+I (35892) DETECTION: No person above threshold 0.80
+I (36065) FRAME: #225 Inference: 122.96 ms (pre=9.00, model=113.68, post=0.26), capture=46.20 ms, age=222.98 ms
+I (36066) DETECTION: No person above threshold 0.80
+I (36191) FRAME: #226 Inference: 121.21 ms (pre=8.79, model=111.96, post=0.45), capture=0.05 ms, age=249.05 ms
+I (36192) DETECTION: person, confidence=0.8053, box=[0,0,197,239] in 320x240
+I (36365) FRAME: #227 Inference: 123.15 ms (pre=9.00, model=113.68, post=0.45), capture=44.20 ms, age=223.16 ms
+I (36366) DETECTION: person, confidence=0.8101, box=[0,0,197,239] in 320x240
+I (36495) FRAME: #228 Inference: 121.45 ms (pre=8.79, model=112.19, post=0.45), capture=0.05 ms, age=252.29 ms
+I (36495) DETECTION: person, confidence=0.8053, box=[0,0,196,239] in 320x240
+I (36567) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=35583863 us
+I (36572) BUZZER_PIN: GPIO14 actual pad=1, t=35588863 us
+I (36665) FRAME: #229 Inference: 123.21 ms (pre=9.00, model=113.73, post=0.46), capture=40.20 ms, age=223.21 ms
+I (36666) DETECTION: person, confidence=0.8101, box=[0,0,194,239] in 320x240
+I (36772) BUZZER_PIN: GPIO14 actual pad=0, t=35788863 us
+I (36794) FRAME: #230 Inference: 121.34 ms (pre=8.79, model=112.28, post=0.26), capture=0.05 ms, age=252.19 ms
+I (36795) DETECTION: No person above threshold 0.80
+W (36797) BUZZER: Stopped: stale/negative result or TX timeout; GPIO14 LOW
+I (36965) FRAME: #231 Inference: 122.95 ms (pre=9.01, model=113.66, post=0.26), capture=43.20 ms, age=222.97 ms
+I (36966) DETECTION: No person above threshold 0.80
+I (37091) FRAME: #232 Inference: 121.06 ms (pre=8.79, model=111.99, post=0.26), capture=0.05 ms, age=248.89 ms
+I (37092) DETECTION: No person above threshold 0.80
+I (37265) FRAME: #233 Inference: 122.80 ms (pre=9.00, model=113.53, post=0.25), capture=46.20 ms, age=222.81 ms
+I (37266) DETECTION: No person above threshold 0.80
+I (37391) FRAME: #234 Inference: 121.25 ms (pre=8.79, model=111.99, post=0.46), capture=0.05 ms, age=249.10 ms
+I (37392) DETECTION: person, confidence=0.8101, box=[0,0,198,239] in 320x240
+I (37565) FRAME: #235 Inference: 123.17 ms (pre=9.00, model=113.69, post=0.46), capture=44.20 ms, age=223.19 ms
+I (37566) DETECTION: person, confidence=0.8053, box=[0,0,201,239] in 320x240
+I (37695) FRAME: #236 Inference: 121.45 ms (pre=8.79, model=112.19, post=0.46), capture=0.05 ms, age=252.28 ms
+I (37695) DETECTION: person, confidence=0.8053, box=[0,0,200,239] in 320x240
+I (37865) FRAME: #237 Inference: 123.15 ms (pre=9.00, model=113.68, post=0.46), capture=40.20 ms, age=223.17 ms
+I (37866) DETECTION: person, confidence=0.8053, box=[0,0,198,239] in 320x240
+I (37995) FRAME: #238 Inference: 121.44 ms (pre=8.79, model=112.19, post=0.45), capture=0.05 ms, age=252.28 ms
+I (37995) DETECTION: person, confidence=0.8101, box=[0,0,200,239] in 320x240
+I (38165) FRAME: #239 Inference: 122.97 ms (pre=9.00, model=113.69, post=0.27), capture=40.20 ms, age=223.00 ms
+I (38166) DETECTION: No person above threshold 0.80
+I (38291) FRAME: #240 Inference: 121.05 ms (pre=8.80, model=111.98, post=0.26), capture=0.05 ms, age=248.89 ms
+I (38292) DETECTION: No person above threshold 0.80
+I (38465) FRAME: #241 Inference: 123.00 ms (pre=9.00, model=113.54, post=0.45), capture=46.20 ms, age=223.02 ms
+I (38466) DETECTION: person, confidence=0.8197, box=[0,0,197,239] in 320x240
+I (38593) FRAME: #242 Inference: 121.13 ms (pre=8.79, model=112.05, post=0.28), capture=0.05 ms, age=250.97 ms
+I (38594) DETECTION: No person above threshold 0.80
+I (38765) FRAME: #243 Inference: 122.97 ms (pre=9.00, model=113.52, post=0.44), capture=44.20 ms, age=222.98 ms
+I (38766) DETECTION: person, confidence=0.8197, box=[0,0,197,239] in 320x240
+I (38797) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=37813863 us
+I (38802) BUZZER_PIN: GPIO14 actual pad=1, t=37818863 us
+I (38894) FRAME: #244 Inference: 121.50 ms (pre=8.79, model=112.22, post=0.47), capture=0.05 ms, age=251.35 ms
+I (38895) DETECTION: person, confidence=0.8101, box=[0,0,194,239] in 320x240
+I (39002) BUZZER_PIN: GPIO14 actual pad=0, t=38018863 us
+I (39065) FRAME: #245 Inference: 123.01 ms (pre=9.01, model=113.72, post=0.26), capture=41.20 ms, age=223.02 ms
+I (39066) DETECTION: No person above threshold 0.80
+W (39067) BUZZER: Stopped: stale/negative result or TX timeout; GPIO14 LOW
+I (39191) FRAME: #246 Inference: 121.26 ms (pre=8.80, model=111.97, post=0.46), capture=0.05 ms, age=249.09 ms
+I (39192) DETECTION: person, confidence=0.8101, box=[0,0,197,239] in 320x240
+I (39365) FRAME: #247 Inference: 123.17 ms (pre=9.00, model=113.69, post=0.47), capture=44.70 ms, age=223.19 ms
+I (39366) DETECTION: person, confidence=0.8292, box=[0,0,196,239] in 320x240
+I (39495) FRAME: #248 Inference: 121.44 ms (pre=8.79, model=112.19, post=0.44), capture=0.05 ms, age=252.28 ms
+I (39495) DETECTION: person, confidence=0.8478, box=[0,0,195,239] in 320x240
+I (39665) FRAME: #249 Inference: 123.16 ms (pre=9.00, model=113.68, post=0.46), capture=40.20 ms, age=223.18 ms
+I (39666) DETECTION: person, confidence=0.8101, box=[0,0,196,239] in 320x240
+I (39795) FRAME: #250 Inference: 121.45 ms (pre=8.79, model=112.19, post=0.46), capture=0.05 ms, age=252.29 ms
+I (39795) DETECTION: person, confidence=0.8244, box=[0,0,195,239] in 320x240
+I (39965) FRAME: #251 Inference: 123.16 ms (pre=9.01, model=113.67, post=0.47), capture=40.20 ms, age=223.16 ms
+I (39966) DETECTION: person, confidence=0.8101, box=[0,0,195,239] in 320x240
+I (40094) FRAME: #252 Inference: 121.41 ms (pre=8.79, model=112.16, post=0.44), capture=0.05 ms, age=252.25 ms
+I (40095) DETECTION: person, confidence=0.8101, box=[0,0,197,239] in 320x240
+I (40265) FRAME: #253 Inference: 123.16 ms (pre=9.00, model=113.68, post=0.46), capture=40.20 ms, age=223.17 ms
+I (40266) DETECTION: person, confidence=0.8101, box=[0,0,195,239] in 320x240
+I (40395) FRAME: #254 Inference: 121.44 ms (pre=8.79, model=112.19, post=0.44), capture=0.05 ms, age=252.28 ms
+I (40395) DETECTION: person, confidence=0.8244, box=[0,0,196,239] in 320x240
+I (40565) FRAME: #255 Inference: 123.15 ms (pre=9.00, model=113.67, post=0.46), capture=40.20 ms, age=223.16 ms
+I (40566) DETECTION: person, confidence=0.8053, box=[0,0,194,239] in 320x240
+I (40694) FRAME: #256 Inference: 121.25 ms (pre=8.79, model=112.19, post=0.26), capture=0.05 ms, age=252.10 ms
+I (40695) DETECTION: No person above threshold 0.80
+I (40865) FRAME: #257 Inference: 122.95 ms (pre=9.00, model=113.68, post=0.26), capture=43.20 ms, age=222.95 ms
+I (40866) DETECTION: No person above threshold 0.80
+I (40991) FRAME: #258 Inference: 121.22 ms (pre=8.79, model=111.97, post=0.46), capture=0.05 ms, age=249.06 ms
+I (40992) DETECTION: person, confidence=0.8244, box=[0,0,191,239] in 320x240
+I (41067) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=40083863 us
+I (41072) BUZZER_PIN: GPIO14 actual pad=1, t=40088863 us
+I (41165) FRAME: #259 Inference: 123.25 ms (pre=9.01, model=113.76, post=0.47), capture=44.20 ms, age=223.27 ms
+I (41166) DETECTION: person, confidence=0.8053, box=[0,0,195,239] in 320x240
+I (41272) BUZZER_PIN: GPIO14 actual pad=0, t=40288863 us
+I (41294) FRAME: #260 Inference: 121.34 ms (pre=8.79, model=112.28, post=0.26), capture=0.05 ms, age=252.18 ms
+I (41295) DETECTION: No person above threshold 0.80
+W (41297) BUZZER: Stopped: stale/negative result or TX timeout; GPIO14 LOW
+I (41465) FRAME: #261 Inference: 123.15 ms (pre=9.01, model=113.67, post=0.46), capture=43.20 ms, age=223.17 ms
+I (41466) DETECTION: person, confidence=0.8197, box=[0,0,194,239] in 320x240
+I (41595) FRAME: #262 Inference: 121.44 ms (pre=8.80, model=112.18, post=0.45), capture=0.05 ms, age=252.28 ms
+I (41595) DETECTION: person, confidence=0.8244, box=[0,0,193,239] in 320x240
+I (41765) FRAME: #263 Inference: 122.95 ms (pre=9.00, model=113.67, post=0.27), capture=40.20 ms, age=222.97 ms
+I (41766) DETECTION: No person above threshold 0.80
+I (41891) FRAME: #264 Inference: 121.25 ms (pre=8.80, model=111.99, post=0.45), capture=0.05 ms, age=249.09 ms
+I (41892) DETECTION: person, confidence=0.8053, box=[0,0,194,239] in 320x240
+I (42065) FRAME: #265 Inference: 122.97 ms (pre=9.00, model=113.69, post=0.27), capture=44.20 ms, age=222.99 ms
+I (42066) DETECTION: No person above threshold 0.80
+I (42191) FRAME: #266 Inference: 121.03 ms (pre=8.79, model=111.97, post=0.25), capture=0.05 ms, age=248.86 ms
+I (42192) DETECTION: No person above threshold 0.80
+I (42365) FRAME: #267 Inference: 123.14 ms (pre=9.00, model=113.67, post=0.45), capture=46.20 ms, age=223.16 ms
+I (42366) DETECTION: person, confidence=0.8197, box=[0,0,200,239] in 320x240
+I (42495) FRAME: #268 Inference: 121.45 ms (pre=8.79, model=112.19, post=0.45), capture=0.05 ms, age=252.28 ms
+I (42495) DETECTION: person, confidence=0.8053, box=[0,0,198,239] in 320x240
+I (42665) FRAME: #269 Inference: 122.95 ms (pre=9.00, model=113.68, post=0.26), capture=40.20 ms, age=222.97 ms
+I (42666) DETECTION: No person above threshold 0.80
+I (42791) FRAME: #270 Inference: 121.06 ms (pre=8.79, model=111.99, post=0.26), capture=0.05 ms, age=248.90 ms
+I (42792) DETECTION: No person above threshold 0.80
+I (42965) FRAME: #271 Inference: 123.03 ms (pre=9.00, model=113.57, post=0.45), capture=46.20 ms, age=223.05 ms
+I (42966) DETECTION: person, confidence=0.8385, box=[0,0,195,239] in 320x240
+I (43093) FRAME: #272 Inference: 121.12 ms (pre=8.79, model=112.04, post=0.28), capture=0.05 ms, age=250.97 ms
+I (43094) DETECTION: No person above threshold 0.80
+I (43265) FRAME: #273 Inference: 123.20 ms (pre=9.01, model=113.66, post=0.52), capture=44.20 ms, age=223.21 ms
+I (43266) DETECTION: person, confidence=0.8432, box=[0,0,193,239] in 320x240
+I (43297) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=42313863 us
+I (43302) BUZZER_PIN: GPIO14 actual pad=1, t=42318863 us
+I (43395) FRAME: #274 Inference: 121.54 ms (pre=8.79, model=112.20, post=0.53), capture=0.05 ms, age=252.38 ms
+I (43395) DETECTION: person, confidence=0.8101, box=[0,0,195,239] in 320x240
+I (43502) BUZZER_PIN: GPIO14 actual pad=0, t=42518863 us
+I (43565) FRAME: #275 Inference: 123.00 ms (pre=9.00, model=113.72, post=0.26), capture=40.20 ms, age=222.99 ms
+I (43566) DETECTION: No person above threshold 0.80
+W (43567) BUZZER: Stopped: stale/negative result or TX timeout; GPIO14 LOW
+I (43691) FRAME: #276 Inference: 121.26 ms (pre=8.81, model=111.98, post=0.45), capture=0.05 ms, age=249.09 ms
+I (43692) DETECTION: person, confidence=0.8197, box=[0,0,194,239] in 320x240
+I (43865) FRAME: #277 Inference: 122.98 ms (pre=9.00, model=113.69, post=0.27), capture=44.20 ms, age=222.99 ms
+I (43866) DETECTION: No person above threshold 0.80
+I (43991) FRAME: #278 Inference: 121.22 ms (pre=8.79, model=111.97, post=0.44), capture=0.05 ms, age=249.06 ms
+I (43992) DETECTION: person, confidence=0.8053, box=[0,0,194,239] in 320x240
+I (44165) FRAME: #279 Inference: 123.16 ms (pre=9.00, model=113.69, post=0.45), capture=44.20 ms, age=223.17 ms
+I (44166) DETECTION: person, confidence=0.8432, box=[0,0,195,239] in 320x240
+I (44294) FRAME: #280 Inference: 121.26 ms (pre=8.79, model=112.18, post=0.27), capture=0.05 ms, age=252.10 ms
+I (44295) DETECTION: No person above threshold 0.80
+I (44465) FRAME: #281 Inference: 123.11 ms (pre=9.00, model=113.64, post=0.45), capture=43.20 ms, age=223.11 ms
+I (44466) DETECTION: person, confidence=0.8101, box=[0,0,195,239] in 320x240
+I (44595) FRAME: #282 Inference: 121.44 ms (pre=8.79, model=112.18, post=0.45), capture=0.05 ms, age=252.28 ms
+I (44595) DETECTION: person, confidence=0.8101, box=[0,0,199,239] in 320x240
+I (44765) FRAME: #283 Inference: 122.94 ms (pre=9.00, model=113.67, post=0.26), capture=40.20 ms, age=222.96 ms
+I (44766) DETECTION: No person above threshold 0.80
+I (44891) FRAME: #284 Inference: 121.02 ms (pre=8.79, model=111.96, post=0.25), capture=0.05 ms, age=248.86 ms
+I (44892) DETECTION: No person above threshold 0.80
+I (45065) FRAME: #285 Inference: 122.98 ms (pre=9.00, model=113.53, post=0.44), capture=46.20 ms, age=223.00 ms
+I (45066) DETECTION: person, confidence=0.8339, box=[0,0,199,239] in 320x240
+I (45193) FRAME: #286 Inference: 121.31 ms (pre=8.79, model=112.05, post=0.45), capture=0.05 ms, age=251.16 ms
+I (45194) DETECTION: person, confidence=0.8053, box=[0,0,197,239] in 320x240
+I (45365) FRAME: #287 Inference: 123.13 ms (pre=9.00, model=113.67, post=0.45), capture=41.20 ms, age=223.14 ms
+I (45366) DETECTION: person, confidence=0.8101, box=[0,0,198,239] in 320x240
+I (45495) FRAME: #288 Inference: 121.44 ms (pre=8.79, model=112.18, post=0.45), capture=0.05 ms, age=252.29 ms
+I (45495) DETECTION: person, confidence=0.8101, box=[0,0,195,239] in 320x240
+I (45572) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=44588863 us
+I (45577) BUZZER_PIN: GPIO14 actual pad=1, t=44593863 us
+I (45666) FRAME: #289 Inference: 123.34 ms (pre=9.00, model=113.82, post=0.51), capture=40.20 ms, age=223.36 ms
+I (45666) DETECTION: person, confidence=0.8478, box=[0,0,194,239] in 320x240
+I (45777) BUZZER_PIN: GPIO14 actual pad=0, t=44793863 us
+I (45795) FRAME: #290 Inference: 121.51 ms (pre=8.79, model=112.25, post=0.46), capture=0.05 ms, age=252.36 ms
+I (45795) DETECTION: person, confidence=0.8478, box=[0,0,194,239] in 320x240
+I (45965) FRAME: #291 Inference: 123.13 ms (pre=9.00, model=113.67, post=0.44), capture=40.20 ms, age=223.14 ms
+I (45966) DETECTION: person, confidence=0.8101, box=[0,0,192,239] in 320x240
+I (45977) BUZZER_PIN: GPIO14 actual pad=1, t=44993863 us
+I (46095) FRAME: #292 Inference: 121.45 ms (pre=8.83, model=112.15, post=0.45), capture=0.05 ms, age=252.28 ms
+I (46095) DETECTION: person, confidence=0.8385, box=[0,0,193,239] in 320x240
+I (46177) BUZZER_PIN: GPIO14 actual pad=0, t=45193864 us
+I (46177) BUZZER: LOW, cooldown >= 2000 ms, t=45193864 us
+I (46265) FRAME: #293 Inference: 123.25 ms (pre=9.00, model=113.79, post=0.44), capture=40.20 ms, age=223.25 ms
+I (46266) DETECTION: person, confidence=0.8101, box=[0,0,193,239] in 320x240
+I (46394) FRAME: #294 Inference: 121.27 ms (pre=8.79, model=112.19, post=0.27), capture=0.05 ms, age=252.12 ms
+I (46395) DETECTION: No person above threshold 0.80
+I (46565) FRAME: #295 Inference: 122.97 ms (pre=9.00, model=113.52, post=0.44), capture=43.19 ms, age=222.97 ms
+I (46566) DETECTION: person, confidence=0.8385, box=[0,0,194,239] in 320x240
+I (46693) FRAME: #296 Inference: 121.30 ms (pre=8.79, model=112.04, post=0.46), capture=0.05 ms, age=251.16 ms
+I (46694) DETECTION: person, confidence=0.8524, box=[0,0,191,239] in 320x240
+I (46865) FRAME: #297 Inference: 122.95 ms (pre=9.01, model=113.67, post=0.26), capture=41.20 ms, age=222.96 ms
+I (46866) DETECTION: No person above threshold 0.80
+I (46991) FRAME: #298 Inference: 121.06 ms (pre=8.79, model=111.99, post=0.26), capture=0.05 ms, age=248.91 ms
+I (46992) DETECTION: No person above threshold 0.80
+I (47165) FRAME: #299 Inference: 123.11 ms (pre=9.01, model=113.64, post=0.45), capture=46.20 ms, age=223.13 ms
+I (47166) DETECTION: person, confidence=0.8197, box=[0,0,194,239] in 320x240
+I (47295) FRAME: #300 Inference: 121.44 ms (pre=8.79, model=112.18, post=0.45), capture=0.05 ms, age=252.28 ms
+I (47295) DETECTION: person, confidence=0.8432, box=[0,0,194,239] in 320x240
+I (47301) MEMORY: internal free=165131, min=110407, largest=63488; PSRAM free=7142132, largest=7077888 bytes
+I (47465) FRAME: #301 Inference: 123.17 ms (pre=9.01, model=113.69, post=0.46), capture=31.20 ms, age=223.17 ms
+I (47466) DETECTION: person, confidence=0.8101, box=[0,0,194,239] in 320x240
+I (47595) FRAME: #302 Inference: 121.44 ms (pre=8.79, model=112.17, post=0.45), capture=0.05 ms, age=252.28 ms
+I (47595) DETECTION: person, confidence=0.8197, box=[0,0,195,239] in 320x240
+I (47765) FRAME: #303 Inference: 123.16 ms (pre=9.01, model=113.68, post=0.46), capture=40.20 ms, age=223.17 ms
+I (47766) DETECTION: person, confidence=0.8385, box=[0,0,196,239] in 320x240
+I (47895) FRAME: #304 Inference: 121.51 ms (pre=8.79, model=112.19, post=0.52), capture=0.05 ms, age=252.35 ms
+I (47895) DETECTION: person, confidence=0.8292, box=[0,0,197,239] in 320x240
+I (48065) FRAME: #305 Inference: 122.96 ms (pre=9.01, model=113.67, post=0.27), capture=40.20 ms, age=222.97 ms
+I (48066) DETECTION: No person above threshold 0.80
+I (48191) FRAME: #306 Inference: 121.27 ms (pre=8.79, model=112.00, post=0.46), capture=0.05 ms, age=249.10 ms
+I (48192) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=47208863 us
+I (48192) DETECTION: person, confidence=0.8292, box=[0,0,194,239] in 320x240
+I (48197) BUZZER_PIN: GPIO14 actual pad=1, t=47213960 us
+I (48365) FRAME: #307 Inference: 122.97 ms (pre=9.00, model=113.68, post=0.27), capture=38.20 ms, age=222.98 ms
+I (48366) DETECTION: No person above threshold 0.80
+W (48367) BUZZER: Stopped: stale/negative result or TX timeout; GPIO14 LOW
+I (48376) BUZZER_PIN: GPIO14 actual pad=0, t=47393207 us
+I (48491) FRAME: #308 Inference: 121.39 ms (pre=8.87, model=112.06, post=0.46), capture=0.05 ms, age=249.23 ms
+I (48492) DETECTION: person, confidence=0.8053, box=[0,0,193,239] in 320x240
+I (48665) FRAME: #309 Inference: 122.98 ms (pre=9.01, model=113.69, post=0.28), capture=43.20 ms, age=223.00 ms
+I (48666) DETECTION: No person above threshold 0.80
+I (48791) FRAME: #310 Inference: 121.24 ms (pre=8.79, model=111.98, post=0.45), capture=0.05 ms, age=249.08 ms
+I (48792) DETECTION: person, confidence=0.8197, box=[0,0,195,239] in 320x240
+I (48965) FRAME: #311 Inference: 123.16 ms (pre=9.00, model=113.68, post=0.46), capture=44.20 ms, age=223.17 ms
+I (48966) DETECTION: person, confidence=0.8244, box=[0,0,195,239] in 320x240
+I (49094) FRAME: #312 Inference: 121.26 ms (pre=8.79, model=112.19, post=0.26), capture=0.05 ms, age=252.10 ms
+I (49095) DETECTION: No person above threshold 0.80
+I (49265) FRAME: #313 Inference: 122.97 ms (pre=9.00, model=113.51, post=0.45), capture=43.20 ms, age=222.97 ms
+I (49266) DETECTION: person, confidence=0.8053, box=[0,0,192,239] in 320x240
+I (49393) FRAME: #314 Inference: 121.28 ms (pre=8.79, model=112.02, post=0.45), capture=0.05 ms, age=251.12 ms
+I (49394) DETECTION: person, confidence=0.8101, box=[0,0,194,239] in 320x240
+I (49565) FRAME: #315 Inference: 122.95 ms (pre=9.01, model=113.67, post=0.27), capture=41.20 ms, age=222.97 ms
+I (49566) DETECTION: No person above threshold 0.80
+I (49691) FRAME: #316 Inference: 121.26 ms (pre=8.79, model=112.00, post=0.45), capture=0.05 ms, age=249.09 ms
+I (49692) DETECTION: person, confidence=0.8053, box=[0,0,194,239] in 320x240
+I (49865) FRAME: #317 Inference: 123.17 ms (pre=9.01, model=113.68, post=0.47), capture=44.70 ms, age=223.19 ms
+I (49866) DETECTION: person, confidence=0.8339, box=[0,0,193,239] in 320x240
+I (49994) FRAME: #318 Inference: 121.27 ms (pre=8.80, model=112.19, post=0.26), capture=0.05 ms, age=252.10 ms
+I (49995) DETECTION: No person above threshold 0.80
+I (50165) FRAME: #319 Inference: 122.96 ms (pre=9.00, model=113.50, post=0.45), capture=43.20 ms, age=222.95 ms
+I (50166) DETECTION: person, confidence=0.8101, box=[0,0,194,239] in 320x240
+I (50293) FRAME: #320 Inference: 121.17 ms (pre=8.79, model=112.08, post=0.28), capture=0.05 ms, age=251.02 ms
+I (50294) DETECTION: No person above threshold 0.80
+I (50465) FRAME: #321 Inference: 123.11 ms (pre=9.00, model=113.65, post=0.45), capture=44.20 ms, age=223.13 ms
+I (50466) DETECTION: person, confidence=0.8101, box=[0,0,194,239] in 320x240
+I (50467) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=49483863 us
+I (50477) BUZZER_PIN: GPIO14 actual pad=1, t=49494844 us
+I (50594) FRAME: #322 Inference: 121.27 ms (pre=8.85, model=112.13, post=0.27), capture=0.04 ms, age=252.10 ms
+I (50595) DETECTION: No person above threshold 0.80
+W (50597) BUZZER: Stopped: stale/negative result or TX timeout; GPIO14 LOW
+I (50605) BUZZER_PIN: GPIO14 actual pad=0, t=49622165 us
+I (50765) FRAME: #323 Inference: 122.88 ms (pre=9.00, model=113.60, post=0.26), capture=43.20 ms, age=222.86 ms
+I (50766) DETECTION: No person above threshold 0.80
+I (50891) FRAME: #324 Inference: 121.25 ms (pre=8.79, model=111.98, post=0.46), capture=0.05 ms, age=249.10 ms
+I (50892) DETECTION: person, confidence=0.8197, box=[0,0,194,239] in 320x240
+I (51065) FRAME: #325 Inference: 122.97 ms (pre=9.00, model=113.68, post=0.27), capture=44.20 ms, age=222.98 ms
+I (51066) DETECTION: No person above threshold 0.80
+I (51191) FRAME: #326 Inference: 121.02 ms (pre=8.79, model=111.96, post=0.26), capture=0.05 ms, age=248.87 ms
+I (51192) DETECTION: No person above threshold 0.80
+I (51365) FRAME: #327 Inference: 122.98 ms (pre=9.00, model=113.53, post=0.44), capture=46.20 ms, age=223.00 ms
+I (51366) DETECTION: person, confidence=0.8244, box=[0,0,193,239] in 320x240
+I (51493) FRAME: #328 Inference: 121.30 ms (pre=8.79, model=112.04, post=0.46), capture=0.05 ms, age=251.15 ms
+I (51494) DETECTION: person, confidence=0.8244, box=[0,0,195,239] in 320x240
+I (51665) FRAME: #329 Inference: 123.16 ms (pre=9.00, model=113.67, post=0.46), capture=41.20 ms, age=223.17 ms
+I (51666) DETECTION: person, confidence=0.8197, box=[0,0,194,239] in 320x240
+I (51794) FRAME: #330 Inference: 121.26 ms (pre=8.80, model=112.17, post=0.27), capture=0.05 ms, age=252.10 ms
+I (51795) DETECTION: No person above threshold 0.80
+I (51965) FRAME: #331 Inference: 123.14 ms (pre=9.00, model=113.67, post=0.45), capture=43.20 ms, age=223.14 ms
+I (51966) DETECTION: person, confidence=0.8101, box=[0,0,192,239] in 320x240
+I (52095) FRAME: #332 Inference: 121.45 ms (pre=8.79, model=112.20, post=0.45), capture=0.05 ms, age=252.30 ms
+I (52095) DETECTION: person, confidence=0.8101, box=[0,0,194,239] in 320x240
+I (52265) FRAME: #333 Inference: 123.15 ms (pre=9.00, model=113.67, post=0.46), capture=40.20 ms, age=223.17 ms
+I (52266) DETECTION: person, confidence=0.8432, box=[0,0,194,239] in 320x240
+I (52395) FRAME: #334 Inference: 121.45 ms (pre=8.79, model=112.18, post=0.46), capture=0.05 ms, age=252.29 ms
+I (52395) DETECTION: person, confidence=0.8339, box=[0,0,194,239] in 320x240
+I (52565) FRAME: #335 Inference: 123.13 ms (pre=9.00, model=113.67, post=0.45), capture=40.20 ms, age=223.13 ms
+I (52566) DETECTION: person, confidence=0.8385, box=[0,0,192,239] in 320x240
+I (52597) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=51613863 us
+I (52602) BUZZER_PIN: GPIO14 actual pad=1, t=51618863 us
+I (52695) FRAME: #336 Inference: 121.47 ms (pre=8.79, model=112.21, post=0.45), capture=0.05 ms, age=252.31 ms
+I (52695) DETECTION: person, confidence=0.8101, box=[0,0,195,239] in 320x240
+I (52802) BUZZER_PIN: GPIO14 actual pad=0, t=51818863 us
+I (52865) FRAME: #337 Inference: 123.00 ms (pre=9.00, model=113.73, post=0.26), capture=40.20 ms, age=222.99 ms
+I (52866) DETECTION: No person above threshold 0.80
+W (52867) BUZZER: Stopped: stale/negative result or TX timeout; GPIO14 LOW
+I (52991) FRAME: #338 Inference: 121.34 ms (pre=8.82, model=111.98, post=0.53), capture=0.05 ms, age=249.18 ms
+I (52992) DETECTION: person, confidence=0.8101, box=[0,0,205,239] in 320x240
+I (53165) FRAME: #339 Inference: 122.97 ms (pre=9.01, model=113.66, post=0.28), capture=43.20 ms, age=222.99 ms
+I (53166) DETECTION: No person above threshold 0.80
+I (53291) FRAME: #340 Inference: 121.25 ms (pre=8.79, model=111.99, post=0.45), capture=0.05 ms, age=249.09 ms
+I (53292) DETECTION: person, confidence=0.8053, box=[0,0,197,239] in 320x240
+I (53465) FRAME: #341 Inference: 122.98 ms (pre=9.00, model=113.69, post=0.28), capture=44.20 ms, age=223.00 ms
+I (53466) DETECTION: No person above threshold 0.80
+I (53591) FRAME: #342 Inference: 121.23 ms (pre=8.79, model=111.98, post=0.45), capture=0.05 ms, age=249.08 ms
+I (53592) DETECTION: person, confidence=0.8053, box=[0,0,204,239] in 320x240
+I (53765) FRAME: #343 Inference: 122.98 ms (pre=9.01, model=113.68, post=0.28), capture=44.20 ms, age=223.00 ms
+I (53766) DETECTION: No person above threshold 0.80
+I (53891) FRAME: #344 Inference: 121.24 ms (pre=8.79, model=111.99, post=0.45), capture=0.05 ms, age=249.08 ms
+I (53892) DETECTION: person, confidence=0.8053, box=[0,0,205,239] in 320x240
+I (54065) FRAME: #345 Inference: 122.97 ms (pre=9.00, model=113.68, post=0.27), capture=44.20 ms, age=222.99 ms
+I (54066) DETECTION: No person above threshold 0.80
+I (54191) FRAME: #346 Inference: 121.20 ms (pre=8.79, model=111.95, post=0.44), capture=0.05 ms, age=249.04 ms
+I (54192) DETECTION: person, confidence=0.8385, box=[0,0,204,239] in 320x240
+I (54365) FRAME: #347 Inference: 123.22 ms (pre=9.00, model=113.69, post=0.52), capture=44.20 ms, age=223.24 ms
+I (54366) DETECTION: person, confidence=0.8053, box=[0,0,203,239] in 320x240
+I (54494) FRAME: #348 Inference: 121.25 ms (pre=8.79, model=112.19, post=0.26), capture=0.05 ms, age=252.10 ms
+I (54495) DETECTION: No person above threshold 0.80
+I (54665) FRAME: #349 Inference: 123.14 ms (pre=9.01, model=113.67, post=0.46), capture=43.20 ms, age=223.14 ms
+I (54666) DETECTION: person, confidence=0.8101, box=[0,0,202,239] in 320x240
+I (54795) FRAME: #350 Inference: 121.46 ms (pre=8.80, model=112.19, post=0.46), capture=0.05 ms, age=252.30 ms
+I (54795) DETECTION: person, confidence=0.8053, box=[0,0,203,239] in 320x240
+I (54867) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=53883863 us
+I (54872) BUZZER_PIN: GPIO14 actual pad=1, t=53888863 us
+I (54965) FRAME: #351 Inference: 123.25 ms (pre=9.00, model=113.71, post=0.52), capture=40.20 ms, age=223.25 ms
+I (54966) DETECTION: person, confidence=0.8339, box=[0,0,202,239] in 320x240
+I (55072) BUZZER_PIN: GPIO14 actual pad=0, t=54088863 us
+I (55094) FRAME: #352 Inference: 121.36 ms (pre=8.79, model=112.28, post=0.27), capture=0.05 ms, age=252.20 ms
+I (55095) DETECTION: No person above threshold 0.80
+W (55097) BUZZER: Stopped: stale/negative result or TX timeout; GPIO14 LOW
+I (55265) FRAME: #353 Inference: 122.85 ms (pre=9.00, model=113.57, post=0.26), capture=43.20 ms, age=222.86 ms
+I (55266) DETECTION: No person above threshold 0.80
+I (55391) FRAME: #354 Inference: 121.02 ms (pre=8.78, model=111.97, post=0.26), capture=0.05 ms, age=248.86 ms
+I (55392) DETECTION: No person above threshold 0.80
+I (55565) FRAME: #355 Inference: 122.98 ms (pre=9.00, model=113.53, post=0.44), capture=46.20 ms, age=222.99 ms
+I (55566) DETECTION: person, confidence=0.8197, box=[0,0,201,239] in 320x240
+I (55693) FRAME: #356 Inference: 121.28 ms (pre=8.79, model=112.02, post=0.45), capture=0.05 ms, age=251.13 ms
+I (55694) DETECTION: person, confidence=0.8101, box=[0,0,202,239] in 320x240
+I (55865) FRAME: #357 Inference: 123.19 ms (pre=9.00, model=113.66, post=0.51), capture=41.20 ms, age=223.20 ms
+I (55866) DETECTION: person, confidence=0.8339, box=[0,0,203,239] in 320x240
+I (55995) FRAME: #358 Inference: 121.44 ms (pre=8.79, model=112.18, post=0.45), capture=0.05 ms, age=252.28 ms
+I (55995) DETECTION: person, confidence=0.8053, box=[0,0,202,239] in 320x240
+I (56165) FRAME: #359 Inference: 123.25 ms (pre=9.01, model=113.66, post=0.57), capture=40.20 ms, age=223.26 ms
+I (56166) DETECTION: person, confidence=0.8839, box=[0,0,206,239] in 320x240
+I (56295) FRAME: #360 Inference: 121.58 ms (pre=8.79, model=112.18, post=0.58), capture=0.05 ms, age=252.43 ms
+I (56296) DETECTION: person, confidence=0.8927, box=[0,0,202,239] in 320x240
+I (56466) FRAME: #361 Inference: 123.29 ms (pre=9.01, model=113.68, post=0.58), capture=40.20 ms, age=223.29 ms
+I (56466) DETECTION: person, confidence=0.8615, box=[0,0,203,239] in 320x240
+I (56595) FRAME: #362 Inference: 121.57 ms (pre=8.80, model=112.18, post=0.58), capture=0.05 ms, age=252.41 ms
+I (56595) DETECTION: person, confidence=0.8927, box=[0,0,203,239] in 320x240
+I (56766) FRAME: #363 Inference: 123.27 ms (pre=9.00, model=113.69, post=0.57), capture=40.20 ms, age=223.27 ms
+I (56766) DETECTION: person, confidence=0.8750, box=[0,0,201,239] in 320x240
+I (56895) FRAME: #364 Inference: 121.55 ms (pre=8.79, model=112.17, post=0.57), capture=0.05 ms, age=252.39 ms
+I (56895) DETECTION: person, confidence=0.8570, box=[0,0,201,239] in 320x240
+I (57065) FRAME: #365 Inference: 123.14 ms (pre=9.00, model=113.67, post=0.45), capture=40.20 ms, age=223.15 ms
+I (57066) DETECTION: person, confidence=0.8101, box=[0,0,202,239] in 320x240
+I (57097) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=56113863 us
+I (57102) BUZZER_PIN: GPIO14 actual pad=1, t=56118863 us
+I (57195) FRAME: #366 Inference: 121.47 ms (pre=8.79, model=112.20, post=0.46), capture=0.05 ms, age=252.32 ms
+I (57195) DETECTION: person, confidence=0.8053, box=[0,0,202,239] in 320x240
+I (57302) BUZZER_PIN: GPIO14 actual pad=0, t=56318863 us
+I (57365) FRAME: #367 Inference: 123.19 ms (pre=9.00, model=113.72, post=0.45), capture=40.20 ms, age=223.19 ms
+I (57366) DETECTION: person, confidence=0.8101, box=[0,0,201,239] in 320x240
+I (57495) FRAME: #368 Inference: 121.53 ms (pre=8.79, model=112.18, post=0.53), capture=0.05 ms, age=252.36 ms
+I (57496) DETECTION: person, confidence=0.8339, box=[0,0,202,239] in 320x240
+I (57502) BUZZER_PIN: GPIO14 actual pad=1, t=56518864 us
+I (57665) FRAME: #369 Inference: 123.17 ms (pre=9.01, model=113.68, post=0.46), capture=40.20 ms, age=223.17 ms
+I (57666) DETECTION: person, confidence=0.8385, box=[0,0,201,239] in 320x240
+I (57702) BUZZER_PIN: GPIO14 actual pad=0, t=56718863 us
+I (57702) BUZZER: LOW, cooldown >= 2000 ms, t=56718863 us
+I (57795) FRAME: #370 Inference: 121.45 ms (pre=8.79, model=112.19, post=0.45), capture=0.05 ms, age=252.28 ms
+I (57795) DETECTION: person, confidence=0.8053, box=[0,0,202,239] in 320x240
+I (57965) FRAME: #371 Inference: 123.15 ms (pre=9.01, model=113.67, post=0.45), capture=40.20 ms, age=223.14 ms
+I (57966) DETECTION: person, confidence=0.8101, box=[0,0,203,239] in 320x240
+I (58095) FRAME: #372 Inference: 121.51 ms (pre=8.79, model=112.19, post=0.52), capture=0.05 ms, age=252.36 ms
+I (58095) DETECTION: person, confidence=0.8101, box=[0,0,202,239] in 320x240
+I (58265) FRAME: #373 Inference: 122.95 ms (pre=9.00, model=113.67, post=0.27), capture=40.20 ms, age=222.96 ms
+I (58266) DETECTION: No person above threshold 0.80
+I (58391) FRAME: #374 Inference: 121.25 ms (pre=8.80, model=111.99, post=0.45), capture=0.05 ms, age=249.10 ms
+I (58392) DETECTION: person, confidence=0.8053, box=[0,0,204,239] in 320x240
+I (58565) FRAME: #375 Inference: 123.22 ms (pre=9.00, model=113.69, post=0.52), capture=44.20 ms, age=223.24 ms
+I (58566) DETECTION: person, confidence=0.8053, box=[0,0,202,239] in 320x240
+I (58694) FRAME: #376 Inference: 121.25 ms (pre=8.79, model=112.18, post=0.26), capture=0.05 ms, age=252.09 ms
+I (58695) DETECTION: No person above threshold 0.80
+I (58865) FRAME: #377 Inference: 123.08 ms (pre=9.00, model=113.55, post=0.52), capture=43.20 ms, age=223.07 ms
+I (58866) DETECTION: person, confidence=0.8244, box=[0,0,202,239] in 320x240
+I (58993) FRAME: #378 Inference: 121.11 ms (pre=8.79, model=112.03, post=0.27), capture=0.05 ms, age=250.95 ms
+I (58994) DETECTION: No person above threshold 0.80
+I (59165) FRAME: #379 Inference: 122.94 ms (pre=9.01, model=113.66, post=0.26), capture=44.20 ms, age=222.96 ms
+I (59166) DETECTION: No person above threshold 0.80
+I (59291) FRAME: #380 Inference: 121.05 ms (pre=8.79, model=111.99, post=0.26), capture=0.05 ms, age=248.88 ms
+I (59292) DETECTION: No person above threshold 0.80
+I (59465) FRAME: #381 Inference: 123.14 ms (pre=9.00, model=113.67, post=0.46), capture=46.20 ms, age=223.16 ms
+I (59466) DETECTION: person, confidence=0.8339, box=[0,0,203,239] in 320x240
+I (59595) FRAME: #382 Inference: 121.45 ms (pre=8.79, model=112.20, post=0.45), capture=0.05 ms, age=252.29 ms
+I (59595) DETECTION: person, confidence=0.8053, box=[0,0,203,239] in 320x240
+I (59702) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=58718863 us
+I (59707) BUZZER_PIN: GPIO14 actual pad=1, t=58723863 us
+I (59766) FRAME: #383 Inference: 123.36 ms (pre=9.00, model=113.89, post=0.46), capture=40.20 ms, age=223.37 ms
+I (59766) DETECTION: person, confidence=0.8053, box=[0,0,203,239] in 320x240
+I (59895) FRAME: #384 Inference: 121.44 ms (pre=8.79, model=112.19, post=0.45), capture=0.05 ms, age=252.28 ms
+I (59895) DETECTION: person, confidence=0.8101, box=[0,0,201,239] in 320x240
+I (59907) BUZZER_PIN: GPIO14 actual pad=0, t=58923863 us
+I (60065) FRAME: #385 Inference: 123.17 ms (pre=9.01, model=113.68, post=0.46), capture=40.20 ms, age=223.18 ms
+I (60066) DETECTION: person, confidence=0.8244, box=[0,0,202,239] in 320x240
+I (60107) BUZZER_PIN: GPIO14 actual pad=1, t=59123863 us
+I (60194) FRAME: #386 Inference: 121.27 ms (pre=8.79, model=112.20, post=0.27), capture=0.05 ms, age=252.11 ms
+I (60195) DETECTION: No person above threshold 0.80
+W (60197) BUZZER: Stopped: stale/negative result or TX timeout; GPIO14 LOW
+I (60205) BUZZER_PIN: GPIO14 actual pad=0, t=59222156 us
+I (60365) FRAME: #387 Inference: 122.84 ms (pre=9.00, model=113.56, post=0.26), capture=43.20 ms, age=222.83 ms
+I (60366) DETECTION: No person above threshold 0.80
+I (60491) FRAME: #388 Inference: 121.03 ms (pre=8.79, model=111.97, post=0.26), capture=0.05 ms, age=248.87 ms
+I (60492) DETECTION: No person above threshold 0.80
+I (60665) FRAME: #389 Inference: 123.05 ms (pre=9.00, model=113.53, post=0.51), capture=46.20 ms, age=223.07 ms
+I (60666) DETECTION: person, confidence=0.8385, box=[0,0,202,239] in 320x240
+I (60793) FRAME: #390 Inference: 121.12 ms (pre=8.79, model=112.04, post=0.27), capture=0.05 ms, age=250.96 ms
+I (60794) DETECTION: No person above threshold 0.80
+I (60965) FRAME: #391 Inference: 122.97 ms (pre=9.00, model=113.52, post=0.44), capture=44.20 ms, age=222.98 ms
+I (60966) DETECTION: person, confidence=0.8244, box=[0,0,200,239] in 320x240
+I (61093) FRAME: #392 Inference: 121.35 ms (pre=8.79, model=112.03, post=0.52), capture=0.05 ms, age=251.20 ms
+I (61094) DETECTION: person, confidence=0.8244, box=[0,0,201,239] in 320x240
+I (61265) FRAME: #393 Inference: 123.11 ms (pre=9.00, model=113.65, post=0.45), capture=41.20 ms, age=223.13 ms
+I (61266) DETECTION: person, confidence=0.8101, box=[0,0,200,239] in 320x240
+I (61393) FRAME: #394 Inference: 121.12 ms (pre=8.79, model=112.04, post=0.27), capture=0.05 ms, age=250.96 ms
+I (61394) DETECTION: No person above threshold 0.80
+I (61565) FRAME: #395 Inference: 122.96 ms (pre=9.00, model=113.51, post=0.44), capture=44.20 ms, age=222.97 ms
+I (61566) DETECTION: person, confidence=0.8197, box=[0,0,201,239] in 320x240
+I (61693) FRAME: #396 Inference: 121.33 ms (pre=8.79, model=112.06, post=0.46), capture=0.05 ms, age=251.18 ms
+I (61694) DETECTION: person, confidence=0.8101, box=[0,0,201,239] in 320x240
+I (61865) FRAME: #397 Inference: 123.13 ms (pre=8.99, model=113.67, post=0.45), capture=41.20 ms, age=223.15 ms
+I (61866) DETECTION: person, confidence=0.8101, box=[0,0,201,239] in 320x240
+I (61994) FRAME: #398 Inference: 121.26 ms (pre=8.80, model=112.18, post=0.27), capture=0.05 ms, age=252.11 ms
+I (61995) DETECTION: No person above threshold 0.80
+I (62165) FRAME: #399 Inference: 122.78 ms (pre=9.00, model=113.52, post=0.25), capture=43.20 ms, age=222.78 ms
+I (62166) DETECTION: No person above threshold 0.80
+I (62291) FRAME: #400 Inference: 121.04 ms (pre=8.79, model=111.98, post=0.26), capture=0.05 ms, age=248.90 ms
+I (62292) DETECTION: No person above threshold 0.80
+I (62295) MEMORY: internal free=165231, min=110407, largest=63488; PSRAM free=7142132, largest=7077888 bytes
+I (62465) FRAME: #401 Inference: 123.16 ms (pre=9.00, model=113.69, post=0.46), capture=36.20 ms, age=223.17 ms
+I (62466) DETECTION: person, confidence=0.8101, box=[0,0,194,239] in 320x240
+I (62467) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=61483863 us
+I (62477) BUZZER_PIN: GPIO14 actual pad=1, t=61494810 us
+I (62594) FRAME: #402 Inference: 121.27 ms (pre=8.84, model=112.15, post=0.27), capture=0.05 ms, age=252.12 ms
+I (62595) DETECTION: No person above threshold 0.80
+W (62597) BUZZER: Stopped: stale/negative result or TX timeout; GPIO14 LOW
+I (62605) BUZZER_PIN: GPIO14 actual pad=0, t=61622188 us
+I (62765) FRAME: #403 Inference: 123.07 ms (pre=9.01, model=113.59, post=0.46), capture=43.20 ms, age=223.05 ms
+I (62766) DETECTION: person, confidence=0.8053, box=[0,22,138,239] in 320x240
+I (62894) FRAME: #404 Inference: 121.26 ms (pre=8.79, model=112.19, post=0.27), capture=0.05 ms, age=252.11 ms
+I (62895) DETECTION: No person above threshold 0.80
+I (63065) FRAME: #405 Inference: 122.92 ms (pre=9.01, model=113.64, post=0.26), capture=43.20 ms, age=222.92 ms
+I (63066) DETECTION: No person above threshold 0.80
+I (63191) FRAME: #406 Inference: 121.05 ms (pre=8.79, model=111.99, post=0.26), capture=0.05 ms, age=248.88 ms
+I (63192) DETECTION: No person above threshold 0.80
+I (63365) FRAME: #407 Inference: 122.82 ms (pre=9.00, model=113.55, post=0.26), capture=46.20 ms, age=222.83 ms
+I (63366) DETECTION: No person above threshold 0.80
+I (63491) FRAME: #408 Inference: 121.06 ms (pre=8.79, model=111.99, post=0.26), capture=0.05 ms, age=248.90 ms
+I (63492) DETECTION: No person above threshold 0.80
+I (63665) FRAME: #409 Inference: 122.92 ms (pre=9.01, model=113.65, post=0.26), capture=46.20 ms, age=222.94 ms
+I (63666) DETECTION: No person above threshold 0.80
+I (63791) FRAME: #410 Inference: 121.05 ms (pre=8.79, model=111.98, post=0.26), capture=0.05 ms, age=248.89 ms
+I (63792) DETECTION: No person above threshold 0.80
+I (63965) FRAME: #411 Inference: 122.93 ms (pre=9.01, model=113.65, post=0.26), capture=46.20 ms, age=222.95 ms
+I (63966) DETECTION: No person above threshold 0.80
+I (64091) FRAME: #412 Inference: 121.04 ms (pre=8.79, model=111.98, post=0.26), capture=0.05 ms, age=248.88 ms
+I (64092) DETECTION: No person above threshold 0.80
+I (64265) FRAME: #413 Inference: 122.81 ms (pre=9.00, model=113.54, post=0.26), capture=46.20 ms, age=222.82 ms
+I (64266) DETECTION: No person above threshold 0.80
+I (64391) FRAME: #414 Inference: 121.05 ms (pre=8.79, model=111.99, post=0.26), capture=0.05 ms, age=248.90 ms
+I (64392) DETECTION: No person above threshold 0.80
+I (64565) FRAME: #415 Inference: 122.82 ms (pre=9.00, model=113.55, post=0.26), capture=46.20 ms, age=222.84 ms
+I (64566) DETECTION: No person above threshold 0.80
+I (64691) FRAME: #416 Inference: 121.02 ms (pre=8.79, model=111.96, post=0.25), capture=0.05 ms, age=248.87 ms
+I (64692) DETECTION: No person above threshold 0.80
+I (64865) FRAME: #417 Inference: 122.82 ms (pre=9.00, model=113.55, post=0.25), capture=46.20 ms, age=222.84 ms
+I (64866) DETECTION: No person above threshold 0.80
+I (64991) FRAME: #418 Inference: 121.01 ms (pre=8.79, model=111.96, post=0.25), capture=0.05 ms, age=248.86 ms
+I (64992) DETECTION: No person above threshold 0.80
+I (65165) FRAME: #419 Inference: 122.80 ms (pre=9.00, model=113.53, post=0.25), capture=46.20 ms, age=222.82 ms
+I (65166) DETECTION: No person above threshold 0.80
+I (65291) FRAME: #420 Inference: 121.02 ms (pre=8.79, model=111.96, post=0.25), capture=0.05 ms, age=248.86 ms
+I (65292) DETECTION: No person above threshold 0.80
+I (65465) FRAME: #421 Inference: 122.79 ms (pre=9.00, model=113.53, post=0.25), capture=46.20 ms, age=222.81 ms
+I (65466) DETECTION: No person above threshold 0.80
+I (65591) FRAME: #422 Inference: 121.02 ms (pre=8.79, model=111.96, post=0.25), capture=0.05 ms, age=248.87 ms
+I (65592) DETECTION: No person above threshold 0.80
+I (65765) FRAME: #423 Inference: 122.78 ms (pre=9.00, model=113.52, post=0.25), capture=46.20 ms, age=222.80 ms
+I (65766) DETECTION: No person above threshold 0.80
+I (65891) FRAME: #424 Inference: 121.02 ms (pre=8.79, model=111.96, post=0.25), capture=0.05 ms, age=248.86 ms
+I (65892) DETECTION: No person above threshold 0.80
+I (66065) FRAME: #425 Inference: 122.81 ms (pre=9.00, model=113.55, post=0.25), capture=46.20 ms, age=222.83 ms
+I (66066) DETECTION: No person above threshold 0.80
+I (66191) FRAME: #426 Inference: 121.01 ms (pre=8.79, model=111.95, post=0.25), capture=0.05 ms, age=248.86 ms
+I (66192) DETECTION: No person above threshold 0.80
+I (66365) FRAME: #427 Inference: 122.79 ms (pre=9.00, model=113.53, post=0.25), capture=46.20 ms, age=222.81 ms
+I (66366) DETECTION: No person above threshold 0.80
+I (66491) FRAME: #428 Inference: 121.01 ms (pre=8.79, model=111.96, post=0.25), capture=0.05 ms, age=248.86 ms
+I (66492) DETECTION: No person above threshold 0.80
+I (66665) FRAME: #429 Inference: 122.79 ms (pre=9.00, model=113.53, post=0.25), capture=46.20 ms, age=222.81 ms
+I (66666) DETECTION: No person above threshold 0.80
+I (66791) FRAME: #430 Inference: 121.01 ms (pre=8.79, model=111.95, post=0.25), capture=0.05 ms, age=248.86 ms
+I (66792) DETECTION: No person above threshold 0.80
+I (66965) FRAME: #431 Inference: 122.79 ms (pre=9.00, model=113.53, post=0.25), capture=46.20 ms, age=222.81 ms
+I (66966) DETECTION: No person above threshold 0.80
+I (67091) FRAME: #432 Inference: 121.02 ms (pre=8.79, model=111.96, post=0.25), capture=0.05 ms, age=248.86 ms
+I (67092) DETECTION: No person above threshold 0.80
+I (67265) FRAME: #433 Inference: 122.79 ms (pre=9.00, model=113.53, post=0.25), capture=46.20 ms, age=222.81 ms
+I (67266) DETECTION: No person above threshold 0.80
+I (67391) FRAME: #434 Inference: 121.01 ms (pre=8.79, model=111.95, post=0.25), capture=0.05 ms, age=248.86 ms
+I (67392) DETECTION: No person above threshold 0.80
+I (67565) FRAME: #435 Inference: 122.94 ms (pre=9.00, model=113.67, post=0.26), capture=46.20 ms, age=222.96 ms
+I (67566) DETECTION: No person above threshold 0.80
+I (67691) FRAME: #436 Inference: 121.03 ms (pre=8.79, model=111.98, post=0.25), capture=0.05 ms, age=248.87 ms
+I (67692) DETECTION: No person above threshold 0.80
+I (67865) FRAME: #437 Inference: 122.84 ms (pre=9.00, model=113.57, post=0.26), capture=46.20 ms, age=222.86 ms
+I (67866) DETECTION: No person above threshold 0.80
+I (67991) FRAME: #438 Inference: 121.03 ms (pre=8.79, model=111.97, post=0.25), capture=0.05 ms, age=248.88 ms
+I (67992) DETECTION: No person above threshold 0.80
+I (68165) FRAME: #439 Inference: 122.93 ms (pre=9.00, model=113.66, post=0.26), capture=46.20 ms, age=222.95 ms
+I (68166) DETECTION: No person above threshold 0.80
+I (68291) FRAME: #440 Inference: 121.02 ms (pre=8.79, model=111.97, post=0.25), capture=0.05 ms, age=248.86 ms
+I (68292) DETECTION: No person above threshold 0.80
+I (68465) FRAME: #441 Inference: 122.82 ms (pre=9.00, model=113.55, post=0.26), capture=46.20 ms, age=222.84 ms
+I (68466) DETECTION: No person above threshold 0.80
+I (68591) FRAME: #442 Inference: 121.02 ms (pre=8.79, model=111.96, post=0.25), capture=0.05 ms, age=248.86 ms
+I (68592) DETECTION: No person above threshold 0.80
+I (68765) FRAME: #443 Inference: 122.81 ms (pre=9.00, model=113.55, post=0.26), capture=46.20 ms, age=222.83 ms
+I (68766) DETECTION: No person above threshold 0.80
+I (68891) FRAME: #444 Inference: 121.05 ms (pre=8.79, model=111.99, post=0.26), capture=0.05 ms, age=248.90 ms
+I (68892) DETECTION: No person above threshold 0.80
+I (69065) FRAME: #445 Inference: 122.93 ms (pre=9.00, model=113.65, post=0.26), capture=46.20 ms, age=222.95 ms
+I (69066) DETECTION: No person above threshold 0.80
+I (69191) FRAME: #446 Inference: 121.03 ms (pre=8.79, model=111.97, post=0.25), capture=0.05 ms, age=248.87 ms
+I (69192) DETECTION: No person above threshold 0.80
+I (69365) FRAME: #447 Inference: 122.93 ms (pre=9.00, model=113.66, post=0.26), capture=46.20 ms, age=222.95 ms
+I (69366) DETECTION: No person above threshold 0.80
+I (69491) FRAME: #448 Inference: 121.04 ms (pre=8.79, model=111.98, post=0.26), capture=0.05 ms, age=248.88 ms
+I (69492) DETECTION: No person above threshold 0.80
+I (69665) FRAME: #449 Inference: 122.81 ms (pre=9.00, model=113.55, post=0.25), capture=46.20 ms, age=222.83 ms
+I (69666) DETECTION: No person above threshold 0.80
+I (69791) FRAME: #450 Inference: 121.05 ms (pre=8.79, model=111.99, post=0.26), capture=0.05 ms, age=248.90 ms
+I (69792) DETECTION: No person above threshold 0.80
+I (69965) FRAME: #451 Inference: 122.83 ms (pre=9.00, model=113.56, post=0.26), capture=46.20 ms, age=222.84 ms
+I (69966) DETECTION: No person above threshold 0.80
+I (70091) FRAME: #452 Inference: 121.03 ms (pre=8.79, model=111.97, post=0.26), capture=0.05 ms, age=248.87 ms
+I (70092) DETECTION: No person above threshold 0.80
+I (70265) FRAME: #453 Inference: 122.79 ms (pre=9.00, model=113.53, post=0.25), capture=46.20 ms, age=222.81 ms
+I (70266) DETECTION: No person above threshold 0.80
+I (70391) FRAME: #454 Inference: 121.02 ms (pre=8.79, model=111.96, post=0.25), capture=0.05 ms, age=248.87 ms
+I (70392) DETECTION: No person above threshold 0.80
+I (70565) FRAME: #455 Inference: 122.79 ms (pre=9.00, model=113.53, post=0.25), capture=46.20 ms, age=222.81 ms
+I (70566) DETECTION: No person above threshold 0.80
+I (70691) FRAME: #456 Inference: 121.02 ms (pre=8.79, model=111.96, post=0.25), capture=0.05 ms, age=248.86 ms
+I (70692) DETECTION: No person above threshold 0.80
+I (70865) FRAME: #457 Inference: 122.79 ms (pre=9.00, model=113.53, post=0.25), capture=46.20 ms, age=222.81 ms
+I (70866) DETECTION: No person above threshold 0.80
+I (70991) FRAME: #458 Inference: 121.02 ms (pre=8.79, model=111.97, post=0.25), capture=0.05 ms, age=248.87 ms
+I (70992) DETECTION: No person above threshold 0.80
+I (71165) FRAME: #459 Inference: 122.94 ms (pre=9.00, model=113.67, post=0.26), capture=46.20 ms, age=222.96 ms
+I (71166) DETECTION: No person above threshold 0.80
+I (71291) FRAME: #460 Inference: 121.03 ms (pre=8.79, model=111.97, post=0.25), capture=0.05 ms, age=248.87 ms
+I (71292) DETECTION: No person above threshold 0.80
+I (71465) FRAME: #461 Inference: 122.86 ms (pre=9.00, model=113.59, post=0.26), capture=46.20 ms, age=222.88 ms
+I (71466) DETECTION: No person above threshold 0.80
+I (71591) FRAME: #462 Inference: 121.03 ms (pre=8.79, model=111.97, post=0.25), capture=0.05 ms, age=248.87 ms
+I (71592) DETECTION: No person above threshold 0.80
+I (71765) FRAME: #463 Inference: 122.93 ms (pre=9.00, model=113.66, post=0.26), capture=46.20 ms, age=222.95 ms
+I (71766) DETECTION: No person above threshold 0.80
+I (71891) FRAME: #464 Inference: 121.03 ms (pre=8.79, model=111.97, post=0.25), capture=0.05 ms, age=248.86 ms
+I (71892) DETECTION: No person above threshold 0.80
+I (72065) FRAME: #465 Inference: 122.94 ms (pre=9.00, model=113.67, post=0.26), capture=46.20 ms, age=222.96 ms
+I (72066) DETECTION: No person above threshold 0.80
+I (72191) FRAME: #466 Inference: 121.02 ms (pre=8.79, model=111.97, post=0.25), capture=0.05 ms, age=248.86 ms
+I (72192) DETECTION: No person above threshold 0.80
+I (72365) FRAME: #467 Inference: 123.22 ms (pre=9.00, model=113.67, post=0.53), capture=46.20 ms, age=223.24 ms
+I (72366) DETECTION: person, confidence=0.8244, box=[0,52,122,239] in 320x240
+I (72367) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=71383863 us
+I (72378) BUZZER_PIN: GPIO14 actual pad=1, t=71394957 us
+I (72494) FRAME: #468 Inference: 121.27 ms (pre=8.85, model=112.13, post=0.27), capture=0.04 ms, age=252.10 ms
+I (72495) DETECTION: No person above threshold 0.80
+W (72497) BUZZER: Stopped: stale/negative result or TX timeout; GPIO14 LOW
+I (72505) BUZZER_PIN: GPIO14 actual pad=0, t=71522172 us
+I (72665) FRAME: #469 Inference: 122.86 ms (pre=9.01, model=113.58, post=0.26), capture=43.20 ms, age=222.84 ms
+I (72666) DETECTION: No person above threshold 0.80
+I (72791) FRAME: #470 Inference: 121.07 ms (pre=8.79, model=112.01, post=0.26), capture=0.05 ms, age=248.92 ms
+I (72792) DETECTION: No person above threshold 0.80
+I (72965) FRAME: #471 Inference: 122.82 ms (pre=9.00, model=113.55, post=0.25), capture=46.20 ms, age=222.83 ms
+I (72966) DETECTION: No person above threshold 0.80
+I (73091) FRAME: #472 Inference: 121.20 ms (pre=8.79, model=111.95, post=0.45), capture=0.05 ms, age=249.05 ms
+I (73092) DETECTION: person, confidence=0.8101, box=[0,39,124,239] in 320x240
+I (73265) FRAME: #473 Inference: 122.97 ms (pre=9.01, model=113.68, post=0.27), capture=44.20 ms, age=222.99 ms
+I (73266) DETECTION: No person above threshold 0.80
+I (73391) FRAME: #474 Inference: 121.03 ms (pre=8.79, model=111.97, post=0.26), capture=0.05 ms, age=248.87 ms
+I (73392) DETECTION: No person above threshold 0.80
+I (73565) FRAME: #475 Inference: 122.83 ms (pre=9.00, model=113.56, post=0.26), capture=46.20 ms, age=222.84 ms
+I (73566) DETECTION: No person above threshold 0.80
+I (73691) FRAME: #476 Inference: 121.02 ms (pre=8.79, model=111.96, post=0.25), capture=0.05 ms, age=248.86 ms
+I (73692) DETECTION: No person above threshold 0.80
+I (73865) FRAME: #477 Inference: 122.83 ms (pre=9.01, model=113.56, post=0.25), capture=46.20 ms, age=222.85 ms
+I (73866) DETECTION: No person above threshold 0.80
+I (73991) FRAME: #478 Inference: 121.06 ms (pre=8.79, model=111.99, post=0.26), capture=0.05 ms, age=248.90 ms
+I (73992) DETECTION: No person above threshold 0.80
+I (74165) FRAME: #479 Inference: 122.80 ms (pre=9.00, model=113.54, post=0.25), capture=46.20 ms, age=222.82 ms
+I (74166) DETECTION: No person above threshold 0.80
+I (74291) FRAME: #480 Inference: 121.02 ms (pre=8.79, model=111.96, post=0.25), capture=0.05 ms, age=248.87 ms
+I (74292) DETECTION: No person above threshold 0.80
+I (74465) FRAME: #481 Inference: 123.00 ms (pre=9.00, model=113.53, post=0.45), capture=46.20 ms, age=223.01 ms
+I (74466) DETECTION: person, confidence=0.8053, box=[0,41,123,239] in 320x240
+I (74497) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=73513863 us
+I (74502) BUZZER_PIN: GPIO14 actual pad=1, t=73518863 us
+I (74593) FRAME: #482 Inference: 121.38 ms (pre=8.80, model=112.29, post=0.27), capture=0.05 ms, age=251.22 ms
+I (74594) DETECTION: No person above threshold 0.80
+W (74597) BUZZER: Stopped: stale/negative result or TX timeout; GPIO14 LOW
+I (74604) BUZZER_PIN: GPIO14 actual pad=0, t=73621426 us
+I (74765) FRAME: #483 Inference: 122.92 ms (pre=9.00, model=113.64, post=0.26), capture=44.20 ms, age=222.93 ms
+I (74766) DETECTION: No person above threshold 0.80
+I (74891) FRAME: #484 Inference: 121.06 ms (pre=8.79, model=112.00, post=0.26), capture=0.05 ms, age=248.89 ms
+I (74892) DETECTION: No person above threshold 0.80
+I (75065) FRAME: #485 Inference: 122.91 ms (pre=9.01, model=113.63, post=0.26), capture=46.20 ms, age=222.93 ms
+I (75066) DETECTION: No person above threshold 0.80
+I (75191) FRAME: #486 Inference: 121.01 ms (pre=8.79, model=111.96, post=0.25), capture=0.05 ms, age=248.85 ms
+I (75192) DETECTION: No person above threshold 0.80
+I (75365) FRAME: #487 Inference: 122.81 ms (pre=9.00, model=113.54, post=0.25), capture=46.20 ms, age=222.83 ms
+I (75366) DETECTION: No person above threshold 0.80
+I (75491) FRAME: #488 Inference: 121.02 ms (pre=8.79, model=111.97, post=0.25), capture=0.05 ms, age=248.87 ms
+I (75492) DETECTION: No person above threshold 0.80
+I (75665) FRAME: #489 Inference: 122.93 ms (pre=9.01, model=113.65, post=0.26), capture=46.20 ms, age=222.95 ms
+I (75666) DETECTION: No person above threshold 0.80
+I (75791) FRAME: #490 Inference: 121.02 ms (pre=8.79, model=111.96, post=0.26), capture=0.05 ms, age=248.86 ms
+I (75792) DETECTION: No person above threshold 0.80
+I (75965) FRAME: #491 Inference: 122.79 ms (pre=9.00, model=113.53, post=0.25), capture=46.20 ms, age=222.80 ms
+I (75966) DETECTION: No person above threshold 0.80
+I (76091) FRAME: #492 Inference: 121.05 ms (pre=8.79, model=111.99, post=0.26), capture=0.05 ms, age=248.90 ms
+I (76092) DETECTION: No person above threshold 0.80
+I (76265) FRAME: #493 Inference: 122.82 ms (pre=9.00, model=113.55, post=0.26), capture=46.20 ms, age=222.84 ms
+I (76266) DETECTION: No person above threshold 0.80
+I (76391) FRAME: #494 Inference: 121.06 ms (pre=8.79, model=112.00, post=0.26), capture=0.05 ms, age=248.91 ms
+I (76392) DETECTION: No person above threshold 0.80
+I (76565) FRAME: #495 Inference: 122.82 ms (pre=9.00, model=113.55, post=0.25), capture=46.20 ms, age=222.83 ms
+I (76566) DETECTION: No person above threshold 0.80
+I (76691) FRAME: #496 Inference: 121.03 ms (pre=8.79, model=111.97, post=0.25), capture=0.05 ms, age=248.88 ms
+I (76692) DETECTION: No person above threshold 0.80
+I (76865) FRAME: #497 Inference: 122.80 ms (pre=9.00, model=113.53, post=0.25), capture=46.20 ms, age=222.82 ms
+I (76866) DETECTION: No person above threshold 0.80
+I (76991) FRAME: #498 Inference: 121.07 ms (pre=8.79, model=112.00, post=0.26), capture=0.05 ms, age=248.91 ms
+I (76992) DETECTION: No person above threshold 0.80
+I (77165) FRAME: #499 Inference: 122.84 ms (pre=9.00, model=113.56, post=0.25), capture=46.20 ms, age=222.85 ms
+I (77166) DETECTION: No person above threshold 0.80
+I (77291) FRAME: #500 Inference: 121.06 ms (pre=8.79, model=111.99, post=0.26), capture=0.05 ms, age=248.90 ms
+I (77292) DETECTION: No person above threshold 0.80
+I (77295) MEMORY: internal free=165231, min=110407, largest=63488; PSRAM free=7142132, largest=7077888 bytes
+I (77465) FRAME: #501 Inference: 122.97 ms (pre=9.02, model=113.67, post=0.26), capture=36.20 ms, age=222.98 ms
+I (77466) DETECTION: No person above threshold 0.80
+I (77591) FRAME: #502 Inference: 121.04 ms (pre=8.80, model=111.97, post=0.26), capture=0.05 ms, age=248.88 ms
+I (77592) DETECTION: No person above threshold 0.80
+I (77765) FRAME: #503 Inference: 122.83 ms (pre=9.01, model=113.56, post=0.25), capture=46.20 ms, age=222.84 ms
+I (77766) DETECTION: No person above threshold 0.80
+I (77891) FRAME: #504 Inference: 121.06 ms (pre=8.80, model=111.99, post=0.26), capture=0.05 ms, age=248.91 ms
+I (77892) DETECTION: No person above threshold 0.80
+I (78065) FRAME: #505 Inference: 122.84 ms (pre=9.01, model=113.57, post=0.26), capture=46.20 ms, age=222.86 ms
+I (78066) DETECTION: No person above threshold 0.80
+I (78191) FRAME: #506 Inference: 121.05 ms (pre=8.80, model=111.98, post=0.26), capture=0.05 ms, age=248.90 ms
+I (78192) DETECTION: No person above threshold 0.80
+I (78365) FRAME: #507 Inference: 122.83 ms (pre=9.01, model=113.55, post=0.25), capture=46.20 ms, age=222.84 ms
+I (78366) DETECTION: No person above threshold 0.80
+I (78491) FRAME: #508 Inference: 121.03 ms (pre=8.80, model=111.96, post=0.25), capture=0.05 ms, age=248.88 ms
+I (78492) DETECTION: No person above threshold 0.80
+I (78665) FRAME: #509 Inference: 122.93 ms (pre=9.01, model=113.65, post=0.26), capture=46.20 ms, age=222.95 ms
+I (78666) DETECTION: No person above threshold 0.80
+I (78791) FRAME: #510 Inference: 121.02 ms (pre=8.80, model=111.95, post=0.26), capture=0.05 ms, age=248.86 ms
+I (78792) DETECTION: No person above threshold 0.80
+I (78965) FRAME: #511 Inference: 122.95 ms (pre=9.01, model=113.66, post=0.26), capture=46.20 ms, age=222.97 ms
+I (78966) DETECTION: No person above threshold 0.80
+I (79091) FRAME: #512 Inference: 121.03 ms (pre=8.80, model=111.96, post=0.26), capture=0.05 ms, age=248.86 ms
+I (79092) DETECTION: No person above threshold 0.80
+I (79265) FRAME: #513 Inference: 122.94 ms (pre=9.01, model=113.66, post=0.26), capture=46.20 ms, age=222.96 ms
+I (79266) DETECTION: No person above threshold 0.80
+I (79391) FRAME: #514 Inference: 121.04 ms (pre=8.80, model=111.97, post=0.26), capture=0.05 ms, age=248.88 ms
+I (79392) DETECTION: No person above threshold 0.80
+I (79565) FRAME: #515 Inference: 122.81 ms (pre=9.01, model=113.53, post=0.25), capture=46.20 ms, age=222.82 ms
+I (79566) DETECTION: No person above threshold 0.80
+I (79691) FRAME: #516 Inference: 121.05 ms (pre=8.80, model=111.98, post=0.26), capture=0.05 ms, age=248.90 ms
+I (79692) DETECTION: No person above threshold 0.80
+I (79865) FRAME: #517 Inference: 122.91 ms (pre=9.01, model=113.63, post=0.26), capture=46.20 ms, age=222.93 ms
+I (79866) DETECTION: No person above threshold 0.80
+I (79991) FRAME: #518 Inference: 121.03 ms (pre=8.80, model=111.96, post=0.26), capture=0.05 ms, age=248.87 ms
+I (79992) DETECTION: No person above threshold 0.80
+I (80165) FRAME: #519 Inference: 122.83 ms (pre=9.01, model=113.56, post=0.25), capture=46.20 ms, age=222.84 ms
+I (80166) DETECTION: No person above threshold 0.80
+I (80291) FRAME: #520 Inference: 121.03 ms (pre=8.80, model=111.96, post=0.25), capture=0.05 ms, age=248.88 ms
+I (80292) DETECTION: No person above threshold 0.80
+I (80465) FRAME: #521 Inference: 122.93 ms (pre=9.01, model=113.65, post=0.26), capture=46.20 ms, age=222.95 ms
+I (80466) DETECTION: No person above threshold 0.80
+I (80591) FRAME: #522 Inference: 121.02 ms (pre=8.80, model=111.96, post=0.26), capture=0.05 ms, age=248.86 ms
+I (80592) DETECTION: No person above threshold 0.80
+I (80765) FRAME: #523 Inference: 122.83 ms (pre=9.01, model=113.56, post=0.25), capture=46.20 ms, age=222.85 ms
+I (80766) DETECTION: No person above threshold 0.80
+I (80891) FRAME: #524 Inference: 121.06 ms (pre=8.80, model=111.99, post=0.26), capture=0.05 ms, age=248.91 ms
+I (80892) DETECTION: No person above threshold 0.80
+I (81065) FRAME: #525 Inference: 122.84 ms (pre=9.01, model=113.56, post=0.26), capture=46.20 ms, age=222.85 ms
+I (81066) DETECTION: No person above threshold 0.80
+I (81191) FRAME: #526 Inference: 121.06 ms (pre=8.80, model=111.99, post=0.26), capture=0.05 ms, age=248.91 ms
+I (81192) DETECTION: No person above threshold 0.80
+I (81365) FRAME: #527 Inference: 122.82 ms (pre=9.01, model=113.55, post=0.25), capture=46.20 ms, age=222.83 ms
+I (81366) DETECTION: No person above threshold 0.80
+I (81491) FRAME: #528 Inference: 121.03 ms (pre=8.80, model=111.97, post=0.25), capture=0.05 ms, age=248.88 ms
+I (81492) DETECTION: No person above threshold 0.80
+I (81665) FRAME: #529 Inference: 122.83 ms (pre=9.01, model=113.55, post=0.26), capture=46.20 ms, age=222.84 ms
+I (81666) DETECTION: No person above threshold 0.80
+I (81791) FRAME: #530 Inference: 121.04 ms (pre=8.80, model=111.97, post=0.26), capture=0.05 ms, age=248.89 ms
+I (81792) DETECTION: No person above threshold 0.80
+I (81965) FRAME: #531 Inference: 122.82 ms (pre=9.01, model=113.54, post=0.25), capture=46.20 ms, age=222.83 ms
+I (81966) DETECTION: No person above threshold 0.80
+I (82091) FRAME: #532 Inference: 121.02 ms (pre=8.80, model=111.95, post=0.26), capture=0.05 ms, age=248.86 ms
+I (82092) DETECTION: No person above threshold 0.80
+I (82265) FRAME: #533 Inference: 122.84 ms (pre=9.01, model=113.56, post=0.26), capture=46.20 ms, age=222.85 ms
+I (82266) DETECTION: No person above threshold 0.80
+I (82391) FRAME: #534 Inference: 121.05 ms (pre=8.80, model=111.98, post=0.26), capture=0.05 ms, age=248.90 ms
+I (82392) DETECTION: No person above threshold 0.80
+I (82565) FRAME: #535 Inference: 122.83 ms (pre=9.01, model=113.56, post=0.25), capture=46.20 ms, age=222.85 ms
+I (82566) DETECTION: No person above threshold 0.80
+I (82691) FRAME: #536 Inference: 121.02 ms (pre=8.80, model=111.96, post=0.26), capture=0.05 ms, age=248.87 ms
+I (82692) DETECTION: No person above threshold 0.80
+I (82865) FRAME: #537 Inference: 122.83 ms (pre=9.01, model=113.55, post=0.25), capture=46.20 ms, age=222.84 ms
+I (82866) DETECTION: No person above threshold 0.80
+I (82991) FRAME: #538 Inference: 121.02 ms (pre=8.80, model=111.95, post=0.25), capture=0.05 ms, age=248.86 ms
+I (82992) DETECTION: No person above threshold 0.80
+I (83165) FRAME: #539 Inference: 122.81 ms (pre=9.01, model=113.54, post=0.25), capture=46.20 ms, age=222.83 ms
+I (83166) DETECTION: No person above threshold 0.80
+I (83291) FRAME: #540 Inference: 121.05 ms (pre=8.80, model=111.98, post=0.26), capture=0.05 ms, age=248.90 ms
+I (83292) DETECTION: No person above threshold 0.80
+I (83465) FRAME: #541 Inference: 122.83 ms (pre=9.01, model=113.56, post=0.26), capture=46.20 ms, age=222.84 ms
+I (83466) DETECTION: No person above threshold 0.80
+I (83591) FRAME: #542 Inference: 121.05 ms (pre=8.80, model=111.98, post=0.26), capture=0.05 ms, age=248.90 ms
+I (83592) DETECTION: No person above threshold 0.80
+I (83765) FRAME: #543 Inference: 122.90 ms (pre=9.01, model=113.62, post=0.26), capture=46.20 ms, age=222.91 ms
+I (83766) DETECTION: No person above threshold 0.80
+I (83891) FRAME: #544 Inference: 121.05 ms (pre=8.80, model=111.98, post=0.26), capture=0.05 ms, age=248.89 ms
+I (83892) DETECTION: No person above threshold 0.80
+I (84065) FRAME: #545 Inference: 122.84 ms (pre=9.01, model=113.57, post=0.26), capture=46.20 ms, age=222.86 ms
+I (84066) DETECTION: No person above threshold 0.80
+I (84191) FRAME: #546 Inference: 121.05 ms (pre=8.80, model=111.98, post=0.26), capture=0.05 ms, age=248.89 ms
+I (84192) DETECTION: No person above threshold 0.80
+I (84365) FRAME: #547 Inference: 122.83 ms (pre=9.01, model=113.56, post=0.25), capture=46.20 ms, age=222.85 ms
+I (84366) DETECTION: No person above threshold 0.80
+I (84491) FRAME: #548 Inference: 121.03 ms (pre=8.80, model=111.96, post=0.26), capture=0.05 ms, age=248.88 ms
+I (84492) DETECTION: No person above threshold 0.80
+I (84665) FRAME: #549 Inference: 122.83 ms (pre=9.01, model=113.55, post=0.26), capture=46.20 ms, age=222.84 ms
+I (84666) DETECTION: No person above threshold 0.80
+I (84791) FRAME: #550 Inference: 121.05 ms (pre=8.80, model=111.98, post=0.26), capture=0.05 ms, age=248.90 ms
+I (84792) DETECTION: No person above threshold 0.80
+I (84965) FRAME: #551 Inference: 122.90 ms (pre=9.01, model=113.62, post=0.26), capture=46.20 ms, age=222.92 ms
+I (84966) DETECTION: No person above threshold 0.80
+I (85091) FRAME: #552 Inference: 121.02 ms (pre=8.80, model=111.96, post=0.26), capture=0.05 ms, age=248.87 ms
+I (85092) DETECTION: No person above threshold 0.80
+I (85265) FRAME: #553 Inference: 122.95 ms (pre=9.02, model=113.66, post=0.26), capture=46.20 ms, age=222.97 ms
+I (85266) DETECTION: No person above threshold 0.80
+I (85391) FRAME: #554 Inference: 121.04 ms (pre=8.80, model=111.97, post=0.26), capture=0.05 ms, age=248.88 ms
+I (85392) DETECTION: No person above threshold 0.80
+I (85565) FRAME: #555 Inference: 122.83 ms (pre=9.01, model=113.56, post=0.25), capture=46.20 ms, age=222.85 ms
+I (85566) DETECTION: No person above threshold 0.80
+I (85691) FRAME: #556 Inference: 121.05 ms (pre=8.80, model=111.98, post=0.26), capture=0.05 ms, age=248.90 ms
+I (85692) DETECTION: No person above threshold 0.80
+I (85865) FRAME: #557 Inference: 122.84 ms (pre=9.01, model=113.57, post=0.25), capture=46.20 ms, age=222.85 ms
+I (85866) DETECTION: No person above threshold 0.80
+I (85991) FRAME: #558 Inference: 121.06 ms (pre=8.80, model=111.98, post=0.26), capture=0.05 ms, age=248.90 ms
+I (85992) DETECTION: No person above threshold 0.80
+I (86165) FRAME: #559 Inference: 122.90 ms (pre=9.01, model=113.61, post=0.26), capture=46.20 ms, age=222.91 ms
+I (86166) DETECTION: No person above threshold 0.80
+I (86291) FRAME: #560 Inference: 121.04 ms (pre=8.80, model=111.97, post=0.26), capture=0.05 ms, age=248.88 ms
+I (86292) DETECTION: No person above threshold 0.80
+I (86465) FRAME: #561 Inference: 122.82 ms (pre=9.01, model=113.55, post=0.25), capture=46.20 ms, age=222.83 ms
+I (86466) DETECTION: No person above threshold 0.80
+I (86591) FRAME: #562 Inference: 121.06 ms (pre=8.80, model=111.98, post=0.26), capture=0.05 ms, age=248.90 ms
+I (86592) DETECTION: No person above threshold 0.80
+I (86765) FRAME: #563 Inference: 122.92 ms (pre=9.01, model=113.64, post=0.26), capture=46.20 ms, age=222.94 ms
+I (86766) DETECTION: No person above threshold 0.80
+I (86891) FRAME: #564 Inference: 121.06 ms (pre=8.80, model=111.98, post=0.26), capture=0.05 ms, age=248.90 ms
+I (86892) DETECTION: No person above threshold 0.80
+I (87065) FRAME: #565 Inference: 122.89 ms (pre=9.01, model=113.61, post=0.26), capture=46.20 ms, age=222.90 ms
+I (87066) DETECTION: No person above threshold 0.80
+I (87191) FRAME: #566 Inference: 121.06 ms (pre=8.80, model=111.98, post=0.26), capture=0.05 ms, age=248.90 ms
+I (87192) DETECTION: No person above threshold 0.80
+I (87365) FRAME: #567 Inference: 122.90 ms (pre=9.01, model=113.61, post=0.26), capture=46.20 ms, age=222.91 ms
+I (87366) DETECTION: No person above threshold 0.80
+I (87491) FRAME: #568 Inference: 121.03 ms (pre=8.80, model=111.97, post=0.26), capture=0.05 ms, age=248.87 ms
+I (87492) DETECTION: No person above threshold 0.80
+I (87665) FRAME: #569 Inference: 122.83 ms (pre=9.01, model=113.56, post=0.25), capture=46.20 ms, age=222.85 ms
+I (87666) DETECTION: No person above threshold 0.80
+I (87791) FRAME: #570 Inference: 121.03 ms (pre=8.80, model=111.97, post=0.25), capture=0.05 ms, age=248.88 ms
+I (87792) DETECTION: No person above threshold 0.80
+I (87965) FRAME: #571 Inference: 122.82 ms (pre=9.01, model=113.55, post=0.26), capture=46.20 ms, age=222.84 ms
+I (87966) DETECTION: No person above threshold 0.80
+I (88091) FRAME: #572 Inference: 121.05 ms (pre=8.79, model=111.98, post=0.26), capture=0.05 ms, age=248.90 ms
+I (88092) DETECTION: No person above threshold 0.80
+I (88265) FRAME: #573 Inference: 122.86 ms (pre=9.01, model=113.58, post=0.26), capture=46.20 ms, age=222.87 ms
+I (88266) DETECTION: No person above threshold 0.80
+I (88391) FRAME: #574 Inference: 121.05 ms (pre=8.79, model=111.98, post=0.26), capture=0.05 ms, age=248.89 ms
+I (88392) DETECTION: No person above threshold 0.80
+I (88565) FRAME: #575 Inference: 122.83 ms (pre=9.01, model=113.56, post=0.26), capture=46.20 ms, age=222.85 ms
+I (88566) DETECTION: No person above threshold 0.80
+I (88691) FRAME: #576 Inference: 121.04 ms (pre=8.79, model=111.97, post=0.26), capture=0.05 ms, age=248.88 ms
+I (88692) DETECTION: No person above threshold 0.80
+I (88865) FRAME: #577 Inference: 122.91 ms (pre=9.01, model=113.63, post=0.26), capture=46.20 ms, age=222.92 ms
+I (88866) DETECTION: No person above threshold 0.80
+I (88991) FRAME: #578 Inference: 121.06 ms (pre=8.79, model=111.99, post=0.26), capture=0.05 ms, age=248.90 ms
+I (88992) DETECTION: No person above threshold 0.80
+I (89165) FRAME: #579 Inference: 122.84 ms (pre=9.01, model=113.56, post=0.25), capture=46.20 ms, age=222.85 ms
+I (89166) DETECTION: No person above threshold 0.80
+I (89291) FRAME: #580 Inference: 121.01 ms (pre=8.79, model=111.95, post=0.25), capture=0.05 ms, age=248.86 ms
+I (89292) DETECTION: No person above threshold 0.80
+I (89465) FRAME: #581 Inference: 122.82 ms (pre=9.01, model=113.55, post=0.25), capture=46.20 ms, age=222.84 ms
+I (89466) DETECTION: No person above threshold 0.80
+I (89591) FRAME: #582 Inference: 121.01 ms (pre=8.79, model=111.95, post=0.25), capture=0.05 ms, age=248.86 ms
+I (89592) DETECTION: No person above threshold 0.80
+I (89765) FRAME: #583 Inference: 122.89 ms (pre=9.01, model=113.60, post=0.26), capture=46.20 ms, age=222.91 ms
+I (89766) DETECTION: No person above threshold 0.80
+I (89891) FRAME: #584 Inference: 121.05 ms (pre=8.79, model=111.98, post=0.26), capture=0.05 ms, age=248.90 ms
+I (89892) DETECTION: No person above threshold 0.80
+I (90065) FRAME: #585 Inference: 122.95 ms (pre=9.01, model=113.67, post=0.26), capture=46.20 ms, age=222.96 ms
+I (90066) DETECTION: No person above threshold 0.80
+I

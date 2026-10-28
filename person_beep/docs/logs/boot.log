@@ -1,0 +1,282 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x10e4
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xb30
+load:0x403cb700,len:0x2cfc
+entry 0x403c88a8
+I (548) octal_psram: vendor id    : 0x0d (AP)
+I (548) octal_psram: dev id       : 0x02 (generation 3)
+I (548) octal_psram: density      : 0x03 (64 Mbit)
+I (550) octal_psram: good-die     : 0x01 (Pass)
+I (555) octal_psram: Latency      : 0x01 (Fixed)
+I (559) octal_psram: VCC          : 0x01 (3V)
+I (563) octal_psram: SRF          : 0x01 (Fast Refresh)
+I (568) octal_psram: BurstType    : 0x01 (Hybrid Wrap)
+I (573) octal_psram: BurstLen     : 0x01 (32 Byte)
+I (577) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)
+I (583) octal_psram: DriveStrength: 0x00 (1/1)
+I (587) MSPI Timing: PSRAM timing tuning index: 11
+I (591) esp_psram: Found 8MB PSRAM device
+I (595) esp_psram: Speed: 80MHz
+I (598) cpu_start: Multicore app
+I (886) esp_psram: SPI SRAM memory test OK
+I (895) cpu_start: Pro cpu start user code
+I (895) cpu_start: cpu freq: 240000000 Hz
+I (895) app_init: Application information:
+I (895) app_init: Project name:     person_beep
+I (899) app_init: App version:      1.0.0
+I (903) app_init: Compile time:     Oct 28 2026 20:48:26
+I (908) app_init: ELF file SHA256:  7dbc91fdc...
+I (913) app_init: ESP-IDF:          v5.4.2
+I (916) efuse_init: Min chip rev:     v0.0
+I (920) efuse_init: Max chip rev:     v0.99 
+I (924) efuse_init: Chip rev:         v0.2
+I (928) heap_init: Initializing. RAM available for dynamic allocation:
+I (934) heap_init: At 3FCA1668 len 000480A8 (288 KiB): RAM
+I (939) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM
+I (945) heap_init: At 600FE01C len 00001FCC (7 KiB): RTCRAM
+I (950) esp_psram: Adding pool of 8192K of PSRAM memory to heap allocator
+I (957) spi_flash: detected chip: generic
+I (960) spi_flash: flash io: dio
+I (963) sleep_gpio: Configure to isolate all GPIO pins in sleep state
+I (969) sleep_gpio: Enable automatic switching of GPIO sleep configuration
+I (0) main_task: Started on CPU1
+I (25) esp_psram: Reserving pool of 64K of internal memory for DMA/internal allocations
+I (25) main_task: Calling app_main()
+I (25) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 
+I (33) BUZZER: Ready: Freenove GPIO14, active HIGH, hardware-timed pulses
+I (39) HARDWARE: Freenove ESP32-S3, cores=2, revision=2, reset_reason=1
+I (46) HARDWARE: Flash=8388608 bytes, PSRAM=8388608 bytes (measured)
+I (52) MEMORY: internal free=290827, min=290827, largest=196608; PSRAM free=8385580, largest=8257536 bytes
+I (61) s3 ll_cam: DMA Channel=0
+I (64) cam_hal: cam init ok
+I (66) sccb-ng: pin_sda 4 pin_scl 5
+I (70) sccb-ng: sccb_i2c_port=1
+I (84) ov7725: Mismatch PID=0xe8
+I (85) ov7760: Mismatch PID=0xe8
+I (86) gc032a: Mismatch PID=0xf302
+I (87) camera: Camera PID=0x9b VER=0x00 MIDL=0x00 MIDH=0x00
+I (88) camera: Detected GC0308 camera
+I (91) camera: Detected camera at address=0x21
+I (344) cam_hal: PSRAM DMA mode disabled
+I (345) s3 ll_cam: node_size: 3840, nodes_per_line: 1, lines_per_node: 6
+I (345) s3 ll_cam: dma_half_buffer_min:  3840, dma_half_buffer: 15360, lines_per_half_buffer: 24, dma_buffer_size: 30720
+I (354) cam_hal: buffer_size: 30720, half_buffer_size: 15360, node_buffer_size: 3840, node_cnt: 8, total_cnt: 10
+I (364) cam_hal: Allocating 153600 Byte frame buffer in PSRAM
+I (369) cam_hal: Allocating 153600 Byte frame buffer in PSRAM
+I (375) cam_hal: cam config ok
+I (378) gc0308: subsample win:640x480, ratio:0.500000
+I (392) CAMERA: Sensor=driver-supported sensor, PID=0x009b (read from hardware)
+I (394) CAMERA: Initialized: Freenove pins, RGB565BE 320x240, two PSRAM buffers
+I (908) MEMORY: internal free=254351, min=254351, largest=159744; PSRAM free=8077128, largest=7995392 bytes
+W (1055) dl::Model: minimize() will delete unused inference variables, breaking model testing/debugging.
+
+I (1057) dl::Model: model:torch-jit-export, version:0
+I (1059) dl::Model: MODEL LOCATION IN FLASH RODATA
+I (1064) dl::Model: +----------------+--------------+----------+--------------+
+I (1070) dl::Model: |                     memory summary                      |
+I (1077) dl::Model: +----------------+--------------+----------+--------------+
+I (1084) dl::Model: |                | internal RAM | PSRAM    | FLASH        |
+I (1091) dl::Model: +----------------+--------------+----------+--------------+
+I (1098) dl::Model: | fbs_model      |              |          | 425.11KB     |
+I (1105) dl::Model: |  -- parameter  |              |          |  -- 332.33KB |
+I (1112) dl::Model: +----------------+--------------+----------+--------------+
+I (1119) dl::Model: | parameter_copy |              | 332.33KB |              |
+I (1126) dl::Model: +----------------+--------------+----------+--------------+
+I (1133) dl::Model: | variable       | 64.00KB      | 539.00KB |              |
+I (1140) dl::Model: +----------------+--------------+----------+--------------+
+I (1147) dl::Model: | others         | 22.03KB      | 36.24KB  |              |
+I (1154) dl::Model: +----------------+--------------+----------+--------------+
+I (1161) dl::Model: | total          | 86.03KB      | 907.57KB | 425.11KB     |
+I (1168) dl::Model: +----------------+--------------+----------+--------------+
+
+I (1175) MODEL: Person detector loaded: PicoDet S8 v1, INT8 224x224, threshold=0.70
+I (1183) MEMORY: internal free=165431, min=110407, largest=63488; PSRAM free=7143932, largest=7077888 bytes
+I (1315) FRAME: #1 Inference: 122.67 ms (pre=9.16, model=112.88, post=0.61), capture=0.05 ms, age=317.31 ms
+I (1316) DETECTION: person, confidence=0.7043, box=[109,119,135,182] in 320x240
+I (3612) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=1343866 us
+I (3737) FRAME: #2 Inference: 121.14 ms (pre=8.84, model=111.75, post=0.54), capture=0.04 ms, age=345.37 ms
+I (3738) DETECTION: person, confidence=0.7043, box=[109,119,133,184] in 320x240
+I (3915) FRAME: #3 Inference: 123.04 ms (pre=9.01, model=113.72, post=0.29), capture=47.80 ms, age=223.06 ms
+I (3916) DETECTION: No person above threshold 0.70
+W (3917) BUZZER: Stopped: stale/negative result or TX timeout; GPIO14 LOW
+I (4041) FRAME: #4 Inference: 121.17 ms (pre=8.81, model=111.80, post=0.54), capture=0.04 ms, age=249.41 ms
+I (4042) DETECTION: person, confidence=0.7043, box=[109,119,134,182] in 320x240
+I (4215) FRAME: #5 Inference: 123.23 ms (pre=9.01, model=113.66, post=0.56), capture=43.80 ms, age=223.25 ms
+I (4216) DETECTION: person, confidence=0.7043, box=[109,119,135,181] in 320x240
+I (4344) FRAME: #6 Inference: 121.65 ms (pre=8.80, model=112.21, post=0.62), capture=0.05 ms, age=251.89 ms
+I (4345) DETECTION: person, confidence=0.7043, box=[108,119,134,182] in 320x240
+I (4515) FRAME: #7 Inference: 123.22 ms (pre=9.01, model=113.64, post=0.56), capture=40.80 ms, age=223.24 ms
+I (4516) DETECTION: person, confidence=0.7043, box=[108,119,134,182] in 320x240
+I (4644) FRAME: #8 Inference: 121.56 ms (pre=8.80, model=112.22, post=0.53), capture=0.05 ms, age=251.81 ms
+I (4645) DETECTION: person, confidence=0.7043, box=[109,118,135,181] in 320x240
+I (4815) FRAME: #9 Inference: 123.24 ms (pre=9.01, model=113.65, post=0.55), capture=40.80 ms, age=223.26 ms
+I (4816) DETECTION: person, confidence=0.7043, box=[108,119,133,182] in 320x240
+I (4944) FRAME: #10 Inference: 121.63 ms (pre=8.80, model=112.19, post=0.62), capture=0.05 ms, age=251.87 ms
+I (4945) DETECTION: person, confidence=0.7043, box=[108,118,134,182] in 320x240
+I (5115) FRAME: #11 Inference: 123.17 ms (pre=9.01, model=113.62, post=0.53), capture=40.80 ms, age=223.19 ms
+I (5116) DETECTION: person, confidence=0.7043, box=[108,119,134,182] in 320x240
+I (5244) FRAME: #12 Inference: 121.64 ms (pre=8.80, model=112.19, post=0.62), capture=0.05 ms, age=251.88 ms
+I (5245) DETECTION: person, confidence=0.7043, box=[108,119,134,181] in 320x240
+I (5415) FRAME: #13 Inference: 123.22 ms (pre=9.01, model=113.64, post=0.56), capture=40.80 ms, age=223.25 ms
+I (5416) DETECTION: person, confidence=0.7043, box=[109,120,134,182] in 320x240
+I (5544) FRAME: #14 Inference: 121.63 ms (pre=8.79, model=112.20, post=0.62), capture=0.05 ms, age=251.88 ms
+I (5545) DETECTION: person, confidence=0.7043, box=[109,118,134,182] in 320x240
+I (5715) FRAME: #15 Inference: 123.23 ms (pre=9.01, model=113.65, post=0.56), capture=40.80 ms, age=223.26 ms
+I (5716) DETECTION: person, confidence=0.7043, box=[109,118,134,182] in 320x240
+I (5844) FRAME: #16 Inference: 121.58 ms (pre=8.80, model=112.18, post=0.59), capture=0.05 ms, age=251.81 ms
+I (5845) DETECTION: person, confidence=0.7043, box=[109,119,134,183] in 320x240
+I (5917) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=3648866 us
+I (6015) FRAME: #17 Inference: 123.33 ms (pre=9.01, model=113.75, post=0.56), capture=40.80 ms, age=223.35 ms
+I (6016) DETECTION: person, confidence=0.7043, box=[109,119,134,182] in 320x240
+I (6144) FRAME: #18 Inference: 121.60 ms (pre=8.80, model=112.23, post=0.56), capture=0.05 ms, age=251.84 ms
+I (6145) DETECTION: person, confidence=0.7043, box=[109,119,135,180] in 320x240
+I (6315) FRAME: #19 Inference: 123.28 ms (pre=9.01, model=113.69, post=0.55), capture=40.80 ms, age=223.29 ms
+I (6316) DETECTION: person, confidence=0.7043, box=[109,119,134,182] in 320x240
+I (6444) FRAME: #20 Inference: 121.69 ms (pre=8.80, model=112.24, post=0.63), capture=0.05 ms, age=251.93 ms
+I (6445) DETECTION: person, confidence=0.7043, box=[108,119,135,182] in 320x240
+I (6522) BUZZER: LOW, cooldown >= 2000 ms
+I (6615) FRAME: #21 Inference: 123.25 ms (pre=9.02, model=113.66, post=0.55), capture=40.80 ms, age=223.26 ms
+I (6616) DETECTION: person, confidence=0.7043, box=[109,119,135,181] in 320x240
+I (6744) FRAME: #22 Inference: 121.59 ms (pre=8.80, model=112.22, post=0.56), capture=0.05 ms, age=251.83 ms
+I (6745) DETECTION: person, confidence=0.7043, box=[109,118,134,182] in 320x240
+I (6915) FRAME: #23 Inference: 123.23 ms (pre=9.01, model=113.65, post=0.55), capture=40.80 ms, age=223.25 ms
+I (6916) DETECTION: person, confidence=0.7043, box=[109,119,134,183] in 320x240
+I (7044) FRAME: #24 Inference: 121.67 ms (pre=8.80, model=112.19, post=0.67), capture=0.05 ms, age=251.91 ms
+I (7045) DETECTION: person, confidence=0.7043, box=[109,119,133,182] in 320x240
+I (7215) FRAME: #25 Inference: 123.24 ms (pre=9.01, model=113.63, post=0.59), capture=40.80 ms, age=223.26 ms
+I (7216) DETECTION: person, confidence=0.7043, box=[108,119,134,181] in 320x240
+I (7344) FRAME: #26 Inference: 121.63 ms (pre=8.80, model=112.19, post=0.62), capture=0.05 ms, age=251.88 ms
+I (7345) DETECTION: person, confidence=0.7043, box=[109,119,134,183] in 320x240
+I (7515) FRAME: #27 Inference: 123.22 ms (pre=9.01, model=113.65, post=0.55), capture=40.80 ms, age=223.24 ms
+I (7516) DETECTION: person, confidence=0.7043, box=[108,119,134,182] in 320x240
+I (7644) FRAME: #28 Inference: 121.61 ms (pre=8.80, model=112.20, post=0.60), capture=0.05 ms, age=251.85 ms
+I (7644) DETECTION: person, confidence=0.7043, box=[109,119,134,182] in 320x240
+I (7815) FRAME: #29 Inference: 123.17 ms (pre=9.00, model=113.62, post=0.53), capture=40.80 ms, age=223.19 ms
+I (7816) DETECTION: person, confidence=0.7043, box=[109,119,134,182] in 320x240
+I (7944) FRAME: #30 Inference: 121.65 ms (pre=8.79, model=112.21, post=0.62), capture=0.05 ms, age=251.89 ms
+I (7945) DETECTION: person, confidence=0.7043, box=[109,120,134,182] in 320x240
+I (8115) FRAME: #31 Inference: 123.24 ms (pre=9.01, model=113.66, post=0.56), capture=40.80 ms, age=223.26 ms
+I (8116) DETECTION: person, confidence=0.7043, box=[109,119,134,182] in 320x240
+I (8244) FRAME: #32 Inference: 121.57 ms (pre=8.80, model=112.20, post=0.56), capture=0.05 ms, age=251.81 ms
+I (8245) DETECTION: person, confidence=0.7043, box=[109,119,135,181] in 320x240
+I (8415) FRAME: #33 Inference: 123.29 ms (pre=9.01, model=113.66, post=0.61), capture=40.80 ms, age=223.31 ms
+I (8416) DETECTION: person, confidence=0.7043, box=[108,119,134,183] in 320x240
+I (8522) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=6253866 us
+I (8544) FRAME: #34 Inference: 122.00 ms (pre=8.79, model=112.72, post=0.47), capture=0.05 ms, age=252.24 ms
+I (8545) DETECTION: person, confidence=0.7043, box=[109,120,134,181] in 320x240
+I (8715) FRAME: #35 Inference: 123.14 ms (pre=9.00, model=113.67, post=0.46), capture=40.80 ms, age=223.16 ms
+I (8716) DETECTION: person, confidence=0.7043, box=[109,119,135,181] in 320x240
+I (8844) FRAME: #36 Inference: 121.66 ms (pre=8.79, model=112.22, post=0.62), capture=0.05 ms, age=251.90 ms
+I (8845) DETECTION: person, confidence=0.7043, box=[108,119,134,182] in 320x240
+I (9015) FRAME: #37 Inference: 123.22 ms (pre=9.01, model=113.71, post=0.49), capture=40.80 ms, age=223.24 ms
+I (9016) DETECTION: person, confidence=0.7043, box=[109,119,135,180] in 320x240
+I (9127) BUZZER: LOW, cooldown >= 2000 ms
+I (9144) FRAME: #38 Inference: 121.76 ms (pre=8.79, model=112.49, post=0.47), capture=0.05 ms, age=252.00 ms
+I (9145) DETECTION: person, confidence=0.7043, box=[109,118,135,181] in 320x240
+I (9315) FRAME: #39 Inference: 123.24 ms (pre=9.01, model=113.68, post=0.54), capture=40.80 ms, age=223.27 ms
+I (9316) DETECTION: person, confidence=0.7043, box=[109,120,134,182] in 320x240
+I (9444) FRAME: #40 Inference: 121.65 ms (pre=8.79, model=112.23, post=0.62), capture=0.05 ms, age=251.89 ms
+I (9445) DETECTION: person, confidence=0.7043, box=[109,119,134,181] in 320x240
+I (9615) FRAME: #41 Inference: 123.12 ms (pre=9.01, model=113.58, post=0.53), capture=40.80 ms, age=223.14 ms
+I (9616) DETECTION: person, confidence=0.7043, box=[109,119,133,181] in 320x240
+I (9744) FRAME: #42 Inference: 121.56 ms (pre=8.79, model=112.18, post=0.58), capture=0.05 ms, age=251.81 ms
+I (9745) DETECTION: person, confidence=0.7043, box=[109,119,134,181] in 320x240
+I (9915) FRAME: #43 Inference: 123.24 ms (pre=9.01, model=113.66, post=0.55), capture=40.80 ms, age=223.26 ms
+I (9916) DETECTION: person, confidence=0.7043, box=[109,119,134,181] in 320x240
+I (10044) FRAME: #44 Inference: 121.68 ms (pre=8.80, model=112.19, post=0.67), capture=0.05 ms, age=251.92 ms
+I (10045) DETECTION: person, confidence=0.7043, box=[109,119,133,182] in 320x240
+I (10215) FRAME: #45 Inference: 123.07 ms (pre=9.00, model=113.59, post=0.46), capture=40.80 ms, age=223.08 ms
+I (10216) DETECTION: person, confidence=0.7043, box=[109,118,134,181] in 320x240
+I (10344) FRAME: #46 Inference: 121.51 ms (pre=8.79, model=112.19, post=0.52), capture=0.05 ms, age=251.76 ms
+I (10344) DETECTION: person, confidence=0.7043, box=[109,118,134,179] in 320x240
+I (10515) FRAME: #47 Inference: 123.09 ms (pre=9.00, model=113.55, post=0.53), capture=40.80 ms, age=223.11 ms
+I (10516) DETECTION: person, confidence=0.7043, box=[108,119,133,180] in 320x240
+I (10644) FRAME: #48 Inference: 121.57 ms (pre=8.79, model=112.18, post=0.58), capture=0.05 ms, age=251.81 ms
+I (10644) DETECTION: person, confidence=0.7043, box=[109,119,133,180] in 320x240
+I (10815) FRAME: #49 Inference: 123.18 ms (pre=9.00, model=113.58, post=0.58), capture=40.80 ms, age=223.20 ms
+I (10816) DETECTION: person, confidence=0.7043, box=[108,118,133,183] in 320x240
+I (10944) FRAME: #50 Inference: 121.57 ms (pre=8.79, model=112.18, post=0.58), capture=0.05 ms, age=251.82 ms
+I (10944) DETECTION: person, confidence=0.7043, box=[109,120,134,182] in 320x240
+I (11115) FRAME: #51 Inference: 123.12 ms (pre=9.01, model=113.58, post=0.53), capture=40.80 ms, age=223.14 ms
+I (11116) DETECTION: person, confidence=0.7043, box=[109,119,133,181] in 320x240
+I (11127) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=8858866 us
+I (11244) FRAME: #52 Inference: 121.77 ms (pre=8.88, model=112.20, post=0.67), capture=0.05 ms, age=252.01 ms
+I (11245) DETECTION: person, confidence=0.7043, box=[108,119,134,183] in 320x240
+I (11415) FRAME: #53 Inference: 123.28 ms (pre=9.01, model=113.71, post=0.55), capture=40.80 ms, age=223.30 ms
+I (11416) DETECTION: person, confidence=0.7043, box=[109,119,133,181] in 320x240
+I (11544) FRAME: #54 Inference: 121.22 ms (pre=8.79, model=111.88, post=0.53), capture=0.05 ms, age=252.46 ms
+I (11545) DETECTION: person, confidence=0.7043, box=[109,118,134,181] in 320x240
+I (11715) FRAME: #55 Inference: 123.24 ms (pre=9.01, model=113.69, post=0.53), capture=39.80 ms, age=223.25 ms
+I (11716) DETECTION: person, confidence=0.7043, box=[109,119,134,181] in 320x240
+I (11732) BUZZER: LOW, cooldown >= 2000 ms
+I (11844) FRAME: #56 Inference: 121.41 ms (pre=8.84, model=112.00, post=0.55), capture=0.05 ms, age=252.66 ms
+I (11845) DETECTION: person, confidence=0.7043, box=[109,118,133,181] in 320x240
+I (12015) FRAME: #57 Inference: 122.98 ms (pre=9.01, model=113.66, post=0.29), capture=39.80 ms, age=223.01 ms
+I (12016) DETECTION: No person above threshold 0.70
+I (12141) FRAME: #58 Inference: 120.90 ms (pre=8.79, model=111.83, post=0.26), capture=0.05 ms, age=249.14 ms
+I (12142) DETECTION: No person above threshold 0.70
+I (12315) FRAME: #59 Inference: 122.72 ms (pre=9.00, model=113.44, post=0.26), capture=45.79 ms, age=222.73 ms
+I (12315) DETECTION: No person above threshold 0.70
+I (12440) FRAME: #60 Inference: 120.95 ms (pre=8.79, model=111.89, post=0.26), capture=0.05 ms, age=248.21 ms
+I (12441) DETECTION: No person above threshold 0.70
+I (12615) FRAME: #61 Inference: 123.16 ms (pre=9.00, model=113.54, post=0.60), capture=46.79 ms, age=223.17 ms
+I (12616) DETECTION: person, confidence=0.7043, box=[109,119,134,182] in 320x240
+I (12744) FRAME: #62 Inference: 121.56 ms (pre=8.79, model=112.21, post=0.54), capture=0.05 ms, age=251.81 ms
+I (12744) DETECTION: person, confidence=0.7043, box=[109,118,134,180] in 320x240
+I (12915) FRAME: #63 Inference: 123.21 ms (pre=9.01, model=113.65, post=0.53), capture=40.80 ms, age=223.22 ms
+I (12916) DETECTION: person, confidence=0.7043, box=[109,118,133,181] in 320x240
+I (13044) FRAME: #64 Inference: 121.26 ms (pre=8.79, model=111.90, post=0.55), capture=0.05 ms, age=252.51 ms
+I (13045) DETECTION: person, confidence=0.7043, box=[109,119,133,181] in 320x240
+I (13215) FRAME: #65 Inference: 123.26 ms (pre=9.02, model=113.67, post=0.56), capture=39.80 ms, age=223.27 ms
+I (13216) DETECTION: person, confidence=0.7043, box=[109,119,134,182] in 320x240
+I (13344) FRAME: #66 Inference: 121.56 ms (pre=8.79, model=112.18, post=0.58), capture=0.05 ms, age=251.80 ms
+I (13344) DETECTION: person, confidence=0.7043, box=[109,119,133,181] in 320x240
+I (13515) FRAME: #67 Inference: 123.19 ms (pre=9.01, model=113.64, post=0.53), capture=40.80 ms, age=223.21 ms
+I (13516) DETECTION: person, confidence=0.7043, box=[109,118,134,181] in 320x240
+I (13644) FRAME: #68 Inference: 121.19 ms (pre=8.79, model=111.90, post=0.48), capture=0.05 ms, age=252.44 ms
+I (13645) DETECTION: person, confidence=0.7043, box=[110,119,135,179] in 320x240
+I (13732) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=11463866 us
+I (13815) FRAME: #69 Inference: 123.37 ms (pre=9.02, model=113.85, post=0.49), capture=39.80 ms, age=223.39 ms
+I (13816) DETECTION: person, confidence=0.7043, box=[109,118,135,181] in 320x240
+I (13944) FRAME: #70 Inference: 120.97 ms (pre=8.79, model=111.88, post=0.28), capture=0.04 ms, age=252.21 ms
+I (13945) DETECTION: No person above threshold 0.70
+W (13947) BUZZER: Stopped: stale/negative result or TX timeout; GPIO14 LOW
+I (14115) FRAME: #71 Inference: 123.21 ms (pre=9.01, model=113.64, post=0.54), capture=42.79 ms, age=223.23 ms
+I (14116) DETECTION: person, confidence=0.7043, box=[109,117,132,182] in 320x240
+I (14244) FRAME: #72 Inference: 121.65 ms (pre=8.79, model=112.23, post=0.61), capture=0.05 ms, age=251.89 ms
+I (14245) DETECTION: person, confidence=0.7043, box=[109,118,134,182] in 320x240
+I (14415) FRAME: #73 Inference: 123.25 ms (pre=9.01, model=113.64, post=0.59), capture=40.80 ms, age=223.27 ms
+I (14416) DETECTION: person, confidence=0.7043, box=[109,119,134,181] in 320x240
+I (14544) FRAME: #74 Inference: 121.27 ms (pre=8.79, model=111.91, post=0.55), capture=0.05 ms, age=252.52 ms
+I (14545) DETECTION: person, confidence=0.7043, box=[109,118,133,181] in 320x240
+I (14715) FRAME: #75 Inference: 123.25 ms (pre=9.02, model=113.66, post=0.55), capture=39.80 ms, age=223.26 ms
+I (14716) DETECTION: person, confidence=0.7043, box=[108,118,133,182] in 320x240
+I (14844) FRAME: #76 Inference: 121.20 ms (pre=8.79, model=111.90, post=0.48), capture=0.05 ms, age=252.44 ms
+I (14845) DETECTION: person, confidence=0.7043, box=[109,117,135,180] in 320x240
+I (15015) FRAME: #77 Inference: 123.25 ms (pre=9.02, model=113.67, post=0.56), capture=39.80 ms, age=223.27 ms
+I (15016) DETECTION: person, confidence=0.7043, box=[108,118,134,182] in 320x240
+I (15144) FRAME: #78 Inference: 121.18 ms (pre=8.79, model=111.90, post=0.48), capture=0.05 ms, age=252.43 ms
+I (15145) DETECTION: person, confidence=0.7043, box=[110,117,134,179] in 320x240
+I (15315) FRAME: #79 Inference: 123.25 ms (pre=9.02, model=113.67, post=0.55), capture=39.80 ms, age=223.26 ms
+I (15316) DETECTION: person, confidence=0.7043, box=[109,118,133,181] in 320x240
+I (15444) FRAME: #80 Inference: 121.29 ms (pre=8.79, model=111.93, post=0.55), capture=0.05 ms, age=252.53 ms
+I (15445) DETECTION: person, confidence=0.7043, box=[109,118,134,181] in 320x240
+I (15615) FRAME: #81 Inference: 123.26 ms (pre=9.02, model=113.67, post=0.56), capture=39.80 ms, age=223.28 ms
+I (15616) DETECTION: person, confidence=0.7043, box=[109,118,133,182] in 320x240
+I (15744) FRAME: #82 Inference: 121.18 ms (pre=8.79, model=111.85, post=0.53), capture=0.05 ms, age=252.42 ms
+I (15745) DETECTION: person, confidence=0.7043, box=[109,118,134,182] in 320x240
+I (15915) FRAME: #83 Inference: 123.14 ms (pre=9.01, model=113.65, post=0.47), capture=39.80 ms, age=223.16 ms
+I (15916) DETECTION: person, confidence=0.7043, box=[110,118,135,179] in 320x240
+I (15947) BUZZER: Beep Beep! GPIO14, 200/200/200 ms, t=13678866 us
+I (16044) FRAME: #84 Inference: 121.73 ms (pre=8.79, model=112.31, post=0.60), capture=0.05 ms, age=251.97 ms
+I (16045) DETECTION: person, confidence=0.7043, box=[109,118,133,181] in 320x240
+I (16215) FRAME: #85 Inference: 123.29 ms (pre=9.02, model=113.71, post=0.55), capture=40.80 ms, age=223.31 ms
+I (16216) DETECTION: person, confidence=0.7043, box=[109,118,134,182] in 320x240
+I (16344) FRAME: #86 Inference: 121.21 ms (pre=8.79, model=111.88, post=0.53), capture=0.04 ms, age=252.45 ms
+I (16345) DETECTION: person, confidence=0.7043, box=[110,117,135,180] in 320x240
+I

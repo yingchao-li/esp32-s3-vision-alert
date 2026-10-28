@@ -1,0 +1,16 @@
+.DS_Store
+.venv/
+**/build/
+**/managed_components/
+**/__pycache__/
+person_beep/backups/*.bin
+**/sdkconfig
+**/sdkconfig.old
+esp32_vision/tools/vendor/
+esp32_vision/data/
+esp32_vision/training_runs/
+esp32_vision/tools/.training-env/
+esp32_vision/build-*/
+esp32_vision/sdkconfig.dual*
+esp32_vision/*.plist
+esp32_vision/main/wifi_secrets.h

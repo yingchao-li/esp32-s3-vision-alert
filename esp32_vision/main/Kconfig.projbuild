@@ -1,0 +1,45 @@
+menu "Vision system"
+
+choice VISION_MODEL_SOURCE
+    prompt "Embedded detection model"
+    default VISION_MODEL_YOLO11_COCO
+    help
+        Only one real INT8 model is embedded in the application image at a time.
+        Changing the choice re-runs the model provenance/SHA verification and
+        relinks the firmware; it never downloads a model at runtime.
+
+config VISION_MODEL_BASELINE
+    bool "Person-only baseline (PicoDet 224, 435 KB)"
+    help
+        The original single-class pedestrian model. Keeps the smallest image and
+        the fastest inference, but only Person can trigger the buzzer.
+
+config VISION_MODEL_YOLO11_COCO
+    bool "YOLO11n COCO 320 (Person/Bicycle/Car, 2.86 MB, ~1 FPS, no Traffic Cone)"
+    help
+        Route A: the official ESP-DL coco_detect YOLO11n INT8 artifact. COCO
+        categories person(0), bicycle(1) and car(2) are mapped to the existing
+        alarm vocabulary. Traffic Cone has no COCO category; it stays
+        undeployed until a trained four-class model is provided.
+
+config VISION_FOUR_CLASS_MODEL
+    bool "Trained four-class ESPDet model (requires models/four_class.json)"
+    help
+        Build fails unless models/four_class.json, the real .espdl artifact and
+        its validation report are installed by tools/deploy_model.py.
+
+endchoice
+
+config VISION_DL_DUAL_CORE
+    bool "ESP-DL internal multi-core execution (experimental scheduling profile)"
+    default n
+config VISION_WIFI_SSID
+    string "Optional station SSID (empty enables standalone AP)"
+    default ""
+config VISION_WIFI_PASSWORD
+    string "Optional station password"
+    default ""
+config VISION_AP_PASSWORD
+    string "Setup access point WPA2 password (at least 8 characters)"
+    default "vision-setup"
+endmenu

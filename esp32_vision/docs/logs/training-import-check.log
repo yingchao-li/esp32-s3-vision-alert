@@ -1,0 +1,11 @@
+
+    ___________ ____        ____  ____  ____
+   / ____/ ___// __ \      / __ \/ __ \/ __ \
+  / __/  \__ \/ /_/ /_____/ /_/ / /_/ / / / /
+ / /___ ___/ / ____/_____/ ____/ ____/ /_/ /
+/_____//____/_/         /_/   /_/    \___\_\
+
+
+TRAINING IMPORT PASS; no training/inference performed
+torch 2.2.2 onnx 1.17.0 onnxruntime 1.19.2
+MPS available True

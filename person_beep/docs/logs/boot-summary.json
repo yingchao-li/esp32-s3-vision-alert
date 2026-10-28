@@ -1,0 +1,27 @@
+{
+  "source": "docs/logs/boot.log",
+  "frames": 86,
+  "inference_ms": {
+    "mean": 122.33,
+    "min": 120.9,
+    "max": 123.37
+  },
+  "person_boxes": 80,
+  "confidence_range": [
+    0.7043,
+    0.7043
+  ],
+  "negative_frames": 6,
+  "alarm_sequences": 6,
+  "min_observed_low_cooldown_ms": 2000,
+  "cooldown_violations": [],
+  "safe_idle": false,
+  "panic": false,
+  "hardware_lines": [
+    "I (39) HARDWARE: Freenove ESP32-S3, cores=2, revision=2, reset_reason=1",
+    "I (46) HARDWARE: Flash=8388608 bytes, PSRAM=8388608 bytes (measured)"
+  ],
+  "sensor_lines": [
+    "I (392) CAMERA: Sensor=driver-supported sensor, PID=0x009b (read from hardware)"
+  ]
+}

@@ -1,0 +1,2 @@
+PASS: fail-closed observations, confidence, freshness, sequence/cooldown/cancel boundaries
+models/pedestrian_detect_pico_s8_v1.espdl: OK

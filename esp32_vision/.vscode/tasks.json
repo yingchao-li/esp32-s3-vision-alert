@@ -1,0 +1,12 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {"label":"Vision: Build","type":"process","command":"/bin/bash","args":["${workspaceFolder}/tools/build.sh"],"options":{"cwd":"${workspaceFolder}"},"group":{"kind":"build","isDefault":true},"problemMatcher":["$gcc"]},
+    {"label":"Vision: Build dual-core profile","type":"process","command":"/bin/bash","args":["${workspaceFolder}/tools/build_profile.sh","dual"],"options":{"cwd":"${workspaceFolder}"},"problemMatcher":["$gcc"]},
+    {"label":"Vision: Flash APP ONLY","type":"process","command":"/bin/bash","args":["${workspaceFolder}/tools/flash.sh","${input:port}"],"options":{"cwd":"${workspaceFolder}"},"problemMatcher":[]},
+    {"label":"Vision: Serial Monitor (user test)","type":"process","command":"/bin/bash","args":["${workspaceFolder}/tools/monitor.sh","${input:port}"],"options":{"cwd":"${workspaceFolder}"},"problemMatcher":[]},
+    {"label":"Vision: Host unit tests","type":"process","command":"/bin/bash","args":["${workspaceFolder}/tools/test.sh"],"options":{"cwd":"${workspaceFolder}"},"problemMatcher":["$gcc"]},
+    {"label":"Vision: Restore stable APP","type":"process","command":"/bin/bash","args":["${workspaceFolder}/tools/restore_stable.sh","${input:port}"],"options":{"cwd":"${workspaceFolder}"},"problemMatcher":[]}
+  ],
+  "inputs":[{"id":"port","type":"promptString","description":"Verified Freenove serial port (close monitors first)","default":"/dev/cu.usbmodem5C930528211"}]
+}

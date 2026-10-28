@@ -1,0 +1,159 @@
+Checking "python3" ...
+Python 3.13.7
+"python3" has been detected
+Activating ESP-IDF 5.4
+Setting IDF_PATH to '~/.espressif/esp-idf-v5.4.2'.
+* Checking python version ... 3.13.7
+* Checking python dependencies ... OK
+* Deactivating the current ESP-IDF environment (if any) ... OK
+* Establishing a new ESP-IDF environment ... OK
+* Identifying shell ... bash
+* Detecting outdated tools in system ... OK - no outdated tools found
+* Shell completion ... Autocompletion code generated
+WARNING: Failed to load shell autocompletion for bash version: 3.2.57(1)-release!
+
+Done! You can now compile ESP-IDF projects.
+Go to the project directory and run:
+
+  idf.py build
+esptool.py v4.12.0
+Serial port /dev/cu.usbmodem5C930528211
+Connecting....
+Chip is ESP32-S3 (QFN56) (revision v0.2)
+Features: WiFi, BLE, Embedded PSRAM 8MB (AP_3v3)
+Crystal is 40MHz
+MAC: 44:b1:76:c7:ed:58
+Uploading stub...
+Running stub...
+Stub running...
+Manufacturer: 20
+Device: 4017
+Detected flash size: 8MB
+Flash type set in eFuse: quad (4 data lines)
+Flash voltage set by eFuse to 3.3V
+Hard resetting via RTS pin...
+
+esptool.py v4.12.0
+Serial port /dev/cu.usbmodem5C930528211
+Connecting....
+Chip is ESP32-S3 (QFN56) (revision v0.2)
+Features: WiFi, BLE, Embedded PSRAM 8MB (AP_3v3)
+Crystal is 40MHz
+MAC: 44:b1:76:c7:ed:58
+Uploading stub...
+Running stub...
+Stub running...
+Configuring flash size...
+4096 (100 %)
+4096 (100 %)
+Read 4096 bytes at 0x00008000 in 0.4 seconds (90.6 kbit/s)...
+Hard resetting via RTS pin...
+
+PRECHECK PASS: ESP32-S3 44:b1:76:c7:ed:58, 8MB; app offset=0x10000, size=0x3f0000, image=2388064. APPLICATION ONLY.
+esptool.py v4.12.0
+Serial port /dev/cu.usbmodem5C930528211
+Connecting....
+Chip is ESP32-S3 (QFN56) (revision v0.2)
+Features: WiFi, BLE, Embedded PSRAM 8MB (AP_3v3)
+Crystal is 40MHz
+MAC: 44:b1:76:c7:ed:58
+Uploading stub...
+Running stub...
+Stub running...
+Configuring flash size...
+Flash will be erased from 0x00010000 to 0x00257fff...
+Compressed 2388064 bytes to 1204751...
+Writing at 0x00010000... (1 %)
+Writing at 0x0001eaaa... (2 %)
+Writing at 0x0002b30f... (4 %)
+Writing at 0x00031801... (5 %)
+Writing at 0x00037e46... (6 %)
+Writing at 0x0003d4ea... (8 %)
+Writing at 0x00043475... (9 %)
+Writing at 0x000490c1... (10 %)
+Writing at 0x0004ed65... (12 %)
+Writing at 0x00054c30... (13 %)
+Writing at 0x0005af74... (14 %)
+Writing at 0x000605a0... (16 %)
+Writing at 0x00066035... (17 %)
+Writing at 0x0006b781... (18 %)
+Writing at 0x0007165a... (20 %)
+Writing at 0x00076823... (21 %)
+Writing at 0x0007cd4d... (22 %)
+Writing at 0x000824a4... (24 %)
+Writing at 0x000881d0... (25 %)
+Writing at 0x00097240... (27 %)
+Writing at 0x0009f60b... (28 %)
+Writing at 0x000a835a... (29 %)
+Writing at 0x000b2d6d... (31 %)
+Writing at 0x000b87a3... (32 %)
+Writing at 0x000bddb9... (33 %)
+Writing at 0x000c357e... (35 %)
+Writing at 0x000c94cd... (36 %)
+Writing at 0x000d0447... (37 %)
+Writing at 0x000d8261... (39 %)
+Writing at 0x000df038... (40 %)
+Writing at 0x000e7bea... (41 %)
+Writing at 0x000edf9f... (43 %)
+Writing at 0x000f3dc2... (44 %)
+Writing at 0x000faa31... (45 %)
+Writing at 0x00103098... (47 %)
+Writing at 0x0010c766... (48 %)
+Writing at 0x00116b87... (50 %)
+Writing at 0x00120bdb... (51 %)
+Writing at 0x00128d84... (52 %)
+Writing at 0x001482ca... (54 %)
+Writing at 0x00151572... (55 %)
+Writing at 0x001577cf... (56 %)
+Writing at 0x0015e6bc... (58 %)
+Writing at 0x00163d6a... (59 %)
+Writing at 0x0016980d... (60 %)
+Writing at 0x0016f00c... (62 %)
+Writing at 0x00174840... (63 %)
+Writing at 0x00179c6d... (64 %)
+Writing at 0x0017edfa... (66 %)
+Writing at 0x00183df3... (67 %)
+Writing at 0x0018956f... (68 %)
+Writing at 0x0018ed0c... (70 %)
+Writing at 0x001942ec... (71 %)
+Writing at 0x0019978e... (72 %)
+Writing at 0x0019f3ad... (74 %)
+Writing at 0x001a4562... (75 %)
+Writing at 0x001a9989... (77 %)
+Writing at 0x001aec03... (78 %)
+Writing at 0x001b3ec5... (79 %)
+Writing at 0x001b9134... (81 %)
+Writing at 0x001be26c... (82 %)
+Writing at 0x001c375a... (83 %)
+Writing at 0x001c8f55... (85 %)
+Writing at 0x001ce567... (86 %)
+Writing at 0x001d3ee7... (87 %)
+Writing at 0x001ddfd6... (89 %)
+Writing at 0x001e6a19... (90 %)
+Writing at 0x0021ab96... (91 %)
+Writing at 0x00235470... (93 %)
+Writing at 0x0023b952... (94 %)
+Writing at 0x00241c3d... (95 %)
+Writing at 0x00248c3b... (97 %)
+Writing at 0x0024ea23... (98 %)
+Writing at 0x00253d6f... (100 %)
+Wrote 2388064 bytes (1204751 compressed) at 0x00010000 in 105.0 seconds (effective 182.0 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
+
+{
+  "status": "FLASH PASS",
+  "port": "/dev/cu.usbmodem5C930528211",
+  "mac": "44:b1:76:c7:ed:58",
+  "image": "/path/to/ESP32_USB_Camera/esp32_vision/build/esp32_vision.bin",
+  "image_sha256": "729ea7b2fd5190ec7f993c4d492a882bdd92059ef50b3b3a3ce38be8e4393c70",
+  "image_bytes": 2388064,
+  "offset": 65536,
+  "partition_bytes": 4128768,
+  "partition_table_written": false,
+  "bootloader_written": false,
+  "nvs_erased": false,
+  "hardware_function_test": "NOT PERFORMED; USER RESPONSIBILITY"
+}

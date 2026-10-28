@@ -1,0 +1,7 @@
+.section .rodata.vision_model,"a",@progbits
+.balign 16
+.global vision_model_start
+vision_model_start:
+.incbin "@MODEL_FILE@"
+.global vision_model_end
+vision_model_end:
